@@ -105,7 +105,7 @@
 
       <div class="actions">
         <button class="btn" id="hr-add" type="button">＋ Add employee</button>
-        <button class="btn ghost" id="hr-attendance" type="button" ${!active.length ? "disabled" : ""}>Attendance</button>
+        <button class="btn ghost" id="hr-attendance" type="button" ${!active.length || window.me?.canManualAttendance === false ? "disabled" : ""}>Attendance</button>
         <button class="btn ghost" id="hr-payroll" type="button" ${!active.length ? "disabled" : ""}>Run payroll</button>
         <button class="btn ghost" id="hr-ask" type="button">Ask HR</button>
       </div>
@@ -360,6 +360,7 @@
 
   // ---------------------------------------------------------------- attendance by hand
   function attendanceForm(date = C.today()) {
+    if (window.me?.canManualAttendance === false) return;
     const el = dialog("Attendance", `
       ${field("attDate", "Date", date, "date", `required max="${C.today()}"`)}
       <p class="note">Employees punch with a photo; the rules are applied automatically at that moment. Use this to correct a day or to mark someone who does not use the app. Absent and unpaid leave cost a full day, a half day costs half. Recorded punch times and photos are kept whatever you set here.</p>
