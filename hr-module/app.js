@@ -18,7 +18,7 @@
 
   // ---------------------------------------------------------------- navigation
   window.buildNav = function () {
-    const keys = Object.keys(SCREENS).filter(k => SCREENS[k].roles.includes(me.role) && (!SCREENS[k].needsEmployee || me.employeeLinked));
+    const keys = Object.keys(SCREENS).filter(k => SCREENS[k].roles.includes(me.role) && (!SCREENS[k].needsManager || me.canManageEmployees) && (!SCREENS[k].needsEmployee || me.employeeLinked));
     $("#tabbar").innerHTML = keys.map(k =>
       `<button class="tabbtn" type="button" data-t="${k}"><span class="ti">${SCREENS[k].icon}</span><span class="tl">${esc(SCREENS[k].label)}</span></button>`).join("");
     $("#tabbar").querySelectorAll(".tabbtn").forEach(b => { b.onclick = () => go(b.dataset.t); });

@@ -10,15 +10,15 @@
     document.body.append(dialog); dialog.showModal(); return dialog;
   }
 
-  // Best effort: a refused or unavailable location never blocks the punch.
+  // Attendance requires a current device location.
   function getLocation() {
     return new Promise(resolve => {
       if (!navigator.geolocation) return resolve(null);
-      const timer = setTimeout(() => resolve(null), 6000);
+      const timer = setTimeout(() => resolve(null), 21000);
       navigator.geolocation.getCurrentPosition(
         pos => { clearTimeout(timer); resolve({ lat: pos.coords.latitude, lng: pos.coords.longitude, acc: pos.coords.accuracy }); },
         () => { clearTimeout(timer); resolve(null); },
-        { enableHighAccuracy: false, timeout: 5000, maximumAge: 60000 });
+        { enableHighAccuracy: true, timeout: 20000, maximumAge: 0 });
     });
   }
 
@@ -83,7 +83,7 @@
 
       let stream = null, blob = null, objectUrl = null, prepared = null, uploaded = false;
       let busy = false, result = null, generation = 0, savedAttempt = false, punchLoc = null;
-      const locPromise = getLocation();   // starts while the camera opens
+      let locPromise = getLocation();   // starts while the camera opens
 
       const fail = message => { errorBox.textContent = message; errorBox.hidden = false; };
       const stop = () => { ++generation; stream?.getTracks().forEach(t => t.stop()); stream = null; video.srcObject = null; capture.disabled = true; };
@@ -137,6 +137,7 @@
           canvas.height = Math.round(video.videoHeight * scale);
           canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
           punchLoc = await locPromise;
+          if (!punchLoc) { locPromise = getLocation(); throw new Error("Allow location access and turn on Location, then take the photo again."); }
           stampCanvas(canvas, employeeName, punchLoc);
           const photo = await new Promise(r => canvas.toBlob(r, "image/jpeg", .82));
           if (!dialog.open) return;
@@ -145,7 +146,7 @@
           objectUrl = URL.createObjectURL(blob); img.src = objectUrl;
           video.hidden = true; img.hidden = false; placeholder.hidden = true;
           capture.hidden = true; retake.hidden = false; confirm.hidden = false;
-          status.textContent = punchLoc ? "Check the photo, then confirm." : "Location was not available — the punch will still be saved.";
+          status.textContent = "Photo and location ready. Check the photo, then confirm.";
         } catch (err) { fail(err.message); capture.disabled = !stream; }
       };
       retake.onclick = openCamera; retry.onclick = openCamera;
