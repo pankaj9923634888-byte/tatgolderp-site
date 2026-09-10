@@ -260,9 +260,11 @@
       </div>
 
       <h4>Sign-in</h4>
-      <p class="note">Choose this employee’s existing TatGold username. They use the same password for attendance. Add any new login under Users & access first. Leave unlinked for manual attendance.</p>
+      <p class="note">Link an existing login, or enter a new username and password below. New logins can use only attendance and their own leave. Leave blank for manual attendance.</p>
       <div class="fields">
         ${`<label>TatGold login<select class="input" name="email"><option value="">Not linked</option>${logins.map(u=>`<option value="${esc(u.email)}" ${u.email===e.email?"selected":""}>${esc(u.username)} · ${esc(u.fullName)}</option>`).join("")}</select></label>`}
+        ${field("newUsername", "New username", "", "text", 'autocomplete="off" maxlength="40"')}
+        ${field("newPassword", "New password", "", "password", 'autocomplete="new-password" minlength="8" maxlength="72"')}
         ${field("mobile", "Mobile", e.mobile || "", "tel", 'maxlength="20"')}
       </div>
 
@@ -331,7 +333,15 @@
         }
         const next = clone(state), index = next.employees.findIndex(x => x.id === e.id);
         if (index < 0) next.employees.push(e); else next.employees[index] = e;
-        await save(next, id ? "Employee updated: " + e.name : "Employee added: " + e.name);
+        const username = String(f.get("newUsername") || "").trim();
+        const password = String(f.get("newPassword") || "");
+        if (username || password) {
+          if (e.email) throw new Error("Choose Not linked to create a new login, or clear the new username/password to keep the existing login.");
+          if (!username || password.length < 8) throw new Error("Enter a username and password of at least 8 characters.");
+          const {data,error}=await sb.rpc("hr_employee_create_login",{p_state:next,p_version:version,p_employee_id:e.id,p_username:username,p_password:password});
+          if(error) throw new Error(error.message);
+          state=data.state;version=Number(data.version);render();
+        } else await save(next, id ? "Employee updated: " + e.name : "Employee added: " + e.name);
         el.close();
       });
     };
