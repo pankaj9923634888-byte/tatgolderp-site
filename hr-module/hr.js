@@ -112,7 +112,7 @@
 
       ${active.length ? Object.keys(byBranch).sort().map(branch => `
         <h4>${esc(branch)} · ${byBranch[branch].length}</h4>
-        <div class="grid">${byBranch[branch].map(e => card(e, on)).join("")}</div>`).join("")
+        <div class="employee-kpi-grid">${byBranch[branch].map(e => card(e, on)).join("")}</div>`).join("")
       : `<div class="panel"><h3>Start with your team</h3>
           <p class="dim">Add each employee once — salary, weekly off, shift, PF and insurance. Link their TatGold username so they can punch attendance from their own phone.</p>
           <button class="btn" id="hr-first" type="button">Add the first employee</button></div>`}
