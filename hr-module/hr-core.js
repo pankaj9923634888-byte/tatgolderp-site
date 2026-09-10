@@ -8,12 +8,12 @@
 })(typeof globalThis !== "undefined" ? globalThis : this, function () {
   "use strict";
 
-  const statuses = ["Not marked", "Present", "Absent", "Half day", "Paid leave", "Unpaid leave", "Holiday / weekly off"];
-  const docs = ["Aadhaar", "PAN", "Bank proof", "Appointment letter"];
+  const statuses = ["Not marked", "Present", "Absent", "Half day", "Paid leave", "Sick leave", "Unpaid leave", "Holiday / weekly off"];
+  const docs = ["Aadhaar", "PAN", "Bank proof", "Cancelled cheque", "Family Aadhaar", "Appointment letter"];
   const branches = ["Ashirwad", "Durga", "A&D"];
   const WEEKDAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   // Shop defaults. Every one of these is editable per employee.
-  const RULES = { shiftIn: "10:00", shiftOut: "20:30", lateGrace: 15, weeklyOff: "Sunday" };
+  const RULES = { shiftIn: "09:30", shiftOut: "20:00", lateGrace: 10, weeklyOff: "Sunday" };
 
   // Decimal-safe 2dp rounding (half up), matching Postgres round(numeric, 2). Working in
   // integer paise avoids the binary-floating-point edge cases that make 1234.565 unpredictable.
@@ -57,10 +57,10 @@
     const tin = mins(inTime);
     if (tin == null) return { status: "Not marked", note: "No punch recorded", lateMin: 0 };
     const late = tin - mins(r.shiftIn);
-    if (late > r.lateGrace) return { status: "Half day", note: `Late by ${late} min (in ${inTime}, allowed till ${hhmm(mins(r.shiftIn) + r.lateGrace)})`, lateMin: late };
+    if (tin >= 900) return {status:"Half day",note:"Afternoon half day",lateMin:late};
     const tout = mins(outTime);
     if (tout != null && tout < mins(r.shiftOut)) return { status: "Half day", note: `Left at ${outTime}, shift ends ${r.shiftOut}`, lateMin: Math.max(0, late) };
-    return { status: "Present", note: late > 0 ? `In ${inTime} (${late} min late, within grace)` : "On time", lateMin: Math.max(0, late) };
+    return { status: "Present", note: late > r.lateGrace ? "Late mark; every 3 in the month deduct half a day" : late > 0 ? `In ${inTime} (${late} min late, within grace)` : "On time", lateMin: Math.max(0, late) };
   }
 
   const record = (state, id, date) => state.attendance.find(a => a.employeeId === id && a.date === date)?.status || "Not marked";
@@ -78,7 +78,7 @@
   }
 
   function countDays(state, employee, dates, on) {
-    const counts = { Present: 0, "Half day": 0, "Paid leave": 0, "Unpaid leave": 0, Absent: 0, "Holiday / weekly off": 0, "Not marked": 0 };
+    const counts = { Present: 0, "Half day": 0, "Paid leave": 0, "Sick leave": 0, "Unpaid leave": 0, Absent: 0, "Holiday / weekly off": 0, "Not marked": 0 };
     let unpaidDays = 0, unmarkedDays = 0, autoAbsentDays = 0;
     for (const date of dates) {
       const marked = record(state, employee.id, date), status = effectiveStatus(state, employee, date, on);
@@ -91,6 +91,14 @@
     return { counts, unpaidDays, unmarkedDays, autoAbsentDays };
   }
 
+  function payAdjustments(state,employee,first,last) {
+    let lateMarks=0,overtimeHours=0;
+    for(const a of state.attendance.filter(a=>a.employeeId===employee.id&&a.date>=first&&a.date>=employee.joined&&a.date<=last&&Number(a.policyVersion)===2)) {
+      if(a.status==="Present"&&a.lateMark===true)lateMarks++;
+      if(a.checkIn&&a.checkOut&&["Present","Half day"].includes(a.status))overtimeHours+=Math.max(0,Math.floor((mins(istTime(a.checkOut))-1200)/60));
+    }
+    return {lateMarks,lateDeductionDays:Math.floor(lateMarks/3)*0.5,overtimeHours};
+  }
   function payroll(state, month, on = today()) {
     const dates = monthDates(month), lastDay = dates[dates.length - 1];
     const employees = state.employees.filter(e => e.active && e.joined <= lastDay);
@@ -100,14 +108,16 @@
       if (!(salary > 0) || !Number.isFinite(salary)) throw new Error(`Set a monthly salary for ${e.name}.`);
       if (!validDate(e.joined)) throw new Error(`Set a joining date for ${e.name}.`);
       const eligible = dates.filter(d => d >= e.joined);
-      const { unpaidDays, unmarkedDays, autoAbsentDays } = countDays(state, e, eligible, on);
+      let { unpaidDays, unmarkedDays, autoAbsentDays } = countDays(state, e, eligible, on);
+      const adj=payAdjustments(state,e,dates[0],on<lastDay?on:lastDay);unpaidDays+=adj.lateDeductionDays;
+      const overtimePay=money(salary/dates.length/11*adj.overtimeHours*2);
       const gross = money(salary * eligible.length / dates.length);
       const lossOfPay = money(salary * unpaidDays / dates.length);
       const pf = money(Number(e.pf?.employeeAmount || 0)), employerPF = money(Number(e.pf?.employerAmount || 0));
-      if (gross - lossOfPay < pf) throw new Error(`Employee PF is more than the salary earned by ${e.name} this month.`);
+      if (gross + overtimePay - lossOfPay < pf) throw new Error(`Employee PF is more than the salary earned by ${e.name} this month.`);
       return { employeeId: e.id, name: e.name, designation: e.designation, branch: e.branch, monthlySalary: salary,
         calendarDays: dates.length, eligibleDays: eligible.length, unpaidDays, unmarkedDays, autoAbsentDays,
-        gross, lossOfPay, pf, employerPF, net: money(gross - lossOfPay - pf) };
+        ...adj, overtimePay, gross, lossOfPay, pf, employerPF, net: money(gross + overtimePay - lossOfPay - pf) };
     });
   }
 
@@ -115,18 +125,26 @@
   function monthToDate(state, employee, month, uptoDate = today()) {
     const all = monthDates(month), calendarDays = all.length;
     const dates = all.filter(d => d <= uptoDate && d >= employee.joined);
-    const { counts, unpaidDays, autoAbsentDays } = countDays(state, employee, dates, uptoDate);
+    let { counts, unpaidDays, autoAbsentDays } = countDays(state, employee, dates, uptoDate);
     const salary = Number(employee.salary || 0);
+    const adj=payAdjustments(state,employee,all[0],uptoDate);unpaidDays+=adj.lateDeductionDays;
+    const overtimePay=money(salary/calendarDays/11*adj.overtimeHours*2);
     const grossSoFar = money(salary * dates.length / calendarDays);
     const lossOfPaySoFar = money(salary * unpaidDays / calendarDays);
     return { month, uptoDate, calendarDays, daysElapsed: dates.length, counts, unpaidDays, autoAbsentDays,
-      grossSoFar, lossOfPaySoFar, approxNetSoFar: money(grossSoFar - lossOfPaySoFar) };
+      ...adj, overtimePay, grossSoFar, lossOfPaySoFar, approxNetSoFar: money(grossSoFar + overtimePay - lossOfPaySoFar) };
   }
 
-  function leave(state, employee, year) {
-    const used = state.attendance.filter(a => a.employeeId === employee.id && a.date.startsWith(String(year)) && a.status === "Paid leave").length;
-    const allowance = Number(employee.leaveAllowance || 0);
-    return { used, allowance, remaining: allowance - used };
+  function earnedLeaves(employee,on=today()) {
+    const start=employee.joined;if(!validDate(start)||!validDate(on)||on<start)return 0;
+    const a=start.split("-").map(Number),b=on.split("-").map(Number);
+    return Math.max(0,(b[0]-a[0])*12+b[1]-a[1]-(b[2]<a[2]?1:0))*2;
+  }
+  function leave(state,employee,year) {
+    const used=state.attendance.filter(a=>a.employeeId===employee.id&&a.status==="Paid leave").length;
+    const allowance=earnedLeaves(employee);
+    const sickUsed=state.attendance.filter(a=>a.employeeId===employee.id&&a.date.startsWith(String(year))&&a.status==="Sick leave").length;
+    return {used,allowance,remaining:allowance-used,sickUsed,sickAllowance:3,sickRemaining:3-sickUsed};
   }
 
   function policyStatus(policy, on = today()) {
@@ -157,7 +175,7 @@
     if (/document|kyc|aadhaar|pan|कागद/.test(q))
       return who.map(e => { const missing = docs.filter(d => e.documents?.[d]?.status !== "Verified"); return `${e.name}: ${missing.length ? "To verify — " + missing.join(", ") : "All documents verified"}.`; }).join("\n");
     if (/leave|सुट्ट|रजा/.test(q))
-      return who.map(e => { const l = leave(state, e, on.slice(0, 4)); return `${e.name}: ${l.remaining} paid leave days left (${l.used} of ${l.allowance} used in ${on.slice(0, 4)}).`; }).join("\n");
+      return who.map(e => { const l = leave(state, e, on.slice(0, 4)); return `${e.name}: ${l.remaining} paid leave days left (${l.used} of ${l.allowance} earned days used).`; }).join("\n");
     if (/weekly off|holiday|सुट्टीचा दिवस/.test(q))
       return who.map(e => `${e.name}: ${rulesFor(e).weeklyOff} off · shift ${rulesFor(e).shiftIn}–${rulesFor(e).shiftOut}.`).join("\n");
     if (/absent|attendance|present|हजर/.test(q))
@@ -171,5 +189,5 @@
 
   return { statuses, docs, branches, WEEKDAYS, RULES, money, today, istTime, mins, hhmm, weekday,
     validDate, monthDates, rulesFor, dayStatus, record, effectiveStatus, countDays,
-    payroll, monthToDate, leave, policyStatus, answer };
+    payroll, monthToDate, payAdjustments, earnedLeaves, leave, policyStatus, answer };
 });

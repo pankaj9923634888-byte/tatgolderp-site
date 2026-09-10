@@ -104,9 +104,9 @@
     const note = $("#att-leave-note"), list = $("#att-leave-list");
     if (!note || !leave?.linked) return;
     const left = Number(leave.allowance) - Number(leave.used);
-    note.textContent = `${left} paid leave day${left === 1 ? "" : "s"} left this year (${leave.used} of ${leave.allowance} used).`;
+    note.textContent = `${left} earned leaves available (${leave.used} of ${leave.allowance} earned used). 2 per completed month; unused days carry forward. Sick leave: ${Number(leave.sickAllowance)-Number(leave.sickUsed)} of 3 paid days left this year.`;
     list.innerHTML = leave.requests.length ? leave.requests.slice(0, 8).map(r => `
-      <div class="line"><span>${dmy(r.from)}${r.from !== r.to ? " – " + dmy(r.to) : ""} · ${r.type === "PAID" ? "Paid" : "Unpaid"}${r.reason ? " · " + esc(r.reason) : ""}</span>
+      <div class="line"><span>${dmy(r.from)}${r.from !== r.to ? " – " + dmy(r.to) : ""} · ${r.type === "PAID" ? "Paid" : r.type === "SICK" ? "Paid sick leave" : "Unpaid"}${r.reason ? " · " + esc(r.reason) : ""}</span>
       <span class="row"><span class="tag ${STATUS_TAG[r.status] || ""}">${esc(r.status)}</span>
       ${r.status === "PENDING" ? `<button class="btn ghost sm" type="button" data-cancel="${esc(r.id)}">Withdraw</button>` : ""}</span></div>`).join("")
       : '<p class="dim">You have not applied for any leave yet.</p>';
@@ -127,7 +127,7 @@
       <div class="body"><form id="leave-form" class="stack">
         <label>From<input class="input" name="from" type="date" min="${esc(data.joined)}" value="${esc(data.today)}" required autocomplete="off"></label>
         <label>To<input class="input" name="to" type="date" min="${esc(data.joined)}" value="${esc(data.today)}" required autocomplete="off"></label>
-        <label>Type<select class="input" name="type"><option value="PAID">Paid leave</option><option value="UNPAID">Unpaid leave</option></select></label>
+        <label>Type<select class="input" name="type"><option value="PAID">Paid leave</option><option value="SICK">Paid sick leave</option><option value="UNPAID">Unpaid leave</option></select></label>
         <label>Reason<input class="input" name="reason" maxlength="200" placeholder="e.g. family function"
           autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></label>
         <p class="note">Admin approves or rejects this. Your weekly off inside the range is already off and is not counted against your leave.</p>

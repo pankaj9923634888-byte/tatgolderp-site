@@ -21,8 +21,8 @@
     ? `In ${clockTime(row.checkIn)} · Out ${clockTime(row.checkOut)}${row.source ? " · " + row.source : ""}`
     : row?.source ? row.source : "No punch recorded today";
   const newEmployee = () => ({
-    id: crypto.randomUUID(), name: "", designation: "", branch: C.branches[0], email: "", mobile: "",
-    joined: C.today(), active: true, salary: "", leaveAllowance: 12,
+    birthday: "", anniversary: "", familyName: "", familyMobile: "", familyRelation: "", id: crypto.randomUUID(), name: "", designation: "", branch: C.branches[0], email: "", mobile: "",
+    joined: C.today(), active: true, salary: "", leaveAllowance: 24,
     weeklyOff: C.RULES.weeklyOff, shiftIn: C.RULES.shiftIn, shiftOut: C.RULES.shiftOut, lateGrace: C.RULES.lateGrace,
     pf: { status: "To review", employeeAmount: 0, employerAmount: 0 },
     health: { status: "Not set", provider: "", policyNumber: "", expiry: "" },
@@ -89,7 +89,7 @@
         const s = C.policyStatus(e[key], on);
         if (s !== "Active") warnings.push(`${e.name} · ${label}: ${s.toLowerCase()}${e[key]?.expiry ? " (" + dmy(e[key].expiry) + ")" : ""}.`);
       }
-      if (C.leave(state, e, on.slice(0, 4)).remaining < 0) warnings.push(`${e.name} · paid leave has gone past the yearly allowance.`);
+      if (C.leave(state, e, on.slice(0, 4)).remaining < 0) warnings.push(`${e.name} · paid leave has gone past the earned balance.`);
       if (!e.email) warnings.push(`${e.name} · no TatGold login linked, so they cannot punch attendance themselves.`);
       const missed = state.attendance.filter(a => a.employeeId === e.id && a.checkIn && !a.checkOut && !a.reviewedAt && a.date < on);
       if (missed.length) warnings.push(`${e.name} · ${missed.length} day${missed.length === 1 ? "" : "s"} punched in but never out. Review before payroll.`);
@@ -164,7 +164,7 @@
       <div class="facts">
         <div><span>Monthly salary</span><b>${e.salary ? amount(e.salary) : "Not set"}</b></div>
         <div><span>Today</span><b>${onDuty ? "● " : ""}${esc(todayStatus)}</b></div>
-        <div><span>Paid leave ${on.slice(0, 4)}</span><b>${l.remaining} left of ${l.allowance}</b></div>
+        <div><span>Earned leave · carried forward</span><b>${l.remaining} left of ${l.allowance}</b></div>
         <div><span>Weekly off</span><b>${esc(rules.weeklyOff)}</b></div>
       </div>
       <p class="punch-note">${esc(punchNote(row))}</p>
@@ -188,7 +188,7 @@
     const pending = (data || []).filter(r => r.status === "PENDING");
     const decided = (data || []).filter(r => r.status !== "PENDING").slice(0, 10);
     count.textContent = pending.length ? `${pending.length} waiting` : "Nothing waiting";
-    const row = r => `<div class="line"><div><b>${esc(r.employeeName || "—")}</b> ${tag(r.type === "PAID" ? "Paid leave" : "Unpaid leave")}
+    const row = r => `<div class="line"><div><b>${esc(r.employeeName || "—")}</b> ${tag(r.type === "PAID" ? "Paid leave" : r.type === "SICK" ? "Sick leave" : "Unpaid leave")}
       <div class="dim">${dmy(r.from)}${r.from !== r.to ? " – " + dmy(r.to) : ""}${r.reason ? " · " + esc(r.reason) : ""}</div></div>
       ${r.status === "PENDING" ? `<span class="row"><button class="btn ghost sm" type="button" data-reject="${esc(r.id)}">Reject</button>
         <button class="btn sm" type="button" data-approve="${esc(r.id)}">Approve</button></span>`
@@ -217,7 +217,7 @@
     function draw() {
       const month = monthSel.value, isCurrent = month === C.today().slice(0, 7);
       const r = C.monthToDate(state, e, month, isCurrent ? C.today() : C.monthDates(month).slice(-1)[0]);
-      const rows = [["Present", r.counts.Present], ["Half day", r.counts["Half day"]], ["Paid leave", r.counts["Paid leave"]],
+      const rows = [["Present", r.counts.Present], ["Half day", r.counts["Half day"]], ["Paid leave", r.counts["Paid leave"]], ["Sick leave", r.counts["Sick leave"]],
         ["Unpaid leave", r.counts["Unpaid leave"]], ["Absent", r.counts.Absent],
         ["Weekly off", r.counts["Holiday / weekly off"]], ["Not marked", r.counts["Not marked"]]];
       el.querySelector("#rep-body").innerHTML = `
@@ -226,7 +226,7 @@
         ${e.salary ? `<div class="facts">
             <div><span>Days counted</span><b>${r.daysElapsed} of ${r.calendarDays}</b></div>
             <div><span>Gross</span><b>${amount(r.grossSoFar)}</b></div>
-            <div><span>Loss of pay</span><b>${amount(r.lossOfPaySoFar)}</b></div>
+            <div><span>Late marks / half-day deductions</span><b>${r.lateMarks} / ${r.lateDeductionDays}</b></div><div><span>Overtime (${r.overtimeHours} hours)</span><b>${amount(r.overtimePay)}</b></div><div><span>Loss of pay</span><b>${amount(r.lossOfPaySoFar)}</b></div>
             <div><span>Approx. net before PF</span><b>${amount(r.approxNetSoFar)}</b></div></div>
           <p class="note">Employee PF (${amount(e.pf?.employeeAmount || 0)} a month) comes off once at payroll, not day by day. Days that have not happened yet are excluded.${
             r.autoAbsentDays ? ` ${r.autoAbsentDays} day${r.autoAbsentDays === 1 ? "" : "s"} counted Absent automatically — no punch, no leave, nothing marked.` : ""}</p>`
@@ -255,7 +255,7 @@
         ${picker("branch", "Shop", C.branches, e.branch || C.branches[0])}
         ${field("joined", "Joining date", e.joined, "date", "required")}
         ${field("salary", "Monthly gross salary (₹)", e.salary ?? "", "number", 'min="0" max="10000000" step="0.01" placeholder="Not set"')}
-        ${field("leaveAllowance", "Paid leave days per year", e.leaveAllowance, "number", 'required min="0" max="366" step="1"')}
+        <p class="note">Earned leave: 2 per completed month, carried forward. Sick leave: 3 paid days per year.</p>
         ${picker("active", "Status", ["Active", "Archived"], e.active ? "Active" : "Archived")}
       </div>
 
@@ -266,8 +266,17 @@
         ${field("mobile", "Mobile", e.mobile || "", "tel", 'maxlength="20"')}
       </div>
 
+      <h4>Personal and family details</h4>
+      <div class="fields">
+        ${field("birthday", "Birthday", e.birthday || "", "date")}
+        ${field("anniversary", "Anniversary", e.anniversary || "", "date")}
+        ${field("familyName", "Family member name", e.familyName || "", "text", 'maxlength="100"')}
+        ${field("familyRelation", "Relationship", e.familyRelation || "", "text", 'maxlength="60"')}
+        ${field("familyMobile", "Family mobile number", e.familyMobile || "", "tel", 'maxlength="20"')}
+      </div>
+      <p class="note">Attach Aadhaar, PAN, cancelled cheque and family Aadhaar using Documents on the employee card.</p>
       <h4>Attendance rules</h4>
-      <p class="note">One fixed weekly off per employee, taken on that day only — never shifted. Punching in more than the grace minutes after shift start is a half day, and so is punching out before shift end.</p>
+      <p class="note">One fixed weekly off per employee, taken on that day only — never shifted. Three late marks in a calendar month deduct half a day. Afternoon arrival from 3 PM or leaving before shift end counts as half day. Full hours after 8 PM earn overtime at 2×; hourly pay uses an 11-hour day.</p>
       <div class="fields">
         ${picker("weeklyOff", "Weekly off", C.WEEKDAYS, rules.weeklyOff)}
         ${field("shiftIn", "Shift starts", rules.shiftIn, "time", "required")}
@@ -300,10 +309,12 @@
         e.joined = f.get("joined");
         if (!C.validDate(e.joined)) throw new Error("Choose a valid joining date.");
         e.salary = f.get("salary") === "" ? null : Number(f.get("salary"));
-        e.leaveAllowance = Number(f.get("leaveAllowance"));
+        e.leaveAllowance = 24;
         e.active = f.get("active") === "Active";
         e.email = f.get("email").trim().toLowerCase();
         e.mobile = f.get("mobile").trim();
+        for (const key of ["birthday", "anniversary", "familyName", "familyRelation", "familyMobile"]) e[key] = String(f.get(key) || "").trim();
+        for (const key of ["birthday", "anniversary"]) if (e[key] && (!C.validDate(e[key]) || e[key] > C.today())) throw new Error("Choose a valid past " + key + " date.");
         if (e.email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e.email)) throw new Error("Check the sign-in e-mail.");
         e.weeklyOff = f.get("weeklyOff"); e.shiftIn = f.get("shiftIn"); e.shiftOut = f.get("shiftOut");
         e.lateGrace = Number(f.get("lateGrace"));
@@ -449,11 +460,11 @@
   // ---------------------------------------------------------------- payroll
   const payrollTable = lines => `<div class="table"><table><thead><tr>
       <th>Employee</th><th class="num">Days</th><th class="num">Unpaid</th><th class="num">Gross ₹</th>
-      <th class="num">Loss of pay ₹</th><th class="num">PF ₹</th><th class="num">Net ₹</th></tr></thead><tbody>
+      <th class="num">Loss of pay ₹</th><th class="num">Late marks</th><th class="num">OT hours</th><th class="num">OT ₹</th><th class="num">PF ₹</th><th class="num">Net ₹</th></tr></thead><tbody>
       ${lines.map(l => `<tr><td>${esc(l.name)}<div class="dim">${esc(l.branch || "")}</div></td>
         <td class="num">${l.eligibleDays}/${l.calendarDays}</td><td class="num">${l.unpaidDays}</td>
         <td class="num">${amount(l.gross)}</td><td class="num">${amount(l.lossOfPay)}</td>
-        <td class="num">${amount(l.pf)}</td><td class="num"><b>${amount(l.net)}</b></td></tr>`).join("")}
+        <td class="num">${l.lateMarks||0}</td><td class="num">${l.overtimeHours||0}</td><td class="num">${amount(l.overtimePay||0)}</td><td class="num">${amount(l.pf)}</td><td class="num"><b>${amount(l.net)}</b></td></tr>`).join("")}
     </tbody></table></div>`;
 
   function payrollForm() {
@@ -540,9 +551,9 @@
     // A leading =, +, - or @ would be read as a formula by Excel, so quote those cells.
     const cell = v => '"' + String(typeof v === "string" && /^[=+\-@\t\r]/.test(v) ? "'" + v : v).replace(/"/g, '""') + '"';
     const rows = [["Month", "Employee", "Shop", "Designation", "Monthly salary", "Eligible days", "Calendar days",
-      "Unpaid days", "Gross", "Loss of pay", "Employee PF", "Net", "Employer PF", "Status"],
+      "Unpaid days", "Gross", "Loss of pay", "Employee PF", "Net", "Employer PF", "Late marks", "Late deduction days", "Overtime hours", "Overtime pay", "Status"],
       ...p.lines.map(l => [p.month, l.name, l.branch || "", l.designation || "", l.monthlySalary, l.eligibleDays,
-        l.calendarDays, l.unpaidDays, l.gross, l.lossOfPay, l.pf, l.net, l.employerPF, p.status])];
+        l.calendarDays, l.unpaidDays, l.gross, l.lossOfPay, l.pf, l.net, l.employerPF, l.lateMarks||0, l.lateDeductionDays||0, l.overtimeHours||0, l.overtimePay||0, p.status])];
     const blob = new Blob(["﻿" + rows.map(r => r.map(cell).join(",")).join("\r\n")], { type: "text/csv;charset=utf-8" });
     const url = URL.createObjectURL(blob), link = document.createElement("a");
     link.href = url; link.download = `AD-payroll-${p.month}.csv`; link.click();
@@ -554,7 +565,7 @@
     const legal = (window.HR_CONFIG?.COMPANY_LEGAL) || "";
     const rows = [["Monthly salary", amount(l.monthlySalary)], ["Days paid", `${l.eligibleDays} of ${l.calendarDays}`],
       ["Unpaid days", l.unpaidDays], ["Gross earnings", amount(l.gross)], ["Loss of pay", "− " + amount(l.lossOfPay)],
-      ["Employee PF", "− " + amount(l.pf)], ["Net salary", amount(l.net)],
+      ["Late marks / deduction days", `${l.lateMarks||0} / ${l.lateDeductionDays||0}`], ["Overtime hours", l.overtimeHours||0], ["Overtime pay", amount(l.overtimePay||0)], ["Employee PF", "− " + amount(l.pf)], ["Net salary", amount(l.net)],
       ["Employer PF (company contribution)", amount(l.employerPF)]];
     const html = `<h3>${esc(company)}</h3><p class="dim">${esc(legal)}${legal ? " · " : ""}Payslip · ${esc(p.month)}</p>
       <h4>${esc(l.name)}</h4><p class="dim">${esc(l.designation || "Employee")}${l.branch ? " · " + esc(l.branch) : ""}</p>
