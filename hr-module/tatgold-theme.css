@@ -1,0 +1,4 @@
+
+:root{--bg:#f5f5f7;--ink:#172b43;--dim:#788393;--line:#e4e7ed;--gold:#246bd3;--gold-soft:#e9f1ff;--radius:20px;--shadow:0 4px 16px rgba(23,43,67,.05)}
+body{background:var(--bg)}main{max-width:1400px;padding-top:16px}.topbar{background:transparent;border:0}.topbar-left .brand-mark{display:none}.panel{border:1px solid var(--line);padding:22px}.btn{background:#246bd3}.btn.ghost{background:#fff;color:#246bd3;border:1px solid var(--line)}.input{border-radius:12px}.tabbtn.on{color:#246bd3}.brand-mark,.boot-mark{background:linear-gradient(140deg,#62adff,#2474eb)}
+@media(max-width:600px){main{padding-left:8px;padding-right:8px}.panel{padding:16px}.topbar{padding:12px 8px}.who{font-size:12px}}
