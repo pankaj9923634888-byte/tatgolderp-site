@@ -144,10 +144,21 @@
     document.querySelectorAll("[data-docs]").forEach(b => { b.onclick = () => documentsForm(b.dataset.docs); });
     document.querySelectorAll("[data-photo]").forEach(b => { b.onclick = () => PunchPhotos.view(b.dataset.photo, b.dataset.photoTitle); });
     document.querySelectorAll("[data-pay]").forEach(b => { b.onclick = () => payrollReview(b.dataset.pay); });
+    document.querySelectorAll('[data-employee]').forEach(b=>{b.onclick=()=>{
+      const e=findEmployee(b.dataset.employee);const el=dialog(e.name,fullCard(e,C.today()));
+      el.querySelectorAll('[data-edit]').forEach(x=>x.onclick=()=>{el.close();employeeForm(e.id)});
+      el.querySelectorAll('[data-report]').forEach(x=>x.onclick=()=>{el.close();employeeReport(e.id)});
+      el.querySelectorAll('[data-docs]').forEach(x=>x.onclick=()=>{el.close();documentsForm(e.id)});
+      el.querySelectorAll('[data-photo]').forEach(x=>x.onclick=()=>PunchPhotos.view(x.dataset.photo,x.dataset.photoTitle));
+    }});
     loadLeavePanel();
   }
 
-  function card(e, on) {
+  function card(e,on) {
+    const status=C.record(state,e.id,on), l=C.leave(state,e,on.slice(0,4));
+    return `<button type="button" class="employee-kpi" data-employee="${esc(e.id)}"><span class="employee-kpi-top"><span class="avatar">${esc(initials(e.name))}</span><span><strong>${esc(e.name)}</strong><small>${esc(e.designation||'Employee')}</small></span></span><span class="employee-kpi-bottom"><b>${esc(status)}</b><span>${l.remaining} leaves</span></span><small>View details →</small></button>`;
+  }
+  function fullCard(e, on) {
     const l = C.leave(state, e, on.slice(0, 4));
     const verified = C.docs.filter(d => e.documents?.[d]?.status === "Verified").length;
     const row = state.attendance.find(a => a.employeeId === e.id && a.date === on);
