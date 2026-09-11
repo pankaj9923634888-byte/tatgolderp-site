@@ -1,0 +1,24 @@
+{
+  "id": "/",
+  "name": "TatGold ERP",
+  "short_name": "TatGold ERP",
+  "start_url": "/entries/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f4f7fc",
+  "theme_color": "#103a80",
+  "icons": [
+    {
+      "src": "/icons/tatgold-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/tatgold-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
