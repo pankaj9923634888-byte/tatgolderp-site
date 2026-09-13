@@ -58,7 +58,9 @@
   }
   async function save(next, action) {
     const { data, error } = await sb.rpc("hr_save", { p_state: next, p_version: version, p_action: action });
-    if (error) throw new Error(error.code === "40001"
+    // Version conflict: the server raises PT409 (HTTP 409). It used to raise 40001, which PostgREST 14 retried
+    // without limit (sql/72_hr_conflict_errcode.sql) — both codes are recognised so old and new servers behave alike.
+    if (error) throw new Error(error.code === "PT409" || error.code === "40001"
       ? "HR was changed in another window. Close this form, refresh and try again — nothing you saved before is lost."
       : error.message);
     state = data.state; version = Number(data.version);
