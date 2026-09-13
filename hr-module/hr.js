@@ -112,7 +112,7 @@
         <button class="btn ghost" id="hr-ask" type="button">Ask HR</button>
       </div>
 
-      ${active.length ? Object.keys(byBranch).sort().map(branch => `
+      ${active.length ? attendanceSummary(active, on) + Object.keys(byBranch).sort().map(branch => `
         <h4>${esc(branch)} · ${byBranch[branch].length}</h4>
         <div class="employee-kpi-grid">${byBranch[branch].map(e => card(e, on)).join("")}</div>`).join("")
       : `<div class="panel"><h3>Start with your team</h3>
@@ -156,9 +156,40 @@
     loadLeavePanel();
   }
 
+  // Today's mark for the employee tiles: green = in on time, yellow = came late / half day, red = not in,
+  // grey = weekly off, leave or not yet joined. Uses the same shift + grace rules as the punch itself.
+  function todayMark(e, on) {
+    if (e.joined > on) return { tone: "off", label: "Not joined", detail: "Joins " + dmy(e.joined) };
+    const row = state.attendance.find(a => a.employeeId === e.id && a.date === on);
+    const marked = row?.status || "Not marked", rules = C.rulesFor(e);
+    const inTime = row?.checkIn ? C.istTime(row.checkIn) : null, outTime = row?.checkOut ? C.istTime(row.checkOut) : null;
+    if (["Paid leave", "Sick leave", "Unpaid leave"].includes(marked)) return { tone: "off", label: marked, detail: "On leave today" };
+    if (marked === "Holiday / weekly off" || (!inTime && C.weekday(on) === rules.weeklyOff)) return { tone: "off", label: "Weekly off", detail: rules.weeklyOff + " off" };
+    if (inTime) {
+      const late = (C.mins(inTime) ?? 0) - (C.mins(rules.shiftIn) ?? 0);
+      const punched = "In " + inTime + (outTime ? " · Out " + outTime : "");
+      if (marked === "Half day") return { tone: "late", label: "Half day", detail: punched };
+      if (row?.lateMark === true || late > rules.lateGrace) return { tone: "late", label: "Late " + late + " min", detail: punched + " · shift " + rules.shiftIn };
+      return { tone: "present", label: "Present", detail: punched + (late > 0 ? " · " + late + " min within grace" : " · on time") };
+    }
+    if (marked === "Present") return { tone: "present", label: "Present", detail: "Marked by admin" };
+    if (marked === "Half day") return { tone: "late", label: "Half day", detail: "Marked by admin" };
+    return { tone: "absent", label: marked === "Absent" ? "Absent" : "Not in", detail: "No punch today · shift " + rules.shiftIn };
+  }
   function card(e,on) {
-    const status=C.record(state,e.id,on), l=C.leave(state,e,on.slice(0,4));
-    return `<button type="button" class="employee-kpi" data-employee="${esc(e.id)}"><span class="employee-kpi-top"><span class="avatar">${esc(initials(e.name))}</span><span><strong>${esc(e.name)}</strong><small>${esc(e.designation||'Employee')}</small></span></span><span class="employee-kpi-bottom"><b>${esc(status)}</b><span>${l.remaining} leaves</span></span><small>View details →</small></button>`;
+    const m = todayMark(e, on), l = C.leave(state, e, on.slice(0, 4));
+    return `<button type="button" class="emp emp-${m.tone}" data-employee="${esc(e.id)}" title="${esc(m.detail)}">
+      <span class="emp-avatar"><span class="avatar">${esc(initials(e.name))}</span><i class="emp-dot" aria-hidden="true"></i></span>
+      <span class="emp-body"><strong>${esc(e.name)}</strong><small>${esc(e.designation || "Employee")} · ${esc(e.branch || "")}</small></span>
+      <span class="emp-status"><b>${esc(m.label)}</b><small>${esc(m.detail)}</small></span>
+      <span class="emp-leaves" title="Earned leave left this year">${l.remaining}<small>leaves</small></span>
+    </button>`;
+  }
+  function attendanceSummary(active, on) {
+    const counts = { present: 0, late: 0, absent: 0, off: 0 };
+    active.forEach(e => { counts[todayMark(e, on).tone]++; });
+    const chip = (tone, label) => `<span class="emp-sum emp-sum-${tone}"><i></i>${counts[tone]} ${label}</span>`;
+    return `<div class="emp-summary" aria-label="Today at a glance">${chip("present", "present")}${chip("late", "late")}${chip("absent", "not in")}${chip("off", "off / leave")}<span class="emp-sum-date">${dmy(on)}</span></div>`;
   }
   function fullCard(e, on) {
     const l = C.leave(state, e, on.slice(0, 4));
