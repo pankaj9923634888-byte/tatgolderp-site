@@ -2,7 +2,7 @@
   "id": "/",
   "name": "TatGold ERP",
   "short_name": "TatGold ERP",
-  "start_url": "/entries/",
+  "start_url": "/home/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#f4f7fc",
