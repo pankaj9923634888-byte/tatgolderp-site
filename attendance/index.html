@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TatGold Attendance</title>
+<!-- The iPhone / web version of the TatGold Attendance app (the Android APK is a WebView that opens /hr/).
+     Add this page to the Home Screen: it installs as a standalone app whose start page forces the attendance-only
+     mode (?app=attendance) and goes straight to /hr/. Opened in a normal browser it shows the install steps. -->
+<link rel="manifest" href="/attendance.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Attendance">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0B2F6B">
+<link rel="apple-touch-icon" href="/icons/attendance-180.png">
+<link rel="icon" href="/icons/attendance-192.png">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;min-height:100%;background:#0B2F6B;color:#fff;font-family:"Helvetica Neue",Helvetica,Arial,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+  body{padding:calc(env(safe-area-inset-top,0px) + 28px) 22px calc(env(safe-area-inset-bottom,0px) + 28px);display:flex;flex-direction:column;align-items:center;text-align:center;min-height:100vh;min-height:100dvh;background:linear-gradient(170deg,#1D4A8F,#061C40)}
+  .icon{width:108px;height:108px;border-radius:26px;box-shadow:0 18px 40px -18px rgba(0,0,0,.7);margin:18px 0 14px}
+  h1{margin:0;font-size:26px;letter-spacing:-.02em}
+  .sub{margin:6px 0 0;opacity:.8;font-size:15px}
+  .card{width:100%;max-width:420px;margin-top:22px;padding:18px 18px 16px;border-radius:20px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);text-align:left;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+  .card h2{margin:0 0 10px;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:#E7D3A0}
+  ol{margin:0;padding-left:22px;font-size:15.5px;line-height:1.55}
+  ol li{margin:4px 0}
+  kbd{display:inline-block;padding:1px 7px;border-radius:7px;background:rgba(255,255,255,.18);font:inherit;font-weight:600}
+  .btn{display:flex;align-items:center;justify-content:center;width:100%;max-width:420px;margin-top:18px;padding:16px 20px;border:0;border-radius:999px;background:#C9A84C;color:#1b1400;font-size:18px;font-weight:700;text-decoration:none;box-shadow:0 10px 24px -10px rgba(201,168,76,.9)}
+  .btn:active{transform:scale(.98)}
+  .note{margin-top:14px;font-size:13px;opacity:.72;max-width:420px;line-height:1.5}
+  .opening{margin-top:40px;font-size:17px;opacity:.9}
+  [hidden]{display:none!important}
+</style>
+</head>
+<body>
+  <img class="icon" src="/icons/attendance-192.png" alt="" width="108" height="108">
+  <h1>TatGold Attendance</h1>
+  <p class="sub">A &amp; D Jewellers · punch in / punch out</p>
+
+  <div id="opening" class="opening" hidden>Opening attendance…</div>
+
+  <div id="install">
+    <div class="card" id="ios">
+      <h2>Install on iPhone</h2>
+      <ol>
+        <li>Open this page in <strong>Safari</strong> (not inside WhatsApp).</li>
+        <li>Tap the <strong>Share</strong> button <kbd>&#x2191;</kbd> at the bottom.</li>
+        <li>Scroll down and tap <strong>Add to Home Screen</strong>.</li>
+        <li>Tap <strong>Add</strong>. The Attendance icon appears on your Home Screen.</li>
+      </ol>
+    </div>
+    <div class="card" id="android" hidden>
+      <h2>Install on Android</h2>
+      <ol>
+        <li>Use the <strong>TatGold Attendance</strong> app (APK) from your manager, or</li>
+        <li>in Chrome tap the <strong>⋮</strong> menu → <strong>Add to Home screen</strong> / <strong>Install app</strong>.</li>
+      </ol>
+    </div>
+    <a class="btn" id="open" href="/hr/?app=attendance">Open attendance now</a>
+    <p class="note">Open the app from the Home Screen icon, sign in once with your attendance login, and allow the camera and location when asked — the photo and location are saved only when you confirm Punch In or Punch Out.</p>
+  </div>
+
+<script>
+(function () {
+  var ua = navigator.userAgent;
+  var standalone = window.navigator.standalone === true || (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches);
+  var fromHome = /[?&]source=home/.test(location.search);
+  var android = /Android/i.test(ua);
+  try { sessionStorage.setItem('tatgold:attendance-app', '1'); } catch (e) {}
+  if (standalone || fromHome) {
+    document.getElementById('install').hidden = true;
+    document.getElementById('opening').hidden = false;
+    location.replace('/hr/?app=attendance');
+    return;
+  }
+  if (android) { document.getElementById('android').hidden = false; document.getElementById('ios').hidden = true; }
+})();
+</script>
+</body>
+</html>

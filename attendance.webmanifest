@@ -1,0 +1,17 @@
+{
+  "id": "/attendance/",
+  "name": "TatGold Attendance",
+  "short_name": "Attendance",
+  "description": "Punch in and punch out with photo and location — A & D Jewellers staff attendance",
+  "start_url": "/attendance/?app=attendance&source=home",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0B2F6B",
+  "theme_color": "#0B2F6B",
+  "icons": [
+    { "src": "/icons/attendance-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/attendance-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/attendance-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
