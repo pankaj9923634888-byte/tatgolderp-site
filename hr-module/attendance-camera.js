@@ -76,7 +76,18 @@
         </div>
         <p class="note">The date, time and location are stamped onto the photo and saved with it. Your punch time comes from the server, not this device.</p>`;
 
-      const video = body.querySelector("video"), img = body.querySelector("img");
+      const video = body.querySelector("video"), img = body.querySelector("img"), frame = body.querySelector(".camera-frame");
+      // The box takes the shape of the live stream (portrait on a phone held upright, landscape on a laptop) so the
+      // face is never cropped, and the selfie preview is mirrored like a mirror — the saved photo keeps the true view.
+      let mirrored = false;
+      const fitFrame = () => {
+        const w = video.videoWidth, h = video.videoHeight;
+        if (!w || !h) return;
+        frame.style.aspectRatio = `${w} / ${h}`;
+        frame.style.maxWidth = h > w ? `calc(62vh * ${(w / h).toFixed(4)})` : "";
+        frame.style.marginLeft = frame.style.marginRight = "auto";
+      };
+      const setMirror = on => { mirrored = on; video.style.transform = on ? "scaleX(-1)" : ""; };
       const placeholder = body.querySelector(".camera-placeholder"), status = body.querySelector(".camera-status"), errorBox = body.querySelector(".err");
       const capture = body.querySelector("[data-capture]"), retake = body.querySelector("[data-retake]");
       const confirm = body.querySelector("[data-confirm]"), retry = body.querySelector("[data-retry]");
@@ -111,12 +122,15 @@
         try {
           if (!window.isSecureContext) throw new Error("Open the app on its https:// address to use the camera.");
           if (!navigator.mediaDevices?.getUserMedia) throw new Error("The camera is not available in this browser. Use Safari or Chrome on your phone.");
-          const media = await navigator.mediaDevices.getUserMedia({ audio: false, video: { facingMode: { ideal: "user" }, width: { ideal: 960 }, height: { ideal: 720 } } });
+          const media = await navigator.mediaDevices.getUserMedia({ audio: false, video: { facingMode: { ideal: "user" }, width: { ideal: 1280 }, height: { ideal: 960 } } });
           if (!dialog.open || current !== generation || document.hidden) { media.getTracks().forEach(t => t.stop()); return; }
           stream = media; video.srcObject = media; video.muted = true;
-          video.onloadeddata = () => { if (dialog.open && stream && video.videoWidth) { capture.disabled = false; placeholder.hidden = true; } };
+          const settings = media.getVideoTracks()[0]?.getSettings?.() || {};
+          setMirror(settings.facingMode ? settings.facingMode === "user" : true);   // phones: the selfie camera; no facingMode reported = a laptop webcam, also mirrored
+          video.onloadeddata = () => { if (dialog.open && stream && video.videoWidth) { fitFrame(); capture.disabled = false; placeholder.hidden = true; } };
+          video.onresize = fitFrame;   // the phone was turned: the stream re-orients, the box follows
           await video.play();
-          if (stream && video.videoWidth) { capture.disabled = false; placeholder.hidden = true; }
+          if (stream && video.videoWidth) { fitFrame(); capture.disabled = false; placeholder.hidden = true; }
         } catch (err) {
           if (!dialog.open || current !== generation) return;
           stop(); video.hidden = true; placeholder.textContent = "Camera unavailable"; retry.hidden = false;
@@ -135,7 +149,10 @@
           const scale = Math.min(1, 960 / Math.max(video.videoWidth, video.videoHeight));
           canvas.width = Math.round(video.videoWidth * scale);
           canvas.height = Math.round(video.videoHeight * scale);
-          canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
+          const ctx = canvas.getContext("2d");
+          if (mirrored) { ctx.translate(canvas.width, 0); ctx.scale(-1, 1); }   // keep the photo the way the person saw it in the preview
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+          ctx.setTransform(1, 0, 0, 1, 0, 0);   // the stamp is written the normal way round
           punchLoc = await locPromise;
           if (!punchLoc) { locPromise = getLocation(); throw new Error("Allow location access and turn on Location, then take the photo again."); }
           stampCanvas(canvas, employeeName, punchLoc);
