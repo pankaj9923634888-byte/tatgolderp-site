@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TATGOLD Print Agent — set-up for the sticker printer</title>
+<style>
+  body{margin:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;background:#f3f5f9;color:#1d1d1f;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:30px 20px 60px}
+  h1{font-size:24px;color:#0B2F6B;margin:0 0 4px}
+  .sub{color:#5c5c61;margin:0 0 22px;font-size:14px}
+  h2{font-size:16px;color:#0B2F6B;margin:26px 0 8px}
+  .card{background:#fff;border:1px solid rgba(11,47,107,.12);border-radius:14px;padding:16px 18px;margin:0 0 12px}
+  ol,ul{padding-left:20px;margin:6px 0}li{margin:4px 0}
+  code,kbd{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;background:#eef2f8;padding:1px 5px;border-radius:5px}
+  .btn{display:inline-block;background:#0B2F6B;color:#fff;text-decoration:none;padding:9px 16px;border-radius:10px;font-weight:600}
+  table{border-collapse:collapse;width:100%;font-size:13.5px}td,th{border-bottom:1px solid #e3e8f0;padding:6px 8px;text-align:left;vertical-align:top}th{color:#5c5c61;font-weight:600}
+  .note{background:#fff8e6;border-left:4px solid #C9A84C;padding:10px 12px;border-radius:8px;font-size:13.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Sticker printer set-up</h1>
+  <p class="sub">TSC TTP-244 Plus · 27 × 14 mm sticker roll with ribbon · TATGOLD ERP labeling PC (Windows)</p>
+
+  <div class="card">
+    <h2 style="margin-top:0">1 · Printer on Windows</h2>
+    <ol>
+      <li>Load the 27 × 14 mm sticker roll and the ribbon; connect the printer by USB and switch it on.</li>
+      <li>Install the TSC Windows driver (from the printer's CD or <a href="https://www.tscprinters.com" target="_blank" rel="noreferrer">tscprinters.com → Downloads → Driver</a>) and pick the model <b>TSC TTP-244 Plus</b>. Windows then lists a printer with that name — keep the name as it is.</li>
+      <li>Hold the printer's FEED button once with the roll loaded so it learns the sticker gap (the ERP's <b>Calibrate roll</b> button does the same).</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0">2 · Install the TATGOLD Print Agent (once per PC)</h2>
+    <ol>
+      <li><a class="btn" href="/downloads/tatgold-print-agent.exe" download>Download tatgold-print-agent.exe</a> &nbsp;and move it to a folder that stays, for example <code>C:\TatGold\</code>.</li>
+      <li>Double-click it. Windows SmartScreen may say "Windows protected your PC" because the file is not signed — click <b>More info</b> → <b>Run anyway</b>. If the antivirus asks, allow it.</li>
+      <li>A page opens at <code>http://127.0.0.1:9123/</code> showing <b>Running</b> and the printers of this PC. Click <b>Print a test sticker</b> — a framed TATGOLD sticker comes out.</li>
+      <li>To start it with Windows: open Command Prompt in that folder and run <code>tatgold-print-agent.exe --install</code> (or put a shortcut to it in the Startup folder: <kbd>Win</kbd>+<kbd>R</kbd> → <code>shell:startup</code>).</li>
+    </ol>
+    <p class="note">The agent only listens on this PC (127.0.0.1) and only answers tatgolderp.com — nothing is opened to the network. Its settings live in <code>tatgold-print-agent.json</code> next to the exe; its log in <code>%LOCALAPPDATA%\TatGold\print-agent.log</code>.</p>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0">3 · Printing from the ERP</h2>
+    <ol>
+      <li>Labeling → Create labels opens the <b>Print stickers</b> screen (also: a label's Print sticker button). It shows every sticker exactly as the printer will draw it.</li>
+      <li>The first time, the browser may ask whether <b>tatgolderp.com may reach devices on your local network</b> — choose <b>Allow</b>, then click <b>Re-check</b>.</li>
+      <li>Choose the printer <b>TSC TTP-244 Plus</b>, click <b>Test print</b>, then <b>Print N stickers</b>. Printer, darkness, speed and direction are remembered on this PC.</li>
+    </ol>
+    <table>
+      <tr><th>Setting</th><th>What it does</th></tr>
+      <tr><td>Darkness 0–15</td><td>How hot the head prints. Start at 8; go to 10–11 if the print is faint, lower if it smudges.</td></tr>
+      <tr><td>Speed 1–4</td><td>Inches per second. 2 is a good balance; 1 is crispest for the small QR.</td></tr>
+      <tr><td>Direction</td><td>If the sticker comes out upside down, choose <b>Rotated 180°</b>.</td></tr>
+      <tr><td>Gap between stickers</td><td>The blank space between two stickers on the roll (usually 2 mm). Change it, then <b>Calibrate roll</b>.</td></tr>
+      <tr><td>Shift right / down</td><td>Fine alignment in printer dots (8 dots = 1 mm) when the print sits too far left / up.</td></tr>
+      <tr><td>Ribbon</td><td>On for the ribbon (thermal transfer) rolls; Off only for heat-sensitive (direct thermal) stickers.</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0">4 · If something does not work</h2>
+    <ul>
+      <li><b>"Print Agent not running"</b> on the print screen — open <code>http://127.0.0.1:9123/</code> in a new tab. If it does not load, double-click the exe again (a second copy simply opens the page). Check that the antivirus has not quarantined the file.</li>
+      <li><b>The test sticker prints, ERP stickers do not</b> — the browser blocked local-network access: in the address bar's site settings for tatgolderp.com allow <i>Local network</i> (or <i>Insecure content</i> on older versions), reload and Re-check.</li>
+      <li><b>Blank sticker</b> — the ribbon is missing or Ribbon is set Off; or the darkness is too low.</li>
+      <li><b>Text instead of a sticker</b> (commands printed as letters) — the chosen Windows printer is not the TSC printer; pick TSC TTP-244 Plus.</li>
+      <li><b>Print cut off / wanders</b> — Calibrate roll, check the Gap value, then use Shift right / down.</li>
+      <li><b>No printer in the list</b> — the TSC driver is not installed or the printer is off; the agent page lists what Windows sees.</li>
+      <li><b>Browser print</b> (fallback) prints the same stickers through the normal Windows dialog: choose the TSC printer and set its paper to 27 × 14 mm, no margins, 100 % scale.</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
