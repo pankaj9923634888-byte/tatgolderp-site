@@ -28,7 +28,7 @@
     <ol>
       <li>Load the 27 × 14 mm sticker roll and the ribbon; connect the printer by USB and switch it on.</li>
       <li>Install the TSC Windows driver (from the printer's CD or <a href="https://www.tscprinters.com" target="_blank" rel="noreferrer">tscprinters.com → Downloads → Driver</a>) and pick the model <b>TSC TE244</b>. Windows then lists a printer with that name — keep the name as it is.</li>
-      <li>Load the roll, close the cover and press FEED once — the roll moves to the tear bar. After a new roll run the ERP's <b>Calibrate roll</b> once so the printer measures the stickers.</li>
+      <li>Load the roll and close the cover. After a new roll run the ERP's <b>Calibrate roll</b> once so the printer measures the stickers and moves the roll to the tear bar — do not press FEED on the printer between batches (the ERP keeps track of the roll position itself; if you did, tick <i>Sure start</i> for the next job).</li>
     </ol>
   </div>
 
@@ -58,9 +58,9 @@
       <tr><td>Gap between stickers</td><td>The blank liner between two stickers (3 mm on the A&amp;D roll). Change it, then <b>Calibrate roll</b> — the printer measures the stickers and stops at the next one.</td></tr>
       <tr><td>Left / right · Up / down</td><td>Fine position in printer dots (8 dots = 1 mm). Minus = left / earlier along the roll. Print a <b>Test print</b> (two framed stickers): the frame should sit inside both stickers.</td></tr>
       <tr><td>Ribbon</td><td>On for the ribbon (thermal transfer) rolls; Off only for heat-sensitive (direct thermal) stickers.</td></tr>
-      <tr><td>Roll handling → Re-align at the start of every job</td><td>Keep it on. After a batch is torn off, the roll has been fed forward to the tear bar; at the start of the next job the printer backs it up by <b>Back-up at job start</b> (17 mm on the TE244) so the first sticker starts on its sticker. The stickers after the first one are always placed by the printer's own sensor. If the first sticker of a job prints too <b>early</b> (its top lands on the sticker before) lower Back-up by 1–2 mm; if it prints too <b>late</b> (blank at the start, runs into the next sticker) raise it by 1–2 mm.</td></tr>
-      <tr><td>Roll handling → Sure start</td><td>Feeds one blank sticker through the printer's sensor before the first real one — one sticker lost per job, but the first sticker can never be misplaced. Use it if the Back-up value keeps drifting.</td></tr>
-      <tr><td>Roll handling → Feed the last sticker to the tear bar</td><td>On = after a batch the roll moves forward so you can tear it off at the bar. Tear position moves that stop point (minus = earlier).</td></tr>
+      <tr><td>Roll handling → Move the batch out to the tear bar</td><td>Keep it on. After the last sticker the roll moves forward by the <b>Tear position</b> (22 mm by default) so the batch can be torn off at the bar; the next job first backs the roll up by exactly the same distance, so its first sticker starts on its sticker whatever the value is (the printer's own tear-off is not used — on the TE244 it did not bring the roll back to the right place). The stickers after the first one are always placed by the printer's own sensor.</td></tr>
+      <tr><td>Roll handling → Tear position</td><td>Where the roll stops after a batch. Look at the tear bar after a Test print: it should sit in the small gap after the last sticker. Bar on the last printed sticker → raise by 1 mm; bar on the next blank sticker → lower by 1 mm. Set once per printer.</td></tr>
+      <tr><td>Roll handling → Sure start</td><td>Feeds one blank sticker through the printer's sensor before the first real one — one sticker lost per job, but the first sticker can never be misplaced. Tick it once after a new roll, after pressing FEED on the printer or after a paper jam, print, then untick it.</td></tr>
     </table>
   </div>
 
@@ -71,7 +71,8 @@
       <li><b>The test sticker prints, ERP stickers do not</b> — the browser blocked local-network access: in the address bar's site settings for tatgolderp.com allow <i>Local network</i> (or <i>Insecure content</i> on older versions), reload and Re-check.</li>
       <li><b>Blank sticker</b> — the ribbon is missing or Ribbon is set Off; or the darkness is too low.</li>
       <li><b>Text instead of a sticker</b> (commands printed as letters) — the chosen Windows printer is not the TSC printer; pick TSC TE244.</li>
-      <li><b>Only the first sticker of a job is misplaced</b> — adjust <i>Back-up at job start</i> (early → lower, late → raise, 1 mm per step) and Test print again (two frames; the first shows the job start, the second the printer's own feed). Or switch on <i>Sure start</i>.</li>
+      <li><b>Only the first sticker of a job is misplaced</b> — the roll was moved between two jobs (FEED pressed on the printer, a jam, a new roll, the agent's own test button, another program printing). Tick <i>Sure start</i> for one job (or click <i>Feed one</i>) and the next jobs are right again. Never press FEED on the printer between batches.</li>
+      <li><b>The batch stops short of the tear bar, or a blank sticker comes out after it</b> — adjust <i>Tear position</i> (bar on the last sticker → raise; on the next blank sticker → lower).</li>
       <li><b>Every sticker is shifted the same way along the roll</b> — Calibrate roll (Gap 3 mm), then Up / down (minus = earlier).</li>
       <li><b>Print cut off at the left or right edge</b> — the roll sits off-centre in the printer: push the media guides snug against the roll, then use Left / right.</li>
       <li><b>No printer in the list</b> — the TSC driver is not installed or the printer is off; the agent page lists what Windows sees.</li>
