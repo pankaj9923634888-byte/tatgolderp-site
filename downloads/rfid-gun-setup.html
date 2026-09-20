@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TATGOLD RFID — set-up for the UHF gun</title>
+<style>
+  body{margin:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;background:#f3f5f9;color:#1d1d1f;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:30px 20px 60px}
+  h1{font-size:24px;color:#0B2F6B;margin:0 0 4px}
+  .sub{color:#5c5c61;margin:0 0 22px;font-size:14px}
+  h2{font-size:16px;color:#0B2F6B;margin:26px 0 8px}
+  .card{background:#fff;border:1px solid rgba(11,47,107,.12);border-radius:14px;padding:16px 18px;margin:0 0 12px}
+  ol,ul{padding-left:20px;margin:6px 0}li{margin:4px 0}
+  code,kbd{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;background:#eef2f8;padding:1px 5px;border-radius:5px}
+  .btn{display:inline-block;background:#0B2F6B;color:#fff;text-decoration:none;padding:9px 16px;border-radius:10px;font-weight:600}
+  table{border-collapse:collapse;width:100%;font-size:13.5px}td,th{border-bottom:1px solid #e3e8f0;padding:6px 8px;text-align:left;vertical-align:top}th{color:#5c5c61;font-weight:600}
+  .note{background:#fff8e6;border-left:4px solid #C9A84C;padding:10px 12px;border-radius:8px;font-size:13.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>RFID gun set-up</h1>
+  <p class="sub">Chainway C72-class UHF handheld (Android) · TATGOLD RFID app · card ↔ chip pairing, stock check, find item</p>
+
+  <div class="card">
+    <h2 style="margin-top:0">1 · Install the TATGOLD RFID app (once per gun)</h2>
+    <ol>
+      <li>On the gun, open <b>Chrome</b> and go to <code>tatgolderp.com/downloads/</code> (Wi-Fi or SIM data must be on).</li>
+      <li>Tap <a class="btn" href="/downloads/tatgold-rfid.apk" download>Download TATGOLD RFID APK</a>. When the download finishes, open it from the notification (or Files → Downloads → <code>tatgold-rfid.apk</code>).</li>
+      <li>Android asks to allow installs from Chrome — tap <b>Settings</b> → <b>Allow from this source</b> → back → <b>Install</b>. If Play Protect warns that the app is unknown, tap <b>Install anyway</b> (the app is published by ADFC Digitech, not on the Play Store).</li>
+      <li>Open <b>TATGOLD RFID</b> from the launcher and sign in with your normal ERP user name and password (the same as on the PC). The sign-in stays on the gun; you are not asked again for 24 hours.</li>
+    </ol>
+    <p class="note">Only one app can hold the UHF reader at a time. Before opening TATGOLD RFID: close <b>Sparkle RFID</b> completely (recent apps → swipe it away) and in <b>keyboardemulator</b> switch <b>Enable Scanner</b> to OFF. If the reader dot in the app header says <i>failed</i>, this is the reason — close those apps and restart TATGOLD RFID.</p>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0">2 · The buttons</h2>
+    <table>
+      <tr><th>Button</th><th>Key code</th><th>Pair cards</th><th>Stock check</th><th>Find item</th></tr>
+      <tr><td>Pistol trigger</td><td>139</td><td>Read the chip of the card at the top of the gun</td><td>Hold: count every chip in range · release: stop</td><td>Read the nearest chip</td></tr>
+      <tr><td>Side buttons (left / right)</td><td>293 / 294</td><td>Scan the card's QR with the 2D scanner</td><td>—</td><td>Scan a QR (card or sticker)</td></tr>
+      <tr><td>Android back key</td><td>—</td><td colspan="3">Back to the home tiles</td></tr>
+    </table>
+    <p>Other Chainway models use different codes (280–282, 288–289). Open <b>Settings</b> in the app, press the button — the code shows as <i>Last key pressed</i> — then tap <b>Last key reads the chip</b> or <b>Last key scans QR</b>.</p>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0">3 · Pair cards with chips</h2>
+    <p>Each jewellery card has a printed number (its QR encodes the same, e.g. <code>A5698</code>) and a UHF chip inside. The ERP already knows the card number of every labelled item (RFID CARD column of the lot); pairing tells it which chip is in that card.</p>
+    <ol>
+      <li>Tap <b>Pair cards</b>. Set the reader power low first (Settings → 8–12 dBm) so only the card touching the gun is heard.</li>
+      <li>Press a <b>side button</b> and aim the scanner at the card's QR — the item appears (label, description, weights, card number).</li>
+      <li>Hold that card against the top of the gun and pull the <b>trigger</b>. The chip is read, verified and saved: green message <i>GBA0001 ↔ E280…2C3D</i>, one beep.</li>
+      <li>Next card. The list at the bottom (<b>Lot progress</b>) shows which items of the lot are paired; tap an unpaired row to select it without scanning its QR.</li>
+    </ol>
+    <ul>
+      <li><i>Several chips heard</i> — other cards are too close: move them away, or tap the strongest one in the list (dB value nearest to 0).</li>
+      <li><i>Already has a chip</i> — a card was paired before. <b>Replace chip</b> writes the new chip over the old one (the old chip is freed); <b>Keep old</b> cancels.</li>
+      <li><i>This chip is already on GRN0001</i> — the same chip is paired to another item: check whether the two cards were swapped.</li>
+      <li>You can also scan the item's <b>sticker QR</b> instead of the card QR — both find the same item.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0">4 · Stock check (count a tray or a counter)</h2>
+    <ol>
+      <li>Tap <b>Stock check</b>, choose the branch, the counter and (optionally) one lot. Set the power high (Settings → 25–30 dBm) for a whole tray.</li>
+      <li>Hold the <b>trigger</b> and sweep the gun over the tray — the big number counts the different chips heard. Release the trigger to stop (or use Start / Stop).</li>
+      <li>Tap <b>Compare with ERP</b>. Four tiles come back: <b>matched</b> (in stock here and heard), <b>missing</b> (in stock here but not heard — look for them), <b>elsewhere</b> (heard here but the ERP has them at another counter / branch or sold), <b>unknown</b> (chips the ERP has never paired). Tap a tile for the list.</li>
+      <li>Every check is written to the audit trail (branch, counter, counts, missing labels). Tap <b>Clear</b> before the next tray.</li>
+    </ol>
+    <p>Items without a paired chip cannot be counted by RFID — the note under the tiles says how many.</p>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0">5 · Find item</h2>
+    <p>Pull the trigger near a card, or scan any QR with a side button: the full item card opens (label, HUID, weights, stone, making code, lot, karigar, branch · counter, status, print count). Typing a label / card number / HUID in the box works too. An item without a chip shows <b>Pair a chip</b>.</p>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0">6 · Without the app — keyboard mode in Chrome</h2>
+    <p>The same screens work in the gun's Chrome at <code>tatgolderp.com/gun/</code> with the built-in <b>keyboardemulator</b> app typing what the gun reads into the box on each screen:</p>
+    <ol>
+      <li>keyboardemulator → <b>Enable Scanner</b> ON. Tick <b>UHF</b> (key code 139 = trigger) and <b>Barcode2D</b> (293, 294 = side buttons); remove 139 from Barcode2D. Suffix: <b>Enter</b>.</li>
+      <li>Open <code>tatgolderp.com/gun/</code>, sign in, open a screen and tap the box so the cursor is in it. Pull the trigger — the chip's EPC is typed and the screen reacts; press a side button — the QR text is typed.</li>
+    </ol>
+    <p>Keyboard mode has no trigger-hold counting, no beeps and no power setting; the app is the better tool for daily use.</p>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0">7 · Updates and problems</h2>
+    <ul>
+      <li>A new version is installed the same way (download the APK, open it, <b>Update</b>) — the sign-in and settings stay.</li>
+      <li>Reader dot <i>failed</i> — Sparkle RFID or keyboardemulator holds the reader: close them (keyboardemulator → Enable Scanner OFF) and reopen the app.</li>
+      <li>Nothing heard — power too low for the distance, or the card is not on the top edge of the gun (the antenna is behind the head). Raise the power in Settings.</li>
+      <li>OFFLINE page — no internet on the gun; check Wi-Fi / SIM data and tap Retry.</li>
+      <li>Signed out — the ERP login lasts 24 hours; sign in again with your user name and password.</li>
+    </ul>
+  </div>
+
+  <p class="sub">The app only shows tatgolderp.com; nothing is stored on the gun except the sign-in and the settings. Checksum of the current APK: <a href="/downloads/tatgold-rfid.apk.sha256">tatgold-rfid.apk.sha256</a>.</p>
+</div>
+</body>
+</html>
