@@ -21,14 +21,14 @@
 <body>
 <div class="wrap">
   <h1>Sticker printer set-up</h1>
-  <p class="sub">TSC TTP-244 Plus · 27 × 14 mm sticker roll with ribbon · TATGOLD ERP labeling PC (Windows)</p>
+  <p class="sub">TSC TE244 · 27 × 14 mm sticker roll with ribbon · TATGOLD ERP labeling PC (Windows)</p>
 
   <div class="card">
     <h2 style="margin-top:0">1 · Printer on Windows</h2>
     <ol>
       <li>Load the 27 × 14 mm sticker roll and the ribbon; connect the printer by USB and switch it on.</li>
-      <li>Install the TSC Windows driver (from the printer's CD or <a href="https://www.tscprinters.com" target="_blank" rel="noreferrer">tscprinters.com → Downloads → Driver</a>) and pick the model <b>TSC TTP-244 Plus</b>. Windows then lists a printer with that name — keep the name as it is.</li>
-      <li>Hold the printer's FEED button once with the roll loaded so it learns the sticker gap (the ERP's <b>Calibrate roll</b> button does the same).</li>
+      <li>Install the TSC Windows driver (from the printer's CD or <a href="https://www.tscprinters.com" target="_blank" rel="noreferrer">tscprinters.com → Downloads → Driver</a>) and pick the model <b>TSC TE244</b>. Windows then lists a printer with that name — keep the name as it is.</li>
+      <li>Load the roll, close the cover and press FEED once — the roll moves to the tear bar. After a new roll run the ERP's <b>Calibrate roll</b> once so the printer measures the stickers.</li>
     </ol>
   </div>
 
@@ -48,7 +48,7 @@
     <ol>
       <li>Labeling → Create labels opens the <b>Print stickers</b> screen (also: a label's Print sticker button). It shows every sticker exactly as the printer will draw it.</li>
       <li>The first time, the browser may ask whether <b>tatgolderp.com may reach devices on your local network</b> — choose <b>Allow</b>, then click <b>Re-check</b>.</li>
-      <li>Choose the printer <b>TSC TTP-244 Plus</b>, click <b>Test print</b>, then <b>Print N stickers</b>. Printer, darkness, speed and direction are remembered on this PC.</li>
+      <li>Choose the printer <b>TSC TE244</b>, click <b>Test print</b>, then <b>Print N stickers</b>. Printer, darkness, speed and direction are remembered on this PC.</li>
     </ol>
     <table>
       <tr><th>Setting</th><th>What it does</th></tr>
@@ -58,7 +58,8 @@
       <tr><td>Gap between stickers</td><td>The blank liner between two stickers (3 mm on the A&amp;D roll). Change it, then <b>Calibrate roll</b> — the printer measures the stickers and stops at the next one.</td></tr>
       <tr><td>Left / right · Up / down</td><td>Fine position in printer dots (8 dots = 1 mm). Minus = left / earlier along the roll. Print a <b>Test print</b> (two framed stickers): the frame should sit inside both stickers.</td></tr>
       <tr><td>Ribbon</td><td>On for the ribbon (thermal transfer) rolls; Off only for heat-sensitive (direct thermal) stickers.</td></tr>
-      <tr><td>Roll handling → Re-align at the start of every job</td><td>Keep it on. Before printing, the printer backs the roll up (Back-up, 24 mm) and then feeds to the next sticker exactly like the FEED button, so the first sticker of a job stays in place even after you tear a batch off. If every job leaves one blank sticker before the first printed one, lower Back-up by 5 mm; if the first sticker prints too early (on the torn stub), raise it by 5 mm.</td></tr>
+      <tr><td>Roll handling → Re-align at the start of every job</td><td>Keep it on. After a batch is torn off, the roll has been fed forward to the tear bar; at the start of the next job the printer backs it up by <b>Back-up at job start</b> (17 mm on the TE244) so the first sticker starts on its sticker. The stickers after the first one are always placed by the printer's own sensor. If the first sticker of a job prints too <b>early</b> (its top lands on the sticker before) lower Back-up by 1–2 mm; if it prints too <b>late</b> (blank at the start, runs into the next sticker) raise it by 1–2 mm.</td></tr>
+      <tr><td>Roll handling → Sure start</td><td>Feeds one blank sticker through the printer's sensor before the first real one — one sticker lost per job, but the first sticker can never be misplaced. Use it if the Back-up value keeps drifting.</td></tr>
       <tr><td>Roll handling → Feed the last sticker to the tear bar</td><td>On = after a batch the roll moves forward so you can tear it off at the bar. Tear position moves that stop point (minus = earlier).</td></tr>
     </table>
   </div>
@@ -69,8 +70,9 @@
       <li><b>"Print Agent not running"</b> on the print screen — open <code>http://127.0.0.1:9123/</code> in a new tab. If it does not load, double-click the exe again (a second copy simply opens the page). Check that the antivirus has not quarantined the file.</li>
       <li><b>The test sticker prints, ERP stickers do not</b> — the browser blocked local-network access: in the address bar's site settings for tatgolderp.com allow <i>Local network</i> (or <i>Insecure content</i> on older versions), reload and Re-check.</li>
       <li><b>Blank sticker</b> — the ribbon is missing or Ribbon is set Off; or the darkness is too low.</li>
-      <li><b>Text instead of a sticker</b> (commands printed as letters) — the chosen Windows printer is not the TSC printer; pick TSC TTP-244 Plus.</li>
-      <li><b>Print runs into the next sticker / starts too late</b> — Calibrate roll (Gap 3 mm), keep <i>Re-align at the start of every job</i> on, then Test print: two frames must sit inside two stickers. A remaining constant offset is corrected with Up / down (minus = earlier).</li>
+      <li><b>Text instead of a sticker</b> (commands printed as letters) — the chosen Windows printer is not the TSC printer; pick TSC TE244.</li>
+      <li><b>Only the first sticker of a job is misplaced</b> — adjust <i>Back-up at job start</i> (early → lower, late → raise, 1 mm per step) and Test print again (two frames; the first shows the job start, the second the printer's own feed). Or switch on <i>Sure start</i>.</li>
+      <li><b>Every sticker is shifted the same way along the roll</b> — Calibrate roll (Gap 3 mm), then Up / down (minus = earlier).</li>
       <li><b>Print cut off at the left or right edge</b> — the roll sits off-centre in the printer: push the media guides snug against the roll, then use Left / right.</li>
       <li><b>No printer in the list</b> — the TSC driver is not installed or the printer is off; the agent page lists what Windows sees.</li>
       <li><b>Browser print</b> (fallback) prints the same stickers through the normal Windows dialog: choose the TSC printer and set its paper to 27 × 14 mm, no margins, 100 % scale.</li>
