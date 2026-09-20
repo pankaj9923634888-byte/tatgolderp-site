@@ -31,7 +31,7 @@
       <li>Android asks to allow installs from Chrome — tap <b>Settings</b> → <b>Allow from this source</b> → back → <b>Install</b>. If Play Protect warns that the app is unknown, tap <b>Install anyway</b> (the app is published by ADFC Digitech, not on the Play Store).</li>
       <li>Open <b>TATGOLD RFID</b> from the launcher and sign in with your normal ERP user name and password (the same as on the PC). The sign-in stays on the gun; you are not asked again for 24 hours.</li>
     </ol>
-    <p class="note">Only one app can hold the UHF reader at a time. Before opening TATGOLD RFID: close <b>Sparkle RFID</b> completely (recent apps → swipe it away) and in <b>keyboardemulator</b> switch <b>Enable Scanner</b> to OFF. If the reader dot in the app header says <i>failed</i>, this is the reason — close those apps and restart TATGOLD RFID.</p>
+    <p class="note">Only one app can hold the UHF reader at a time. Before opening TATGOLD RFID: close <b>Sparkle RFID</b> completely (recent apps → swipe it away) and in <b>keyboardemulator</b> make sure the <b>UHF</b> module is unticked (Enable Scanner may stay on — the app uses that service for the QR scanner and switches it on itself). If the reader dot in the app header says <i>failed</i>, this is the reason — close Sparkle, untick UHF and tap Restart reader.</p>
   </div>
 
   <div class="card">
@@ -71,6 +71,7 @@
       <li>Tap <b>Compare with ERP</b>. Four tiles come back: <b>matched</b> (in stock here and heard), <b>missing</b> (in stock here but not heard — look for them), <b>elsewhere</b> (heard here but the ERP has them at another counter / branch or sold), <b>unknown</b> (chips the ERP has never paired). Tap a tile for the list.</li>
       <li>Every check is written to the audit trail (branch, counter, counts, missing labels). Tap <b>Clear</b> before the next tray.</li>
     </ol>
+    <p>First live check at Head Office (20 Sep 2026): 7 chips heard → 6 matched, 0 missing, 0 elsewhere, 1 unknown — the unknown one was a spare card lying in the tray. A card that belongs to no item always shows as <i>unknown</i>; keep spare cards away from the trays.</p>
     <p>Items without a paired chip cannot be counted by RFID — the note under the tiles says how many.</p>
   </div>
 
@@ -93,7 +94,7 @@
     <h2 style="margin-top:0">7 · Updates and problems</h2>
     <ul>
       <li>A new version is installed the same way (download the APK, open it, <b>Update</b>) — the sign-in and settings stay.</li>
-      <li>Reader dot <i>failed</i> — Sparkle RFID or keyboardemulator holds the reader: close them (keyboardemulator → Enable Scanner OFF), then tap <b>Restart reader</b> (home screen or Settings). The reason shows next to the word <i>failed</i> in Settings → About (e.g. <code>init() returned false</code>); send it along with a screenshot if it keeps failing. App 1.1 or later uses Chainway's DeviceAPI 2025 — the version that came with this gun.</li>
+      <li>Reader dot <i>failed</i> — Sparkle RFID or keyboardemulator's UHF module holds the reader: close Sparkle, untick UHF in keyboardemulator, then tap <b>Restart reader</b> (home screen or Settings). The reason shows next to the word <i>failed</i> in Settings → About (e.g. <code>init() returned false</code>); send it along with a screenshot if it keeps failing. App 1.1 or later uses Chainway's DeviceAPI 2025 — the version that came with this gun.</li>
       <li>Nothing heard — power too low for the distance, or the card is not on the top edge of the gun (the antenna is behind the head). Raise the power in Settings.</li>
       <li>A button does nothing — open Settings and press it: <i>Keys seen</i> lists every hardware key the app receives (code, scan code). If the key shows there, map it with <b>Last key reads the chip</b> / <b>Last key scans QR</b>. If it does not show at all, the scanner service (keyboardemulator) is keeping it: untick <b>Scanner service intercepts the scan keys</b> in Settings.</li>
       <li>Nothing scanned — the QR scanner of this gun works through Chainway's scanner service (the keyboardemulator app); the app switches it on by itself. The reason of the last scan shows in Settings → About after <i>2D scanner</i>.</li>
