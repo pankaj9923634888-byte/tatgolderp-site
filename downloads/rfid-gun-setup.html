@@ -54,6 +54,7 @@
       <li>Hold that card against the top of the gun and pull the <b>trigger</b>. The chip is read, verified and saved: green message <i>GBA0001 ↔ E280…2C3D</i>, one beep.</li>
       <li>Next card. The list at the bottom (<b>Lot progress</b>) shows which items of the lot are paired; tap an unpaired row to select it without scanning its QR.</li>
     </ol>
+    <p>One button is enough: with nothing selected the trigger scans the QR, and once an item is shown the same button reads the chip (a scan button with an item shown also reads the chip). The on-screen <b>Scan QR</b> / <b>Read chip</b> buttons do the same.</p>
     <ul>
       <li><i>Several chips heard</i> — other cards are too close: move them away, or tap the strongest one in the list (dB value nearest to 0).</li>
       <li><i>Already has a chip</i> — a card was paired before. <b>Replace chip</b> writes the new chip over the old one (the old chip is freed); <b>Keep old</b> cancels.</li>
@@ -94,6 +95,8 @@
       <li>A new version is installed the same way (download the APK, open it, <b>Update</b>) — the sign-in and settings stay.</li>
       <li>Reader dot <i>failed</i> — Sparkle RFID or keyboardemulator holds the reader: close them (keyboardemulator → Enable Scanner OFF), then tap <b>Restart reader</b> (home screen or Settings). The reason shows next to the word <i>failed</i> in Settings → About (e.g. <code>init() returned false</code>); send it along with a screenshot if it keeps failing. App 1.1 or later uses Chainway's DeviceAPI 2025 — the version that came with this gun.</li>
       <li>Nothing heard — power too low for the distance, or the card is not on the top edge of the gun (the antenna is behind the head). Raise the power in Settings.</li>
+      <li>A button does nothing — open Settings and press it: <i>Keys seen</i> lists every hardware key the app receives (code, scan code). If the key shows there, map it with <b>Last key reads the chip</b> / <b>Last key scans QR</b>. If it does not show at all, the scanner service (keyboardemulator) is keeping it: untick <b>Scanner service intercepts the scan keys</b> in Settings.</li>
+      <li>Nothing scanned — the QR scanner of this gun works through Chainway's scanner service (the keyboardemulator app); the app switches it on by itself. The reason of the last scan shows in Settings → About after <i>2D scanner</i>.</li>
       <li>OFFLINE page — no internet on the gun; check Wi-Fi / SIM data and tap Retry.</li>
       <li>Signed out — the ERP login lasts 24 hours; sign in again with your user name and password.</li>
     </ul>
