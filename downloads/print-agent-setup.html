@@ -65,6 +65,19 @@
   </div>
 
   <div class="card">
+    <h2 style="margin-top:0">3b · Price tokens on a 58 mm receipt printer</h2>
+    <p>The same agent prints the <b>price token</b> (Price Check → Issue the token, or the token page → <b>Print token</b>) on an ordinary 58 mm thermal receipt printer (ESC/POS — Epson TM, TVS, Xprinter, Rongta …) connected by USB to the PC where the token is issued or opened. Install the printer's own Windows driver (or the "Generic / Text Only" driver) — the agent sends the slip as raw printer commands, so any driver that accepts raw jobs works.</p>
+    <table>
+      <tr><th>Setting (gear next to Print token)</th><th>What it does</th></tr>
+      <tr><td>Printer</td><td>The receipt printer from the agent's list. The sticker printer (TSC) is skipped automatically; pick by hand if the wrong one is chosen.</td></tr>
+      <tr><td>Copies · Feed lines · Cut</td><td>Copies of the slip; blank lines fed after it so it clears the tear bar; the partial-cut command (printers without a cutter ignore it).</td></tr>
+      <tr><td>Print automatically when a token is issued here</td><td>On the sales PC: every issued token comes out of the printer at once, no click.</td></tr>
+      <tr><td>Test print</td><td>A short slip with a QR that reads <code>PT-0000</code> — scan it on the Sale Bill's scan box to check the counter scanner.</td></tr>
+    </table>
+    <p>The slip carries a QR of the token number. At the Sale Bill the cashier points the 2D barcode scanner at it: the scanner types <code>PT-0006</code> into the scan box and the bill loads the token with its locked discount — the same as typing the number. Without the agent on a PC (or on an iPad) the button prints the on-screen slip through the browser; the PDF for WhatsApp carries the same QR.</p>
+  </div>
+
+  <div class="card">
     <h2 style="margin-top:0">4 · If something does not work</h2>
     <ul>
       <li><b>"Print Agent not running"</b> on the print screen — open <code>http://127.0.0.1:9123/</code> in a new tab. If it does not load, double-click the exe again (a second copy simply opens the page). Check that the antivirus has not quarantined the file.</li>
