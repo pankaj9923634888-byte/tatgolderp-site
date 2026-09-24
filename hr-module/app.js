@@ -114,6 +114,12 @@
     const bridge = window.parent !== window && window.parent.tatgoldHR;
     if (!bridge) { bootMessage("Open HR from TatGold ERP", "Sign in to TatGold and choose HR & Attendance."); return; }
     sb = bridge;
+    // the ERP passes the company name, its legal name and the shop names (payslip header, Shop picker); a value that
+    // index.html already sets (an installation's own HR_CONFIG) wins over the one from the ERP
+    try {
+      const conf = typeof bridge.config === "function" ? bridge.config() : null, cur = window.HR_CONFIG || (window.HR_CONFIG = {});
+      if (conf) for (const k of Object.keys(conf)) { const v = cur[k]; if (v == null || v === "" || (Array.isArray(v) && !v.length)) cur[k] = conf[k]; }
+    } catch {}
     $("#signout").hidden = true;
     await enterApp();
 

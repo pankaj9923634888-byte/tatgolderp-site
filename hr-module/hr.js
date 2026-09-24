@@ -296,7 +296,7 @@
       <div class="fields">
         ${field("name", "Full name", e.name, "text", 'required maxlength="100"')}
         ${field("designation", "Designation", e.designation, "text", 'maxlength="100"')}
-        ${picker("branch", "Shop", C.branches, e.branch || C.branches[0])}
+        ${picker("branch", "Shop", C.branchOptions(e.branch), e.branch || C.branches[0])}
         ${field("joined", "Joining date", e.joined, "date", "required")}
         ${field("salary", "Monthly gross salary (₹)", e.salary ?? "", "number", 'min="0" max="10000000" step="0.01" placeholder="Not set"')}
         <p class="note">Earned leave: 2 per completed month, carried forward. Sick leave: 3 paid days per year.</p>
@@ -616,7 +616,7 @@
   }
 
   function payslip(p, l) {
-    const company = (window.HR_CONFIG?.COMPANY) || "Ashirwad & Durga Jewellers";
+    const company = (window.HR_CONFIG?.COMPANY) || "";
     const legal = (window.HR_CONFIG?.COMPANY_LEGAL) || "";
     const rows = [["Monthly salary", amount(l.monthlySalary)], ["Days paid", `${l.eligibleDays} of ${l.calendarDays}`],
       ["Unpaid days", l.unpaidDays], ["Gross earnings", amount(l.gross)], ["Loss of pay", "− " + amount(l.lossOfPay)],

@@ -1,4 +1,4 @@
-/* Ashirwad & Durga Jewellers — HR calculations shared by the browser and the test harness.
+/* TATGOLD ERP — HR calculations shared by the browser and the test harness.
    The server (hr.payroll_lines) is the authority for payroll money; this mirrors it exactly so
    the app can show month-to-date figures without a round trip. The harness cross-checks both. */
 (function (root, factory) {
@@ -10,7 +10,9 @@
 
   const statuses = ["Not marked", "Present", "Absent", "Half day", "Paid leave", "Sick leave", "Unpaid leave", "Holiday / weekly off"];
   const docs = ["Aadhaar", "PAN", "Bank proof", "Cancelled cheque", "Family Aadhaar", "Appointment letter"];
-  const branches = ["Ashirwad", "Durga", "A&D"];
+  // The shops (branches) come from the ERP session through the bridge (window.HR_CONFIG.BRANCHES); "Main" until it arrives.
+  const branchList = () => { const b = window.HR_CONFIG && window.HR_CONFIG.BRANCHES; return Array.isArray(b) && b.length ? b.slice() : ["Main"]; };
+  const branchOptions = current => { const b = branchList(); return current && !b.includes(current) ? [current, ...b] : b; };
   const WEEKDAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   // Shop defaults. Every one of these is editable per employee.
   const RULES = { shiftIn: "09:30", shiftOut: "20:00", lateGrace: 10, weeklyOff: "Sunday" };
@@ -187,7 +189,7 @@
     return "Ask about today's attendance, who hasn't punched in, leave balances, weekly offs, insurance renewals, missing documents, PF or salary. Answers come from your own HR records — no external AI is connected.";
   }
 
-  return { statuses, docs, branches, WEEKDAYS, RULES, money, today, istTime, mins, hhmm, weekday,
+  return { statuses, docs, get branches() { return branchList(); }, branchOptions, WEEKDAYS, RULES, money, today, istTime, mins, hhmm, weekday,
     validDate, monthDates, rulesFor, dayStatus, record, effectiveStatus, countDays,
     payroll, monthToDate, payAdjustments, earnedLeaves, leave, policyStatus, answer };
 });
