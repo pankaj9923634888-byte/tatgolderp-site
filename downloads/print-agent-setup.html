@@ -35,12 +35,13 @@
   <div class="card">
     <h2 style="margin-top:0">2 · Install the TATGOLD Print Agent (once per PC)</h2>
     <ol>
-      <li><a class="btn" href="/downloads/tatgold-print-agent.exe" download>Download tatgold-print-agent.exe</a> &nbsp;and move it to a folder that stays, for example <code>C:\TatGold\</code>.</li>
-      <li>Double-click it. Windows SmartScreen may say "Windows protected your PC" because the file is not signed — click <b>More info</b> → <b>Run anyway</b>. If the antivirus asks, allow it.</li>
-      <li>A page opens at <code>http://127.0.0.1:9123/</code> showing <b>Running</b> and the printers of this PC. Click <b>Print a test sticker</b> — a framed TATGOLD sticker comes out.</li>
-      <li>To start it with Windows: open Command Prompt in that folder and run <code>tatgold-print-agent.exe --install</code> (or put a shortcut to it in the Startup folder: <kbd>Win</kbd>+<kbd>R</kbd> → <code>shell:startup</code>).</li>
+      <li><a class="btn" href="/downloads/tatgold-print-agent.exe" download>Download tatgold-print-agent.exe</a> &nbsp;(any folder — Downloads is fine).</li>
+      <li>Double-click it <b>once</b>. Windows SmartScreen may say "Windows protected your PC" because the file is not signed — click <b>More info</b> → <b>Run anyway</b>. If the antivirus asks, allow it.</li>
+      <li>The agent installs itself (in <code>%LOCALAPPDATA%\TatGold\</code>, no administrator rights needed), sets itself to <b>start with Windows</b> and opens its page at <code>http://127.0.0.1:9123/</code> showing <b>Running</b>, <b>Starts with Windows: Yes</b> and the printers of this PC.</li>
+      <li>That is all: after every restart the agent starts by itself. If it is ever not running, the ERP's print screen shows a <b>Start agent</b> button (the browser asks once "Open TATGOLD Print Agent?" — tick <i>Always allow</i> and choose <b>Open</b>).</li>
+      <li>A newer agent is installed the same way: download it and double-click it; it replaces the running one.</li>
     </ol>
-    <p class="note">The agent only listens on this PC (127.0.0.1) and only answers tatgolderp.com — nothing is opened to the network. Its settings live in <code>tatgold-print-agent.json</code> next to the exe; its log in <code>%LOCALAPPDATA%\TatGold\print-agent.log</code>.</p>
+    <p class="note">The agent only listens on this PC (127.0.0.1) and only answers tatgolderp.com — nothing is opened to the network. Everything it keeps is in <code>%LOCALAPPDATA%\TatGold\</code>: the program, <code>tatgold-print-agent.json</code> (port, printer), <code>sticker-settings.json</code> (the print screen's settings — darkness, gap, left / right, up / down, tear position — so another browser or cleared browser data keeps them), <code>roll-state.json</code> (how far the last job moved the roll) and the log <code>print-agent.log</code>. To stop starting with Windows: <code>tatgold-print-agent.exe --uninstall</code> in that folder.</p>
   </div>
 
   <div class="card">
@@ -80,11 +81,11 @@
   <div class="card">
     <h2 style="margin-top:0">4 · If something does not work</h2>
     <ul>
-      <li><b>"Print Agent not running"</b> on the print screen — open <code>http://127.0.0.1:9123/</code> in a new tab. If it does not load, double-click the exe again (a second copy simply opens the page). Check that the antivirus has not quarantined the file.</li>
+      <li><b>"Print Agent not running"</b> on the print screen — click <b>Start agent</b>. If nothing happens, download the agent and double-click it once (it installs itself again). Check that the antivirus has not quarantined the file.</li>
       <li><b>The test sticker prints, ERP stickers do not</b> — the browser blocked local-network access: in the address bar's site settings for tatgolderp.com allow <i>Local network</i> (or <i>Insecure content</i> on older versions), reload and Re-check.</li>
       <li><b>Blank sticker</b> — the ribbon is missing or Ribbon is set Off; or the darkness is too low.</li>
       <li><b>Text instead of a sticker</b> (commands printed as letters) — the chosen Windows printer is not the TSC printer; pick TSC TE244.</li>
-      <li><b>Only the first sticker of a job is misplaced</b> — the roll was moved between two jobs (FEED pressed on the printer, a jam, a new roll, the agent's own test button, another program printing). Tick <i>Sure start</i> for one job (or click <i>Feed one</i>) and the next jobs are right again. Never press FEED on the printer between batches.</li>
+      <li><b>Only the first sticker of a job is misplaced</b> — the roll was moved by hand between two jobs (FEED pressed on the printer, a jam, a new roll). Tick <i>Sure start</i> for one job (or click <i>Feed one</i>) and the next jobs are right again. Never press FEED on the printer between batches. Since agent 1.1 the agent itself remembers how far every job moved the roll — whichever screen or test button printed it — and the first job after the PC starts always begins with one blank sticker, so a restart or the agent's own test no longer misplaces the next sticker.</li>
       <li><b>The batch stops short of the tear bar, or a blank sticker comes out after it</b> — adjust <i>Tear position</i> (bar on the last sticker → raise; on the next blank sticker → lower).</li>
       <li><b>Every sticker is shifted the same way along the roll</b> — Calibrate roll (Gap 3 mm), then Up / down (minus = earlier).</li>
       <li><b>Print cut off at the left or right edge</b> — the roll sits off-centre in the printer: push the media guides snug against the roll, then use Left / right.</li>
