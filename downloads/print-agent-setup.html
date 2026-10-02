@@ -79,6 +79,27 @@
   </div>
 
   <div class="card">
+    <h2 style="margin-top:0">3c · Tokens from the sales iPads</h2>
+    <p>An iPad cannot drive a USB receipt printer, so the salesman's iPad does not print — it <b>asks the shop's billing PC</b>: on the iPad, Price Check → issue the token → <b>Print at the counter</b>. The slip comes out of the 58 mm printer on the billing PC within a few seconds, and the iPad shows <i>printed at Billing PC</i>.</p>
+    <p><b>Once on the billing PC of every shop</b> (the PC with this agent and the receipt printer):</p>
+    <ol>
+      <li>Open the ERP → Home → <b>Token Printer</b>.</li>
+      <li>Choose the <b>receipt printer</b> (never the TSC sticker printer) and press <b>Test print</b> — the slip's QR must read <code>PT-0000</code> on the Sale Bill.</li>
+      <li>Choose the <b>shop</b>, give the PC a name (the iPads show it, e.g. "Billing PC") and tick <b>This PC prints the tokens sent from the iPads</b>. A green <b>Token printer · on</b> pill appears at the top of every ERP page.</li>
+      <li>If the owner has switched the <b>device lock</b> on (Home → Devices): every sales iPad and this PC must be <b>verified</b> there first — a device that is not verified opens attendance only.</li>
+      <li>Keep the ERP <b>open on that PC</b> during shop hours — any page, one tab is enough. In Chrome: Settings → Performance → <b>Always keep these sites active</b> → add <code>tatgolderp.com</code>, so Chrome never puts the page to sleep.</li>
+    </ol>
+    <table>
+      <tr><th>The iPad says</th><th>What it means</th></tr>
+      <tr><td>Counter printer: Billing PC · … · ready</td><td>The PC is on, the agent runs, the printer is chosen. Print.</td></tr>
+      <tr><td>… is waiting for the billing PC</td><td>The PC is not answering (ERP closed, PC asleep, no internet). The slip waits two minutes, then it is dropped — it is never printed late. Tell the customer the token number meanwhile.</td></tr>
+      <tr><td>… is on, but its print agent or receipt printer is not ready</td><td>On the PC: start the agent (Start menu → TATGOLD Print Agent) or choose the printer on the Token Printer page.</td></tr>
+      <tr><td>No PC of this shop prints tokens yet</td><td>Nobody ticked the box on that shop's billing PC (steps above). Until then the button prints through the browser.</td></tr>
+    </table>
+    <p>The tick belongs to the PC, not to a login: whoever signs in on that PC — the entry operator, the cashier, the manager — the tokens keep printing. The Token Printer page also lists the shop's printers and every slip the iPads sent, with the reason when one did not print. A PC that prints <b>both</b> stickers and tokens needs agent <b>1.1.1</b> or newer (download above; double-click it once): with 1.1.0 every token slip made the next sticker batch start with a blank sticker.</p>
+  </div>
+
+  <div class="card">
     <h2 style="margin-top:0">4 · If something does not work</h2>
     <ul>
       <li><b>"Print Agent not running"</b> on the print screen — click <b>Start agent</b>. If nothing happens, download the agent and double-click it once (it installs itself again). Check that the antivirus has not quarantined the file.</li>
