@@ -2,7 +2,7 @@
   "id": "/attendance/",
   "name": "TatGold Attendance",
   "short_name": "Attendance",
-  "description": "Punch in and punch out with photo and location — A & D Jewellers staff attendance",
+  "description": "Punch in and punch out with photo and location — staff attendance",
   "start_url": "/attendance/?app=attendance&source=home",
   "scope": "/",
   "display": "standalone",
