@@ -1,7 +1,7 @@
 {
   "id": "/",
-  "name": "TatGold ERP",
-  "short_name": "TatGold ERP",
+  "name": "Jewellery ERP",
+  "short_name": "Jewellery ERP",
   "start_url": "/home/",
   "scope": "/",
   "display": "standalone",
