@@ -3,14 +3,93 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#291414">
+<meta name="theme-color" content="#7A1C2E">
 <meta name="description" content="A&D Jewellers — Gold and Silver rates. Gold per gram, Silver per 10 grams.">
 <title>A&amp;D Rate</title>
 <meta name="application-name" content="A&amp;D Rate">
 <meta name="apple-mobile-web-app-title" content="A&amp;D Rate">
 <style>
-:root{color-scheme:dark;--bg:#291414;--gold:#edce80;--muted:#cbb995;--silver:#e6e9ef;--line:#725335;font-family:Arial,"Noto Sans Devanagari","Kohinoor Devanagari",sans-serif}
-*{box-sizing:border-box}body{margin:0;background:#190c0d;color:#fff8e7;min-height:100vh;display:grid;place-items:center;overflow:hidden}button,a{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #fff3b8;outline-offset:5px}#stage{position:relative}#board{position:absolute;inset:0 auto auto 0;width:1920px;height:1080px;transform-origin:top left;background:radial-gradient(ellipse at 54% 0%,#452727 0%,#2a1515 56%,#241111 100%);padding:40px 64px 32px;display:flex;flex-direction:column;overflow:hidden}#board:after{content:"";position:absolute;inset:18px;border:1px solid #795b3e;pointer-events:none}.brand-header{display:grid;grid-template-columns:174px 1fr auto;gap:35px;align-items:center;min-height:192px;border-bottom:2px solid #9b7647;padding-bottom:22px}.logo{width:174px;height:174px;object-fit:contain;border-radius:6px}.brand-name{margin:0;color:#fff5da;font:500 86px/1 Georgia,"Times New Roman",serif;letter-spacing:3px}.brand-name span{display:block;margin-top:19px;font:400 32px/1.1 Arial,sans-serif;letter-spacing:18px;color:var(--gold)}.date-clock{text-align:right;align-self:center}.date-clock time{display:block;font-variant-numeric:tabular-nums}.clock{font-size:56px;letter-spacing:2px}.date{font-size:29px;color:#d6c5ab;margin-top:14px}.board-title{display:flex;align-items:center;justify-content:space-between;margin:31px 0 25px;gap:24px}.board-title h2{margin:0;font-size:39px;font-weight:500;letter-spacing:1px}.status-pill{display:flex;align-items:center;gap:12px;color:#d5e7bd;font-size:23px;border:1px solid #708055;border-radius:30px;padding:10px 20px}.status-dot{height:9px;width:9px;background:#b9d793;border-radius:50%}.status-pill.offline{color:#ffe0a0;border-color:#ac8047}.status-pill.offline .status-dot{background:#f1bd69}.rate-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:29px;flex:1;min-height:0}.rate-panel{display:flex;flex-direction:column;background:linear-gradient(155deg,#412722a8,#241213c4);border:1px solid #8e6a3b;border-radius:18px;min-width:0;overflow:hidden}.panel-head{padding:29px 30px 25px;border-bottom:1px solid #7d5b37;background:linear-gradient(120deg,#77532866,#482c2144);display:flex;justify-content:space-between;align-items:flex-start;gap:10px}.panel-head h3{margin:0;color:var(--gold);font-size:43px;line-height:1.25}.panel-head small{font-size:21px;color:#d2b887;display:block;margin-top:9px;letter-spacing:4px}.unit{font-size:24px;line-height:1.4;text-align:right;color:#e4d3b5;white-space:nowrap}.unit strong{display:block;color:#fff4d8;font-size:29px;font-weight:400}.rates{margin:0;padding:0 28px;display:flex;flex-direction:column;flex:1}.rate-row{display:flex;align-items:center;justify-content:space-between;gap:20px;flex:1;min-height:0;border-bottom:1px solid #72503980}.rate-row:last-child{border-bottom:0}.grade{margin:0;display:flex;align-items:baseline;gap:6px;font-size:51px;font-weight:500;color:#f9deb0;white-space:nowrap}.grade small{font-size:28px;color:#dac298}.price{margin:0;display:flex;align-items:baseline;gap:6px;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:57px;letter-spacing:-2px;font-weight:600}.price .currency{font-size:29px;font-weight:400;color:#bc9d6d;letter-spacing:0}.price .fraction{font-size:.55em;letter-spacing:0;color:#d3b889}.price.long{font-size:43px}.price.xlong{font-size:33px}.old-panel{background:linear-gradient(145deg,#3c211cc4,#241212b0)}.old-panel .panel-head{background:#6b42202e}.old-panel .panel-head h3{color:#e7bc7d}.silver-panel{background:linear-gradient(155deg,#39404988,#232326aa);border-color:#8a8e95}.silver-panel .panel-head{background:linear-gradient(115deg,#939da135,#30384240);border-color:#757d84}.silver-panel .panel-head h3,.silver-panel .grade{color:#f0f0f2}.silver-panel .panel-head small,.silver-panel .unit,.silver-panel .grade small{color:#bcc2cb}.silver-panel .rate-row{border-color:#777d884f}.silver-panel .price .fraction,.silver-panel .currency{color:#b2bdcb}.foot{padding-top:25px;display:flex;justify-content:space-between;align-items:center;gap:25px}.rate-date{color:#dbc4a3;font-size:25px;line-height:1.5}.rate-date strong{color:#fff0d1;font-weight:400}.source-note{color:#bba992;font-size:22px}.notice{max-width:820px;text-align:right;color:#e7ca99;font-size:23px;line-height:1.45}.notice:empty{display:none}.tiny-mark{font:16px Arial,sans-serif;letter-spacing:4px;color:#95764e;margin-top:10px}.portrait#board{width:900px;height:1600px;padding:30px 36px 33px}.portrait#board:after{inset:14px}.portrait .brand-header{grid-template-columns:151px 1fr;gap:24px;min-height:208px;padding-bottom:24px}.portrait .logo{width:151px;height:151px}.portrait .brand-name{font-size:63px;letter-spacing:1px}.portrait .brand-name span{font-size:25px;letter-spacing:11px;margin-top:13px}.portrait .date-clock{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;text-align:left;margin-top:-5px}.portrait .clock{font-size:35px}.portrait .date{font-size:29px;margin:0}.portrait .board-title{margin:23px 0 21px;gap:10px}.portrait .board-title h2{font-size:35px}.portrait .status-pill{font-size:22px;padding:8px 13px;gap:8px}.portrait .rate-grid{grid-template-columns:1fr;grid-template-rows:repeat(3,minmax(0,1fr));gap:21px}.portrait .rate-panel{border-radius:16px}.portrait .panel-head{padding:15px 25px;align-items:center}.portrait .panel-head h3{font-size:37px}.portrait .panel-head small{display:inline;font-size:18px;margin:0 0 0 15px;letter-spacing:2px}.portrait .unit{font-size:25px}.portrait .unit strong{display:inline;font-size:25px}.portrait .rates{padding:0 27px}.portrait .rate-row{gap:15px}.portrait .grade{font-size:45px}.portrait .grade small{font-size:28px}.portrait .price{font-size:59px;letter-spacing:-1px}.portrait .price.long{font-size:52px}.portrait .price.xlong{font-size:45px}.portrait .price .currency{font-size:31px}.portrait .foot{padding-top:18px;display:block}.portrait .rate-date{font-size:26px;display:flex;justify-content:space-between;gap:10px}.portrait .source-note{font-size:23px;margin-top:6px}.portrait .notice{margin-top:8px;text-align:left;max-width:none;font-size:23px}.portrait .tiny-mark{display:none}.controls{position:fixed;right:20px;bottom:18px;display:flex;gap:8px;z-index:5;transition:opacity .4s}.controls.hidden{opacity:0;pointer-events:none}.controls:focus-within{opacity:1;pointer-events:auto}.controls button{background:#351d19e8;color:#ead7af;border:1px solid #9f8155;border-radius:8px;padding:10px 13px;font-size:14px}.controls button:hover{background:#553523}dialog{color:#efe2cb;background:#2e1b19;border:1px solid #a57f4d;border-radius:16px;width:min(540px,calc(100vw - 28px));max-height:calc(100svh - 32px);padding:25px;box-shadow:0 30px 100px #0008}dialog::backdrop{background:#0a0405bd}dialog h2{margin:0 0 14px;font-size:24px}dialog p{font-size:16px;line-height:1.6;color:#dac7a9}dialog a{color:#f6d897}dialog button,dialog .action{display:block;width:100%;padding:12px 15px;border:1px solid #9b794e;background:#503523;color:#ffeec9;border-radius:8px;margin-top:10px;text-decoration:none;text-align:center;font-size:16px}dialog .primary{color:#24140a;background:#e6c783;border-color:#e6c783}dialog .close{margin:22px 0 0;background:transparent}.toast{position:fixed;left:50%;bottom:70px;transform:translateX(-50%);color:#20130b;background:#f2d49a;padding:12px 22px;border-radius:8px;max-width:calc(100vw - 30px);font-size:16px;z-index:20;display:none}.toast.show{display:block}@media(prefers-reduced-motion:reduce){.controls{transition:none}}@media print{body{display:block;overflow:visible}.controls,dialog,.toast{display:none!important}#stage{width:100%!important;height:auto!important}#board{position:relative!important;transform:none!important;width:100%!important;height:95vh!important;print-color-adjust:exact}}
+:root{color-scheme:light;--maroon:#7A1C2E;--maroon-deep:#5A1221;--maroon-dark:#3F0C18;--ink:#1F1518;--gold:#D4AF57;--cream:#F6DFB0;--line:#E6D5D9;--line-strong:#C99AA5;font-family:Arial,"Noto Sans Devanagari","Kohinoor Devanagari",sans-serif}
+*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--ink);min-height:100vh;display:grid;place-items:center;overflow:hidden}button,a{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid var(--maroon);outline-offset:5px}
+#stage{position:relative}
+#board{position:absolute;inset:0 auto auto 0;width:1920px;height:1080px;transform-origin:top left;background:#fff;padding:0 64px 26px;display:flex;flex-direction:column;overflow:hidden;border-bottom:14px solid var(--maroon)}
+#board:after{content:none}
+.brand-header{display:grid;grid-template-columns:174px 1fr auto;gap:35px;align-items:center;min-height:214px;margin:0 -64px;padding:20px 64px;background:linear-gradient(100deg,var(--maroon-dark) 0%,var(--maroon) 52%,var(--maroon-deep) 100%);border-bottom:7px solid var(--gold)}
+.logo{width:174px;height:174px;object-fit:contain;border-radius:14px;box-shadow:0 0 0 3px #ffffff40}
+.brand-name{margin:0;color:#fff;font:700 88px/1 Georgia,"Times New Roman",serif;letter-spacing:3px}
+.brand-name span{display:block;margin-top:18px;font:700 32px/1.1 Arial,sans-serif;letter-spacing:18px;color:var(--gold)}
+.date-clock{text-align:right;align-self:center}.date-clock time{display:block;font-variant-numeric:tabular-nums}
+.clock{font-size:60px;font-weight:700;letter-spacing:2px;color:#fff}
+.date{font-size:30px;font-weight:700;color:var(--cream);margin-top:12px}
+.board-title{display:flex;align-items:center;justify-content:space-between;margin:26px 0 22px;gap:24px}
+.board-title h2{margin:0;font-size:44px;font-weight:800;letter-spacing:1px;color:var(--maroon)}
+.status-pill{display:flex;align-items:center;gap:12px;color:#1E7A3A;font-size:23px;font-weight:700;border:2px solid #4CAF6A;border-radius:30px;padding:10px 22px;background:#F0FAF3}
+.status-dot{height:11px;width:11px;background:#2EA65A;border-radius:50%}
+.status-pill.offline{color:#8A5A00;border-color:#E0A93C;background:#FFF6E3}.status-pill.offline .status-dot{background:#E0A93C}
+.rate-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;flex:1;min-height:0}
+.rate-panel{display:flex;flex-direction:column;background:#fff;border:3px solid var(--maroon);border-radius:20px;min-width:0;overflow:hidden;box-shadow:0 10px 30px #7a1c2e14}
+.panel-head{padding:22px 30px 20px;background:var(--maroon);color:#fff;display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.panel-head h3{margin:0;color:#fff;font-size:44px;font-weight:800;line-height:1.2}
+.panel-head small{font-size:21px;font-weight:700;color:var(--cream);display:block;margin-top:8px;letter-spacing:4px}
+.unit{font-size:24px;font-weight:700;line-height:1.4;text-align:right;color:#fff;white-space:nowrap}
+.unit strong{display:block;color:var(--cream);font-size:29px;font-weight:800}
+.rates{margin:0;padding:0 30px;display:flex;flex-direction:column;flex:1}
+.rate-row{display:flex;align-items:center;justify-content:space-between;gap:20px;flex:1;min-height:0;border-bottom:2px solid var(--line)}
+.rate-row:last-child{border-bottom:0}
+.grade{margin:0;display:flex;align-items:baseline;gap:6px;font-size:58px;font-weight:800;color:var(--maroon);white-space:nowrap}
+.grade small{font-size:28px;font-weight:700;color:#A05A68}
+.price{margin:0;display:flex;align-items:baseline;gap:8px;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:72px;letter-spacing:-1px;font-weight:800;color:var(--ink)}
+.price .currency{font-size:32px;font-weight:700;color:var(--maroon);letter-spacing:0}
+.price .fraction{font-size:.55em;letter-spacing:0;color:#6B4C53}
+.price.long{font-size:54px}.price.xlong{font-size:40px}
+.old-panel .panel-head{background:var(--maroon-deep)}
+.old-panel .price{color:var(--maroon-deep)}
+.silver-panel{border-color:var(--maroon)}
+.silver-panel .panel-head{background:var(--maroon)}
+.foot{padding-top:22px;display:flex;justify-content:space-between;align-items:center;gap:25px;border-top:2px solid var(--line)}
+.rate-date{color:var(--maroon);font-size:26px;font-weight:700;line-height:1.5}
+.rate-date strong{color:var(--maroon-deep);font-weight:800}
+.source-note{color:#7C6A6F;font-size:21px;font-weight:700}
+.notice{max-width:820px;text-align:right;color:var(--maroon);font-size:23px;font-weight:700;line-height:1.45}.notice:empty{display:none}
+.tiny-mark{font:700 16px Arial,sans-serif;letter-spacing:4px;color:#A98A92;margin-top:8px}
+.portrait#board{width:900px;height:1600px;padding:0 36px 30px;border-bottom-width:12px}
+.portrait .brand-header{grid-template-columns:151px 1fr;gap:24px;min-height:236px;margin:0 -36px;padding:18px 36px 20px}
+.portrait .logo{width:151px;height:151px;border-radius:12px}
+.portrait .brand-name{font-size:64px;letter-spacing:1px}
+.portrait .brand-name span{font-size:25px;letter-spacing:11px;margin-top:12px}
+.portrait .date-clock{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;text-align:left;margin-top:-4px}
+.portrait .clock{font-size:36px}.portrait .date{font-size:29px;margin:0}
+.portrait .board-title{margin:22px 0 18px;gap:10px}.portrait .board-title h2{font-size:38px}
+.portrait .status-pill{font-size:22px;padding:8px 14px;gap:8px}
+.portrait .rate-grid{grid-template-columns:1fr;grid-template-rows:repeat(3,minmax(0,1fr));gap:20px}
+.portrait .rate-panel{border-radius:18px}
+.portrait .panel-head{padding:14px 25px;align-items:center}
+.portrait .panel-head h3{font-size:38px}
+.portrait .panel-head small{display:inline;font-size:18px;margin:0 0 0 15px;letter-spacing:2px}
+.portrait .unit{font-size:24px}.portrait .unit strong{display:inline;font-size:24px;margin-left:12px}
+.portrait .rates{padding:0 27px}.portrait .rate-row{gap:15px}
+.portrait .grade{font-size:48px}.portrait .grade small{font-size:28px}
+.portrait .price{font-size:62px;letter-spacing:-1px}.portrait .price.long{font-size:54px}.portrait .price.xlong{font-size:46px}
+.portrait .price .currency{font-size:32px}
+.portrait .foot{padding-top:16px;display:block}
+.portrait .rate-date{font-size:26px;display:flex;justify-content:space-between;gap:10px}
+.portrait .source-note{font-size:22px;margin-top:6px}
+.portrait .notice{margin-top:8px;text-align:left;max-width:none;font-size:23px}
+.portrait .tiny-mark{display:none}
+.controls{position:fixed;right:20px;bottom:18px;display:flex;gap:8px;z-index:5;transition:opacity .4s}
+.controls.hidden{opacity:0;pointer-events:none}.controls:focus-within{opacity:1;pointer-events:auto}
+.controls button{background:var(--maroon);color:#fff;border:1px solid var(--maroon-deep);border-radius:8px;padding:10px 13px;font-size:14px;font-weight:700}
+.controls button:hover{background:var(--maroon-deep)}
+dialog{color:var(--ink);background:#fff;border:2px solid var(--maroon);border-radius:16px;width:min(540px,calc(100vw - 28px));max-height:calc(100svh - 32px);padding:25px;box-shadow:0 30px 100px #0006}
+dialog::backdrop{background:#3f0c18a6}
+dialog h2{margin:0 0 14px;font-size:24px;font-weight:800;color:var(--maroon)}
+dialog p{font-size:16px;line-height:1.6;color:#4A3A3F}dialog a{color:var(--maroon);font-weight:700}
+dialog button,dialog .action{display:block;width:100%;padding:12px 15px;border:2px solid var(--maroon);background:#fff;color:var(--maroon);border-radius:8px;margin-top:10px;text-decoration:none;text-align:center;font-size:16px;font-weight:700}
+dialog .primary{color:#fff;background:var(--maroon);border-color:var(--maroon)}
+dialog .close{margin:22px 0 0;background:transparent}
+.toast{position:fixed;left:50%;bottom:70px;transform:translateX(-50%);color:#fff;background:var(--maroon);padding:12px 22px;border-radius:8px;max-width:calc(100vw - 30px);font-size:16px;font-weight:700;z-index:20;display:none}.toast.show{display:block}
+@media(prefers-reduced-motion:reduce){.controls{transition:none}}
+@media print{body{display:block;overflow:visible}.controls,dialog,.toast{display:none!important}#stage{width:100%!important;height:auto!important}#board{position:relative!important;transform:none!important;width:100%!important;height:95vh!important;print-color-adjust:exact}}
 </style>
 </head>
 <body>
