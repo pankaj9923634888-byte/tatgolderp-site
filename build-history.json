@@ -1,16 +1,33 @@
 {
- "generated": "2026-11-07T07:27:24Z",
+ "generated": "2026-11-07T09:17:20Z",
  "source": {
-  "head": "176d199",
-  "commits": 298
+  "head": "753c729",
+  "commits": 301
  },
  "site": {
-  "deploys": 304,
-  "builds": 295,
+  "deploys": 305,
+  "builds": 296,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-07T07:07:41Z"
+  "latest": "2026-11-07T08:19:25Z"
  },
  "builds": [
+  {
+   "no": 296,
+   "build": "20261107-075407",
+   "built": "2026-11-07T07:54:07Z",
+   "published": "2026-11-07T08:19:25Z",
+   "republished": [],
+   "notes": [
+    "Direct lot — a lot opened at Head Office from the weight and purity alone, labeled before its Purchase (RD) / Karigar Jama, which clears it from its own row (7 Nov 2026, sql/210 + web) — \"AATA SADDHYA KARAGIR / KIVA RD PURCHASE KARUN LOT CREAT HOT AAHE AANI NANTAR LABLE TAYAR KARAVE LAGAT AAHE. TR HYAT DIRECT LOT CREAT KARAYCHE … HYANAE LABLING FAST HOIL\" → \"BUILD\"",
+    "Direct lot: the \"Clears direct lot\" picker fits the item cell (7 Nov 2026, web only) — on a 1440 screen the Purchase (RD) item column is ~165 px and the 250 px picker ran under the Metal cell; the whole-lot tick box lost the cell's 150 px minimum; tests/head-office-only.test.cjs follows the Labeling page's guard (the first commit of the round had it as a known failure — it was not). Suite 709 = 704 + the 5 known. Site build 20261107-075407 (Claude outputs/r210/erp-site-direct-lot-210.tgz, sha256 d9be9e78…).",
+    "sql/210: the header comment no longer spells the destructive words out (the Supabase editor's check is textual; the migration has none) — comment only, same migration"
+   ],
+   "commits": [
+    "5b034b3",
+    "6826061",
+    "753c729"
+   ]
+  },
   {
    "no": 295,
    "build": "20261107-065406",
@@ -3847,7 +3864,7 @@
  ],
  "pending": {
   "notes": [
-   "Direct lot — a lot opened from the weight and purity alone, labeled before its Purchase (RD) / Karigar Jama, which clears it from its row (sql/210)"
+   "Bills to PDF — every sale bill of a period as its own PDF, all in one ZIP for the CA; customer sale bills and Sale Bills (RD); a bills.csv index (sql/211 + web)"
   ],
   "commits": []
  }
