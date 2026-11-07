@@ -1,16 +1,29 @@
 {
- "generated": "2026-11-07T09:17:20Z",
+ "generated": "2026-11-07T10:00:57Z",
  "source": {
-  "head": "753c729",
-  "commits": 301
+  "head": "6a8e3e3",
+  "commits": 303
  },
  "site": {
-  "deploys": 305,
-  "builds": 296,
+  "deploys": 306,
+  "builds": 297,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-07T08:19:25Z"
+  "latest": "2026-11-07T09:42:23Z"
  },
  "builds": [
+  {
+   "no": 297,
+   "build": "20261107-091731",
+   "built": "2026-11-07T09:17:31Z",
+   "published": "2026-11-07T09:42:23Z",
+   "republished": [],
+   "notes": [
+    "Bills to PDF — every sale bill of a period as its own PDF, all in one ZIP for the CA (7 Nov 2026, sql/211 + web) — \"MALA SARV SALE BILL EKACH VELES GENRATE KARAT YEIL PDF MADHYE ASE KARUN DE KARAN CA PDF PAN LAGLTE AAHE. EKACH ZIP FILE OPEN HOIL DATE RANGE SELECT KARAYCHI AANI ZIP MADHYE EXPORT HOIL AASE KARUN DE. RD SALE AANI CUSTOMER SALE BILL\""
+   ],
+   "commits": [
+    "e13bf3a"
+   ]
+  },
   {
    "no": 296,
    "build": "20261107-075407",
@@ -3864,8 +3877,11 @@
  ],
  "pending": {
   "notes": [
-   "Bills to PDF — every sale bill of a period as its own PDF, all in one ZIP for the CA; customer sale bills and Sale Bills (RD); a bills.csv index (sql/211 + web)"
+   "Devices per login — a login may hold more than one approved device when the owner allows it; swapnil: 2 (7 Nov 2026, sql/212 + web) — \"SWAPNIL LA 2 THIKANI THEV LOGIN KARAN TO SALE PAN KARTO AANI LABLE PAAN BANVTO\"",
+   "Devices per login — a login holds more than one approved device when the owner allows it; swapnil: 2 (sql/212)"
   ],
-  "commits": []
+  "commits": [
+   "6a8e3e3"
+  ]
  }
 }
