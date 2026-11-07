@@ -72,6 +72,14 @@
       <li>Every check is written to the audit trail (branch, counter, counts, missing labels) and <b>every chip heard on an expected item is marked verified</b> (its chip turns green on the lot page). Tap <b>Clear</b> before the next tray.</li>
       <li><b>Report</b> (app 1.5): under the tiles, <b>Scanned</b> saves an Excel file of the pieces heard and <b>Missing</b> one of the pieces not heard (with the chips that belong elsewhere and the unknown chips) to <i>Download/TATGOLD</i> on the gun; the share button next to each opens WhatsApp / mail / Drive with the file. Each file starts with a Summary sheet (branch, counter, lot, time, counts).</li>
     </ol>
+    <h3>4a · Stock Taking by RFID (the numbered count document)</h3>
+    <ol>
+      <li>In the ERP open the count first: <b>Stock → Stock Taking → New</b> — the branch, the whole shop or one counter, every category or one, every metal or one. The count snapshots what the ERP holds there.</li>
+      <li>On the gun tap <b>Stock check</b>: the <b>Stock Taking</b> box shows the open counts of the branch (with one open count it is already chosen). Hold the <b>trigger</b> over a tray, release, then tap <b>Post … to OZR-PST-0000nn</b> — every chip heard goes into the count in one go: <b>found now</b> (marked found via the gun), <b>already</b> (heard again), <b>extra</b> (a piece the count's snapshot does not hold — the count says where the ERP has it), <b>unknown</b> (a chip on no item: a spare card, or a card whose number is not in the card list).</li>
+      <li>The line under the tiles gives the count's figures (found / expected / not yet found / extra). Tap <b>Next tray</b> and go on; <b>Open the count</b> opens the document in the ERP. Pieces without a chip and the packets are scanned or weighed on the count itself.</li>
+      <li>Nothing in a count changes stock: the owner or the manager closes the count in the ERP and books each difference through its own document. Choose <b>— compare only —</b> in the box to keep the quick tray check of section 4 (it does not touch any count).</li>
+    </ol>
+    <p>A chip is heard only when its card is linked to the piece: type the pre-printed card number at labeling and the chip comes from the imported card list (Labeling → RFID Cards); a card not in the list needs pairing on the gun (section 3) or the list of its box imported once.</p>
     <p>First live check at Head Office (20 Sep 2026): 7 chips heard → 6 matched, 0 missing, 0 elsewhere, 1 unknown — the unknown one was a spare card lying in the tray. A card that belongs to no item always shows as <i>unknown</i>; keep spare cards away from the trays.</p>
     <p>Items without a paired chip cannot be counted by RFID — the note under the tiles says how many.</p>
   </div>
