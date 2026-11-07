@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-07T06:43:07Z",
+ "generated": "2026-11-07T06:53:20Z",
  "source": {
-  "head": "28983a8",
-  "commits": 295
+  "head": "da82205",
+  "commits": 297
  },
  "site": {
   "deploys": 302,
@@ -3818,10 +3818,14 @@
  "pending": {
   "notes": [
    "The GOLD SALE login — Price Check only, on every device (7 Nov 2026, sql/208 + web) — \"GOLD SALE cha jo login banvla aahe to multiple device var thev, tyala fakt Price Check cha access de, baki nako kahich — sarv sale team la ekach link\"",
-   "The BUILD stamp opens the Build history window — every build published so far, numbered, with what changed in each; this device's build marked (7 Nov 2026, web only) — \"BUILD var click kele tr aaj paryant kiti ver zale, ani tyat kay changes kele, te disu de\""
+   "The BUILD stamp opens the Build history window — every build published so far, numbered, with what changed in each; this device's build marked (7 Nov 2026, web only) — \"BUILD var click kele tr aaj paryant kiti ver zale, ani tyat kay changes kele, te disu de\"",
+   "Tests widened for the PRICE_CHECK role (7 Nov 2026): the partner and insurance tests take the Price Check login beside the partner — suite 699 = 696 + 2 known Customer Order + print-agent version (uncommitted .go files of another session)",
+   "The GOLD SALE login — Price Check only, on every device (sql/208): role PRICE CHECK, any device without the Login Desk, the login kept on /price-check/"
   ],
   "commits": [
-   "28983a8"
+   "28983a8",
+   "f7323ee",
+   "da82205"
   ]
  }
 }
