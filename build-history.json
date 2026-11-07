@@ -1,16 +1,46 @@
 {
- "generated": "2026-11-07T06:53:20Z",
+ "generated": "2026-11-07T07:27:24Z",
  "source": {
-  "head": "da82205",
-  "commits": 297
+  "head": "176d199",
+  "commits": 298
  },
  "site": {
-  "deploys": 302,
-  "builds": 293,
+  "deploys": 304,
+  "builds": 295,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-07T05:46:26Z"
+  "latest": "2026-11-07T07:07:41Z"
  },
  "builds": [
+  {
+   "no": 295,
+   "build": "20261107-065406",
+   "built": "2026-11-07T06:54:06Z",
+   "published": "2026-11-07T07:07:41Z",
+   "republished": [],
+   "notes": [
+    "Build history refreshed for the Price Check login build (7 Nov 2026): 293 builds / 302 deploys from the site repo, the sql/208 round pending"
+   ],
+   "commits": [
+    "176d199"
+   ]
+  },
+  {
+   "no": 294,
+   "build": "20261107-064358",
+   "built": "2026-11-07T06:43:58Z",
+   "published": "2026-11-07T06:55:58Z",
+   "republished": [],
+   "notes": [
+    "The GOLD SALE login — Price Check only, on every device (7 Nov 2026, sql/208 + web) — \"GOLD SALE cha jo login banvla aahe to multiple device var thev, tyala fakt Price Check cha access de, baki nako kahich — sarv sale team la ekach link\"",
+    "The BUILD stamp opens the Build history window — every build published so far, numbered, with what changed in each; this device's build marked (7 Nov 2026, web only) — \"BUILD var click kele tr aaj paryant kiti ver zale, ani tyat kay changes kele, te disu de\"",
+    "Tests widened for the PRICE_CHECK role (7 Nov 2026): the partner and insurance tests take the Price Check login beside the partner — suite 699 = 696 + 2 known Customer Order + print-agent version (uncommitted .go files of another session)"
+   ],
+   "commits": [
+    "28983a8",
+    "f7323ee",
+    "da82205"
+   ]
+  },
   {
    "no": 293,
    "build": "20261107-052616",
@@ -3817,15 +3847,8 @@
  ],
  "pending": {
   "notes": [
-   "The GOLD SALE login — Price Check only, on every device (7 Nov 2026, sql/208 + web) — \"GOLD SALE cha jo login banvla aahe to multiple device var thev, tyala fakt Price Check cha access de, baki nako kahich — sarv sale team la ekach link\"",
-   "The BUILD stamp opens the Build history window — every build published so far, numbered, with what changed in each; this device's build marked (7 Nov 2026, web only) — \"BUILD var click kele tr aaj paryant kiti ver zale, ani tyat kay changes kele, te disu de\"",
-   "Tests widened for the PRICE_CHECK role (7 Nov 2026): the partner and insurance tests take the Price Check login beside the partner — suite 699 = 696 + 2 known Customer Order + print-agent version (uncommitted .go files of another session)",
-   "The GOLD SALE login — Price Check only, on every device (sql/208): role PRICE CHECK, any device without the Login Desk, the login kept on /price-check/"
+   "Direct lot — a lot opened from the weight and purity alone, labeled before its Purchase (RD) / Karigar Jama, which clears it from its row (sql/210)"
   ],
-  "commits": [
-   "28983a8",
-   "f7323ee",
-   "da82205"
-  ]
+  "commits": []
  }
 }
