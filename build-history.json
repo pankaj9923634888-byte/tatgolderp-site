@@ -1,16 +1,31 @@
 {
- "generated": "2026-11-07T10:00:57Z",
+ "generated": "2026-11-07T18:58:24Z",
  "source": {
-  "head": "6a8e3e3",
-  "commits": 303
+  "head": "e295c17",
+  "commits": 308
  },
  "site": {
-  "deploys": 306,
-  "builds": 297,
+  "deploys": 307,
+  "builds": 298,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-07T09:42:23Z"
+  "latest": "2026-11-07T10:44:07Z"
  },
  "builds": [
+  {
+   "no": 298,
+   "build": "20261107-103334",
+   "built": "2026-11-07T10:33:34Z",
+   "published": "2026-11-07T10:44:07Z",
+   "republished": [],
+   "notes": [
+    "Devices per login — a login may hold more than one approved device when the owner allows it; swapnil: 2 (7 Nov 2026, sql/212 + web) — \"SWAPNIL LA 2 THIKANI THEV LOGIN KARAN TO SALE PAN KARTO AANI LABLE PAAN BANVTO\"",
+    "Build history refreshed for the devices-per-login build (7 Nov 2026): 297 builds / 306 deploys from the site repo (live 20261107-091731), the sql/212 round pending"
+   ],
+   "commits": [
+    "6a8e3e3",
+    "38524d2"
+   ]
+  },
   {
    "no": 297,
    "build": "20261107-091731",
@@ -3877,11 +3892,16 @@
  ],
  "pending": {
   "notes": [
-   "Devices per login — a login may hold more than one approved device when the owner allows it; swapnil: 2 (7 Nov 2026, sql/212 + web) — \"SWAPNIL LA 2 THIKANI THEV LOGIN KARAN TO SALE PAN KARTO AANI LABLE PAAN BANVTO\"",
-   "Devices per login — a login holds more than one approved device when the owner allows it; swapnil: 2 (sql/212)"
+   "Price Check finds a piece by its RFID card number (7 Nov 2026, sql/213) — \"LABLE RFID CHA NUMBER. TAKLA. TARI DETAILS AALE PAHIJE.\"",
+   "Stock Taking by RFID — the gun posts a sweep into the open count (8 Nov 2026, web only, no SQL) — \"mala rfid varun stock takking karayche asel tr karta yeil? … database rfid no kadhun te map karun ghe. build kar.\"",
+   "Stock Taking metal-wise — a count of the gold alone or the silver alone (7–8 Nov 2026, sql/214 + web) — \"ithe metal pramane gheta aale pahije\"",
+   "Build history refreshed for the metal-wise stock taking build (8 Nov 2026): 298 builds / 307 deploys from the site repo (live 20261107-103334), the sql/214 round and the RFID-gun round pending"
   ],
   "commits": [
-   "6a8e3e3"
+   "b3b1ddc",
+   "63b6418",
+   "5033a2e",
+   "e295c17"
   ]
  }
 }
