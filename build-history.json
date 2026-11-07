@@ -1,16 +1,48 @@
 {
- "generated": "2026-11-07T18:58:24Z",
+ "generated": "2026-11-07T20:36:51Z",
  "source": {
-  "head": "e295c17",
-  "commits": 308
+  "head": "f17279a",
+  "commits": 309
  },
  "site": {
-  "deploys": 307,
-  "builds": 298,
+  "deploys": 309,
+  "builds": 300,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-07T10:44:07Z"
+  "latest": "2026-11-07T19:51:18Z"
  },
  "builds": [
+  {
+   "no": 300,
+   "build": "20261107-185847",
+   "built": "2026-11-07T18:58:47Z",
+   "published": "2026-11-07T19:51:18Z",
+   "republished": [],
+   "notes": [
+    "WORKFLOW.md: the deploy token was renewed on 8 Nov 2026 (expires 6 Feb 2027) — how to renew it next time"
+   ],
+   "commits": [
+    "f17279a"
+   ]
+  },
+  {
+   "no": 299,
+   "build": "20261107-185121",
+   "built": "2026-11-07T18:51:21Z",
+   "published": "2026-11-07T19:34:49Z",
+   "republished": [],
+   "notes": [
+    "Price Check finds a piece by its RFID card number (7 Nov 2026, sql/213) — \"LABLE RFID CHA NUMBER. TAKLA. TARI DETAILS AALE PAHIJE.\"",
+    "Stock Taking by RFID — the gun posts a sweep into the open count (8 Nov 2026, web only, no SQL) — \"mala rfid varun stock takking karayche asel tr karta yeil? … database rfid no kadhun te map karun ghe. build kar.\"",
+    "Stock Taking metal-wise — a count of the gold alone or the silver alone (7–8 Nov 2026, sql/214 + web) — \"ithe metal pramane gheta aale pahije\"",
+    "Build history refreshed for the metal-wise stock taking build (8 Nov 2026): 298 builds / 307 deploys from the site repo (live 20261107-103334), the sql/214 round and the RFID-gun round pending"
+   ],
+   "commits": [
+    "b3b1ddc",
+    "63b6418",
+    "5033a2e",
+    "bcc1273"
+   ]
+  },
   {
    "no": 298,
    "build": "20261107-103334",
@@ -3892,16 +3924,9 @@
  ],
  "pending": {
   "notes": [
-   "Price Check finds a piece by its RFID card number (7 Nov 2026, sql/213) — \"LABLE RFID CHA NUMBER. TAKLA. TARI DETAILS AALE PAHIJE.\"",
-   "Stock Taking by RFID — the gun posts a sweep into the open count (8 Nov 2026, web only, no SQL) — \"mala rfid varun stock takking karayche asel tr karta yeil? … database rfid no kadhun te map karun ghe. build kar.\"",
-   "Stock Taking metal-wise — a count of the gold alone or the silver alone (7–8 Nov 2026, sql/214 + web) — \"ithe metal pramane gheta aale pahije\"",
-   "Build history refreshed for the metal-wise stock taking build (8 Nov 2026): 298 builds / 307 deploys from the site repo (live 20261107-103334), the sql/214 round and the RFID-gun round pending"
+   "IBJA benchmark rate on Metal Rates — fetched by the database at 12:30 / 18:30, Use IBJA rate fills the boxes, optional auto-apply (sql/216)",
+   "Inventory: a Making column (the rate on its basis, the sticker code under it), a Making box to find pieces by % / per gram / per piece / lumpsum or by one rate, and the Making heading sorts the whole stock (8 Nov 2026, sql/215 + web) — \"hya madhye ajun ek column de. making charge sorting % wise. per pcs wise. per gram wise. lumsum\""
   ],
-  "commits": [
-   "b3b1ddc",
-   "63b6418",
-   "5033a2e",
-   "e295c17"
-  ]
+  "commits": []
  }
 }
