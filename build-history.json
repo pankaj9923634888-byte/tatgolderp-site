@@ -1,16 +1,31 @@
 {
- "generated": "2026-11-07T20:36:51Z",
+ "generated": "2026-11-08T12:01:32Z",
  "source": {
-  "head": "f17279a",
-  "commits": 309
+  "head": "fbb6869",
+  "commits": 311
  },
  "site": {
-  "deploys": 309,
-  "builds": 300,
+  "deploys": 310,
+  "builds": 301,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-07T19:51:18Z"
+  "latest": "2026-11-07T21:05:40Z"
  },
  "builds": [
+  {
+   "no": 301,
+   "build": "20261107-203954",
+   "built": "2026-11-07T20:39:54Z",
+   "published": "2026-11-07T21:05:40Z",
+   "republished": [],
+   "notes": [
+    "IBJA benchmark rate on Metal Rates (8 Nov 2026, sql/216 + web) — \"ibja gold rate cha api software la add karta yeil ka\" → \"de karun mag\"",
+    "Inventory: Making column, Making box and Making sort (8 Nov 2026, sql/215 + web) — \"hya madhye ajun ek column de. making charge sorting % wise. per pcs wise. per gram wise. lumsum … item shodhayla sope hoil\""
+   ],
+   "commits": [
+    "aed351a",
+    "fbb6869"
+   ]
+  },
   {
    "no": 300,
    "build": "20261107-185847",
@@ -3924,8 +3939,7 @@
  ],
  "pending": {
   "notes": [
-   "IBJA benchmark rate on Metal Rates — fetched by the database at 12:30 / 18:30, Use IBJA rate fills the boxes, optional auto-apply (sql/216)",
-   "Inventory: a Making column (the rate on its basis, the sticker code under it), a Making box to find pieces by % / per gram / per piece / lumpsum or by one rate, and the Making heading sorts the whole stock (8 Nov 2026, sql/215 + web) — \"hya madhye ajun ek column de. making charge sorting % wise. per pcs wise. per gram wise. lumsum\""
+   "Lot voucher print — one A4 sheet of a lot for the labeler, printed as soon as the lot is created (sql/217)"
   ],
   "commits": []
  }
