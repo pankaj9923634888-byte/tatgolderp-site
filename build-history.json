@@ -1,16 +1,70 @@
 {
- "generated": "2026-11-08T12:01:32Z",
+ "generated": "2026-11-09T18:36:11Z",
  "source": {
-  "head": "fbb6869",
-  "commits": 311
+  "head": "98f1a2a",
+  "commits": 316
  },
  "site": {
-  "deploys": 310,
-  "builds": 301,
+  "deploys": 314,
+  "builds": 305,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-07T21:05:40Z"
+  "latest": "2026-11-09T17:15:33Z"
  },
  "builds": [
+  {
+   "no": 305,
+   "build": "20261109-171214",
+   "built": "2026-11-09T17:12:14Z",
+   "published": "2026-11-09T17:15:33Z",
+   "republished": [],
+   "notes": [
+    "Manager Inventory: the named login wins over the Role View hide (9 Nov 2026 22:41, his \"b\")"
+   ],
+   "commits": [
+    "98f1a2a"
+   ]
+  },
+  {
+   "no": 304,
+   "build": "20261109-060555",
+   "built": "2026-11-09T06:05:55Z",
+   "published": "2026-11-09T06:29:07Z",
+   "republished": [],
+   "notes": [
+    "Inventory for the manager login, one branch (9 Nov 2026, sql/218 + web) — \"manager la vishal hi screen disli pahije. fakt a&d. che login\""
+   ],
+   "commits": [
+    "8bba6e5"
+   ]
+  },
+  {
+   "no": 303,
+   "build": "20261108-144931",
+   "built": "2026-11-08T14:49:31Z",
+   "published": "2026-11-08T14:55:25Z",
+   "republished": [],
+   "notes": [
+    "Lot voucher in the Sale Bill's layout (8 Nov 2026 20:10) — \"voucher format sale bill chya alignment pramane kar, karan page tech astat\": drawn with TaxDoc / taxDocA4 (party rows + text totals + wordsPrefix options added), no Net total when no line has a net"
+   ],
+   "commits": [
+    "22bf8c7"
+   ]
+  },
+  {
+   "no": 302,
+   "build": "20261108-142402",
+   "built": "2026-11-08T14:24:02Z",
+   "published": "2026-11-08T14:33:03Z",
+   "republished": [],
+   "notes": [
+    "Lot voucher print (8 Nov 2026, sql/217 + web) — \"fakt lot jari create kela tari tyachi voucher print zale pahije; print kadhun deta yeil label karnaryala\": one A4 sheet of a lot for the labeler (/labeling/lot/print), opened right after a Direct lot, from every lot row, the lot page, Purchase (RD) and Karigar Desk; PDF twin; sql/217 adds the names to api.lot",
+    "Lot voucher = the gold-in slip only (8 Nov 2026 19:52) — \"mala fakt gold weight jevha in karto tyache voucher de, fakt gross weight; label zalyavar tr report nightoch\": gross weight + pieces, no stone / net / cost, no worksheet"
+   ],
+   "commits": [
+    "e1fcba9",
+    "6fbfe6f"
+   ]
+  },
   {
    "no": 301,
    "build": "20261107-203954",
@@ -3939,7 +3993,7 @@
  ],
  "pending": {
   "notes": [
-   "Lot voucher print — one A4 sheet of a lot for the labeler, printed as soon as the lot is created (sql/217)"
+   "Split / Resize — a label cut into pieces or made smaller / bigger, the difference to shortage · packet · old gold · karigar (10 Nov 2026, sql/219 + web) — \"ekha vastu lahan mothi keli … chain cut karun sale keli tr entry kashi\" → \"thik aahe kar build\""
   ],
   "commits": []
  }
