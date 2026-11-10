@@ -1,16 +1,29 @@
 {
- "generated": "2026-11-09T18:36:11Z",
+ "generated": "2026-11-09T20:41:19Z",
  "source": {
-  "head": "98f1a2a",
-  "commits": 316
+  "head": "35a8594",
+  "commits": 318
  },
  "site": {
-  "deploys": 314,
-  "builds": 305,
+  "deploys": 315,
+  "builds": 306,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-09T17:15:33Z"
+  "latest": "2026-11-09T18:53:08Z"
  },
  "builds": [
+  {
+   "no": 306,
+   "build": "20261109-184501",
+   "built": "2026-11-09T18:45:01Z",
+   "published": "2026-11-09T18:53:08Z",
+   "republished": [],
+   "notes": [
+    "Split / Resize — a label cut into pieces or made smaller / bigger, the difference booked (10 Nov 2026, sql/219 + web)"
+   ],
+   "commits": [
+    "25ae84f"
+   ]
+  },
   {
    "no": 305,
    "build": "20261109-171214",
@@ -3993,8 +4006,11 @@
  ],
  "pending": {
   "notes": [
-   "Split / Resize — a label cut into pieces or made smaller / bigger, the difference to shortage · packet · old gold · karigar (10 Nov 2026, sql/219 + web) — \"ekha vastu lahan mothi keli … chain cut karun sale keli tr entry kashi\" → \"thik aahe kar build\""
+   "Split / Resize at Head Office — a shop sends the piece there, the new labels go back to it (10 Nov 2026, sql/220 + web)",
+   "Split / Resize at Head Office — a shop sends the piece there (on hold, a transfer note), the voucher is made at Head Office and the new labels go back to the shop in the same save (10 Nov 2026, sql/220 + web) — \"pcs resize kiva split karaycha asel tr to pahile default head office la jail … branch transfer houn sale hoil\" → \"build\""
   ],
-  "commits": []
+  "commits": [
+   "35a8594"
+  ]
  }
 }
