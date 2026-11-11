@@ -1,16 +1,53 @@
 {
- "generated": "2026-11-11T17:46:23Z",
+ "generated": "2026-11-11T18:28:49Z",
  "source": {
-  "head": "f4659c8",
-  "commits": 330
+  "head": "6abe485",
+  "commits": 334
  },
  "site": {
-  "deploys": 322,
-  "builds": 310,
+  "deploys": 324,
+  "builds": 312,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-11T17:07:35Z"
+  "latest": "2026-11-11T17:56:21Z"
  },
  "builds": [
+  {
+   "no": 312,
+   "build": "20261111-174921",
+   "built": "2026-11-11T17:49:21Z",
+   "published": "2026-11-11T17:56:21Z",
+   "republished": [],
+   "notes": [
+    "Direct lot: diamond jewellery can be opened as a direct lot with its total carat and number of diamonds, and labeled before the bill arrives",
+    "Purchase (RD): a Diamond row can clear a diamond direct lot; the bill's gold and diamond cost becomes the cost of its labels",
+    "Masters → Counters: the owner adds, renames, retypes and deactivates or activates counters; the list shows every branch's counters and the pieces on each"
+   ],
+   "commits": [
+    "32b4169"
+   ],
+   "refs": [
+    "sql/225"
+   ]
+  },
+  {
+   "no": 311,
+   "build": "20261111-173448",
+   "built": "2026-11-11T17:34:48Z",
+   "published": "2026-11-11T17:47:35Z",
+   "republished": [],
+   "notes": [
+    "Masters → Salesmen: salesmen can be added, edited, moved to another branch and deactivated; a new salesman is offered on the Sale Bill at once"
+   ],
+   "commits": [
+    "4cddffe",
+    "1734f82",
+    "f4659c8"
+   ],
+   "refs": [
+    "sql/224",
+    "sql/223"
+   ]
+  },
   {
    "no": 310,
    "build": "20261111-135822",
@@ -4625,15 +4662,12 @@
  ],
  "pending": {
   "notes": [
-   "Masters → Salesmen: salesmen can be added, edited, moved to another branch and deactivated; a new salesman is offered on the Sale Bill at once",
-   "Direct lot: diamond jewellery can be opened as a direct lot with its total carat and number of diamonds, and labeled before the bill arrives",
-   "Purchase (RD): a Diamond row can clear a diamond direct lot; the bill's gold and diamond cost becomes the cost of its labels",
-   "Masters → Counters: the owner adds a counter, renames it, changes its type and deactivates or activates it; the list shows every branch's counters and the pieces on each"
+   "Sale Bill: the owner can switch the Bill discount box on or off; while it is off, no login can type a bill discount on a bill or an estimate"
   ],
   "commits": [
-   "4cddffe",
-   "1734f82",
-   "f4659c8"
+   "45edba7",
+   "c6b9375",
+   "6abe485"
   ]
  }
 }
