@@ -1,23 +1,42 @@
 {
- "generated": "2026-11-11T04:00:19Z",
+ "generated": "2026-11-11T13:56:29Z",
  "source": {
-  "head": "ca0a2e2",
-  "commits": 325
+  "head": "e43d8a7",
+  "commits": 326
  },
  "site": {
-  "deploys": 318,
-  "builds": 308,
+  "deploys": 321,
+  "builds": 309,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-11T03:20:16Z"
+  "latest": "2026-11-11T13:25:13Z"
  },
  "builds": [
+  {
+   "no": 309,
+   "build": "20261111-040951",
+   "built": "2026-11-11T04:09:51Z",
+   "published": "2026-11-11T04:44:25Z",
+   "republished": [
+    "2026-11-11T13:25:13Z"
+   ],
+   "notes": [
+    "Batch Labeling: a lot whose weight does not match is closed by the owner logins only"
+   ],
+   "commits": [
+    "e43d8a7"
+   ],
+   "refs": [
+    "sql/222"
+   ]
+  },
   {
    "no": 308,
    "build": "20261110-191808",
    "built": "2026-11-10T19:18:08Z",
    "published": "2026-11-11T03:01:12Z",
    "republished": [
-    "2026-11-11T03:20:16Z"
+    "2026-11-11T03:20:16Z",
+    "2026-11-11T13:20:58Z"
    ],
    "notes": [
     "Build history: every build's notes rewritten as plain release notes",
@@ -4592,7 +4611,7 @@
  ],
  "pending": {
   "notes": [
-   "Batch Labeling: a lot whose weight does not match (more than 0.050 g left) is now closed by the owner only; labeling staff close a lot when its weight matches"
+   "Sales and Purchase details: choose a metal (All · Gold · Silver) and every tab, total and export shows that metal only, Day included"
   ],
   "commits": []
  }
