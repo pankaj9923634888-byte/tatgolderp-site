@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-11T17:34:36Z",
+ "generated": "2026-11-11T17:46:23Z",
  "source": {
-  "head": "8b4a9cf",
-  "commits": 327
+  "head": "f4659c8",
+  "commits": 330
  },
  "site": {
   "deploys": 322,
@@ -4625,8 +4625,15 @@
  ],
  "pending": {
   "notes": [
-   "Masters → Salesmen: salesmen can be added, edited, moved to another branch and deactivated; a new salesman is offered on the Sale Bill at once"
+   "Masters → Salesmen: salesmen can be added, edited, moved to another branch and deactivated; a new salesman is offered on the Sale Bill at once",
+   "Direct lot: diamond jewellery can be opened as a direct lot with its total carat and number of diamonds, and labeled before the bill arrives",
+   "Purchase (RD): a Diamond row can clear a diamond direct lot; the bill's gold and diamond cost becomes the cost of its labels",
+   "Masters → Counters: the owner adds a counter, renames it, changes its type and deactivates or activates it; the list shows every branch's counters and the pieces on each"
   ],
-  "commits": []
+  "commits": [
+   "4cddffe",
+   "1734f82",
+   "f4659c8"
+  ]
  }
 }
