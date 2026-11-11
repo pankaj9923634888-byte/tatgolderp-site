@@ -1,16 +1,41 @@
 {
- "generated": "2026-11-10T19:17:28Z",
+ "generated": "2026-11-11T03:10:39Z",
  "source": {
-  "head": "b809dbe",
-  "commits": 322
+  "head": "483edaf",
+  "commits": 324
  },
  "site": {
-  "deploys": 316,
-  "builds": 307,
+  "deploys": 317,
+  "builds": 308,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-10T04:55:25Z"
+  "latest": "2026-11-11T03:01:12Z"
  },
  "builds": [
+  {
+   "no": 308,
+   "build": "20261110-191808",
+   "built": "2026-11-10T19:18:08Z",
+   "published": "2026-11-11T03:01:12Z",
+   "republished": [],
+   "notes": [
+    "Build history: every build's notes rewritten as plain release notes",
+    "Purchase (RD): a Diamond row takes the bill's total diamond carat and count; diamonds come off the net weight and the row becomes a diamond lot for labeling",
+    "Labeling a diamond lot: each piece gets its carat, count, clarity-colour, amount and certificate; labels start with D; the last piece takes what is left",
+    "Diamond stickers show the gross and net weight, the diamond carat and count, the purity with the clarity-colour, and the making code",
+    "Sale bills and estimates name the diamonds on the line and price the gold, making and diamonds together",
+    "Opening Stock: diamond jewellery already in the shop is entered as a diamond lot",
+    "Diamond rates per carat for each clarity-colour are set from the diamond lot page"
+   ],
+   "commits": [
+    "869917d",
+    "b809dbe",
+    "d996cfe",
+    "483edaf"
+   ],
+   "refs": [
+    "sql/221"
+   ]
+  },
   {
    "no": 307,
    "build": "20261109-204452",
@@ -4561,20 +4586,5 @@
    "commits": [],
    "refs": []
   }
- ],
- "pending": {
-  "notes": [
-   "Build history: every build's notes rewritten as plain release notes",
-   "Purchase (RD): a Diamond row takes the bill's total diamond carat and count; the diamonds come off the net weight and the row becomes a diamond lot at the Labeling Counter",
-   "Labeling a diamond lot: each piece gets its diamond carat, count, clarity-colour, diamond amount and certificate; its label starts with D, and the last piece takes the diamonds left in the lot",
-   "Diamond stickers show the gross and net weight, the diamond carat and count, the purity with the clarity-colour, and the making code",
-   "Sale bills and estimates name the diamonds on the line and price the gold, making and diamonds together",
-   "Opening Stock: diamond jewellery already in the shop is entered as a diamond lot",
-   "Diamond rates per carat for each clarity-colour are set from the diamond lot page"
-  ],
-  "commits": [
-   "869917d",
-   "b809dbe"
-  ]
- }
+ ]
 }
