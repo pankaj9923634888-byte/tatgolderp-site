@@ -1,14 +1,14 @@
 {
- "generated": "2026-11-11T03:10:39Z",
+ "generated": "2026-11-11T04:00:19Z",
  "source": {
-  "head": "483edaf",
-  "commits": 324
+  "head": "ca0a2e2",
+  "commits": 325
  },
  "site": {
-  "deploys": 317,
+  "deploys": 318,
   "builds": 308,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-11T03:01:12Z"
+  "latest": "2026-11-11T03:20:16Z"
  },
  "builds": [
   {
@@ -16,7 +16,9 @@
    "build": "20261110-191808",
    "built": "2026-11-10T19:18:08Z",
    "published": "2026-11-11T03:01:12Z",
-   "republished": [],
+   "republished": [
+    "2026-11-11T03:20:16Z"
+   ],
    "notes": [
     "Build history: every build's notes rewritten as plain release notes",
     "Purchase (RD): a Diamond row takes the bill's total diamond carat and count; diamonds come off the net weight and the row becomes a diamond lot for labeling",
@@ -30,7 +32,8 @@
     "869917d",
     "b809dbe",
     "d996cfe",
-    "483edaf"
+    "483edaf",
+    "ca0a2e2"
    ],
    "refs": [
     "sql/221"
@@ -4586,5 +4589,11 @@
    "commits": [],
    "refs": []
   }
- ]
+ ],
+ "pending": {
+  "notes": [
+   "Batch Labeling: a lot whose weight does not match (more than 0.050 g left) is now closed by the owner only; labeling staff close a lot when its weight matches"
+  ],
+  "commits": []
+ }
 }
