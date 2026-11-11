@@ -1,16 +1,30 @@
 {
- "generated": "2026-11-11T13:56:29Z",
+ "generated": "2026-11-11T17:34:36Z",
  "source": {
-  "head": "e43d8a7",
-  "commits": 326
+  "head": "8b4a9cf",
+  "commits": 327
  },
  "site": {
-  "deploys": 321,
-  "builds": 309,
+  "deploys": 322,
+  "builds": 310,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-11T13:25:13Z"
+  "latest": "2026-11-11T17:07:35Z"
  },
  "builds": [
+  {
+   "no": 310,
+   "build": "20261111-135822",
+   "built": "2026-11-11T13:58:22Z",
+   "published": "2026-11-11T17:07:35Z",
+   "republished": [],
+   "notes": [
+    "Sales and Purchase details: choose a metal (All · Gold · Silver) and every tab, total and export shows that metal only, Day included"
+   ],
+   "commits": [
+    "8b4a9cf"
+   ],
+   "refs": []
+  },
   {
    "no": 309,
    "build": "20261111-040951",
@@ -4611,7 +4625,7 @@
  ],
  "pending": {
   "notes": [
-   "Sales and Purchase details: choose a metal (All · Gold · Silver) and every tab, total and export shows that metal only, Day included"
+   "Masters → Salesmen: salesmen can be added, edited, moved to another branch and deactivated; a new salesman is offered on the Sale Bill at once"
   ],
   "commits": []
  }
