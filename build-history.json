@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-14T17:47:26Z",
+ "generated": "2026-11-14T17:50:10Z",
  "source": {
-  "head": "1fac41b",
-  "commits": 356
+  "head": "226e591",
+  "commits": 358
  },
  "site": {
   "deploys": 333,
@@ -4816,12 +4816,15 @@
  ],
  "pending": {
   "notes": [
-   "Cash / Card / UPI report: clicking Cash, Card, UPI or a row of the summary lists the bills and vouchers behind that amount, grouped by kind with subtotals, each one opening on a click"
+   "Cash / Card / UPI report: clicking Cash, Card, UPI or a row of the summary lists the bills and vouchers behind that amount, grouped by kind with subtotals, each one opening on a click",
+   "Packets: a Metal choice (All metals · Gold · Silver, with the packet count of each) — the list, the totals and the Excel / PDF show the chosen metal only, and Packet from the vault opens on that metal"
   ],
   "commits": [
    "49bbd8c",
    "897dc23",
-   "1fac41b"
+   "1fac41b",
+   "edbdabd",
+   "226e591"
   ]
  }
 }
