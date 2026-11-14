@@ -1,16 +1,34 @@
 {
- "generated": "2026-11-14T12:20:15Z",
+ "generated": "2026-11-14T12:34:29Z",
  "source": {
-  "head": "fc61cff",
-  "commits": 343
+  "head": "091a8b1",
+  "commits": 344
  },
  "site": {
-  "deploys": 328,
-  "builds": 316,
+  "deploys": 329,
+  "builds": 317,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-14T11:38:37Z"
+  "latest": "2026-11-14T12:28:47Z"
  },
  "builds": [
+  {
+   "no": 317,
+   "build": "20261114-122215",
+   "built": "2026-11-14T12:22:15Z",
+   "published": "2026-11-14T12:28:47Z",
+   "republished": [],
+   "notes": [
+    "Edits sent for approval: the accounts login gets the Edit buttons of the bills and vouchers it can open; each correction waits in Approvals, showing what will change, and is made only when the owner approves it",
+    "Split / Resize: the stock transfer note of a piece sent to Head Office opens for printing as soon as it is sent, marked for Split / Resize and showing what is to be done, so the printed note travels with the piece"
+   ],
+   "commits": [
+    "fc61cff",
+    "091a8b1"
+   ],
+   "refs": [
+    "sql/232"
+   ]
+  },
   {
    "no": 316,
    "build": "20261114-112956",
@@ -4737,11 +4755,8 @@
  ],
  "pending": {
   "notes": [
-   "Edits sent for approval: the accounts login gets the Edit buttons of the bills and vouchers it can open; each correction waits in Approvals, showing what will change, and is made only when the owner approves it",
-   "Split / Resize: the stock transfer note of a piece sent to Head Office opens for printing as soon as it is sent, marked for Split / Resize and showing what is to be done, so the printed note travels with the piece"
+   "Karigar Desk: the item lines no longer shrink to a thin strip on a laptop screen — the column headings and at least two full lines always stay in view, and the page scrolls instead"
   ],
-  "commits": [
-   "fc61cff"
-  ]
+  "commits": []
  }
 }
