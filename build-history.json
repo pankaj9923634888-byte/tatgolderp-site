@@ -1,16 +1,30 @@
 {
- "generated": "2026-11-14T11:25:24Z",
+ "generated": "2026-11-14T12:20:15Z",
  "source": {
-  "head": "de3cdaa",
-  "commits": 341
+  "head": "fc61cff",
+  "commits": 343
  },
  "site": {
-  "deploys": 327,
-  "builds": 315,
+  "deploys": 328,
+  "builds": 316,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-14T10:58:09Z"
+  "latest": "2026-11-14T11:38:37Z"
  },
  "builds": [
+  {
+   "no": 316,
+   "build": "20261114-112956",
+   "built": "2026-11-14T11:29:56Z",
+   "published": "2026-11-14T11:38:37Z",
+   "republished": [],
+   "notes": [
+    "Saved Bills (Sales Invoices): a search bar — find any bill by bill number, customer name, mobile number or amount, with From / To dates"
+   ],
+   "commits": [
+    "c7dd1bf"
+   ],
+   "refs": []
+  },
   {
    "no": 315,
    "build": "20261114-090042",
@@ -4723,8 +4737,11 @@
  ],
  "pending": {
   "notes": [
-   "Saved Bills (Sales Invoices): a search bar — find any bill by bill number, customer name, mobile number or amount, with From / To dates"
+   "Edits sent for approval: the accounts login gets the Edit buttons of the bills and vouchers it can open; each correction waits in Approvals, showing what will change, and is made only when the owner approves it",
+   "Split / Resize: the stock transfer note of a piece sent to Head Office opens for printing as soon as it is sent, marked for Split / Resize and showing what is to be done, so the printed note travels with the piece"
   ],
-  "commits": []
+  "commits": [
+   "fc61cff"
+  ]
  }
 }
