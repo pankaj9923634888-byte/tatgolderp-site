@@ -1,16 +1,36 @@
 {
- "generated": "2026-11-11T18:28:49Z",
+ "generated": "2026-11-14T06:25:34Z",
  "source": {
-  "head": "6abe485",
-  "commits": 334
+  "head": "102cccb",
+  "commits": 337
  },
  "site": {
-  "deploys": 324,
-  "builds": 312,
+  "deploys": 325,
+  "builds": 313,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-11T17:56:21Z"
+  "latest": "2026-11-11T18:37:58Z"
  },
  "builds": [
+  {
+   "no": 313,
+   "build": "20261111-182901",
+   "built": "2026-11-11T18:29:01Z",
+   "published": "2026-11-11T18:37:58Z",
+   "republished": [],
+   "notes": [
+    "Sale Bill: the owner can switch the Bill discount box on or off; while it is off, no login can type a bill discount on a bill or an estimate"
+   ],
+   "commits": [
+    "45edba7",
+    "c6b9375",
+    "6abe485",
+    "c5b3ee4"
+   ],
+   "refs": [
+    "sql/223",
+    "sql/226"
+   ]
+  },
   {
    "no": 312,
    "build": "20261111-174921",
@@ -4662,12 +4682,13 @@
  ],
  "pending": {
   "notes": [
-   "Sale Bill: the owner can switch the Bill discount box on or off; while it is off, no login can type a bill discount on a bill or an estimate"
+   "Label Status: each label shows its full history, newest first — the lot it was labeled from, sticker prints, corrections, moves and transfers, holds, hallmarking, estimates, sales and returns, splits, packet weights and stock counts; cancelled documents appear only when asked",
+   "Batch Labeling: the pieces typed are kept on the computer, and a batch whose save is cut off by an internet drop is saved by itself, exactly once, when the connection returns; the Labeling list shows lots with pieces still kept on the computer",
+   "Partner logins: a partner can be limited to chosen shops — Branch Health then shows only those shops, without Wednesday; a partner login opens nothing beyond its own screens"
   ],
   "commits": [
-   "45edba7",
-   "c6b9375",
-   "6abe485"
+   "974d30d",
+   "102cccb"
   ]
  }
 }
