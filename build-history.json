@@ -1,16 +1,35 @@
 {
- "generated": "2026-11-14T12:34:29Z",
+ "generated": "2026-11-14T13:12:11Z",
  "source": {
-  "head": "091a8b1",
-  "commits": 344
+  "head": "d0a101f",
+  "commits": 347
  },
  "site": {
-  "deploys": 329,
-  "builds": 317,
+  "deploys": 331,
+  "builds": 318,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-14T12:28:47Z"
+  "latest": "2026-11-14T13:03:38Z"
  },
  "builds": [
+  {
+   "no": 318,
+   "build": "20261114-123514",
+   "built": "2026-11-14T12:35:14Z",
+   "published": "2026-11-14T12:45:47Z",
+   "republished": [
+    "2026-11-14T13:03:38Z"
+   ],
+   "notes": [
+    "Karigar Desk: the item lines no longer shrink to a thin strip on a laptop; the headings and at least two lines always stay in view"
+   ],
+   "commits": [
+    "e300591",
+    "a45ac5c"
+   ],
+   "refs": [
+    "sql/232"
+   ]
+  },
   {
    "no": 317,
    "build": "20261114-122215",
@@ -4755,8 +4774,11 @@
  ],
  "pending": {
   "notes": [
-   "Karigar Desk: the item lines no longer shrink to a thin strip on a laptop screen — the column headings and at least two full lines always stay in view, and the page scrolls instead"
+   "Salesman's token: the salesman fills in the customer's details on the Price Check and a token with the full making-charge calculation prints at the counter",
+   "Sale Bill: a salesman's token brings its pieces, customer, salesman and agreed making onto the bill"
   ],
-  "commits": []
+  "commits": [
+   "d0a101f"
+  ]
  }
 }
