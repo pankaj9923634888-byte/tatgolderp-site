@@ -1,16 +1,50 @@
 {
- "generated": "2026-11-14T17:50:10Z",
+ "generated": "2026-11-14T18:31:19Z",
  "source": {
-  "head": "226e591",
-  "commits": 358
+  "head": "b9d013a",
+  "commits": 362
  },
  "site": {
-  "deploys": 333,
-  "builds": 320,
+  "deploys": 335,
+  "builds": 322,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-14T17:20:12Z"
+  "latest": "2026-11-14T18:01:41Z"
  },
  "builds": [
+  {
+   "no": 322,
+   "build": "20261114-175018",
+   "built": "2026-11-14T17:50:18Z",
+   "published": "2026-11-14T18:01:41Z",
+   "republished": [],
+   "notes": [
+    "Packets: choose All metals, Gold or Silver — the list, the totals and the Excel / PDF show that metal only, and Packet from the vault opens on it"
+   ],
+   "commits": [],
+   "refs": []
+  },
+  {
+   "no": 321,
+   "build": "20261114-174831",
+   "built": "2026-11-14T17:48:31Z",
+   "published": "2026-11-14T17:58:45Z",
+   "republished": [],
+   "notes": [
+    "Cash / Card / UPI report: click a figure or a summary row to list the bills and vouchers behind it, grouped by kind, each one opening on a click"
+   ],
+   "commits": [
+    "49bbd8c",
+    "897dc23",
+    "1fac41b",
+    "edbdabd",
+    "226e591",
+    "db23e72",
+    "16449fa"
+   ],
+   "refs": [
+    "sql/238"
+   ]
+  },
   {
    "no": 320,
    "build": "20261114-153859",
@@ -4816,15 +4850,11 @@
  ],
  "pending": {
   "notes": [
-   "Cash / Card / UPI report: clicking Cash, Card, UPI or a row of the summary lists the bills and vouchers behind that amount, grouped by kind with subtotals, each one opening on a click",
-   "Packets: a Metal choice (All metals · Gold · Silver, with the packet count of each) — the list, the totals and the Excel / PDF show the chosen metal only, and Packet from the vault opens on that metal"
+   "Sale Bill: a bill is saved only once — pressing Save again opens the bill already saved, and the same items for the same customer within 15 minutes ask first"
   ],
   "commits": [
-   "49bbd8c",
-   "897dc23",
-   "1fac41b",
-   "edbdabd",
-   "226e591"
+   "acefb1a",
+   "b9d013a"
   ]
  }
 }
