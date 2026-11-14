@@ -1,16 +1,40 @@
 {
- "generated": "2026-11-14T15:38:36Z",
+ "generated": "2026-11-14T17:47:26Z",
  "source": {
-  "head": "8f9fd06",
-  "commits": 351
+  "head": "1fac41b",
+  "commits": 356
  },
  "site": {
-  "deploys": 332,
-  "builds": 319,
+  "deploys": 333,
+  "builds": 320,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-14T13:55:27Z"
+  "latest": "2026-11-14T17:20:12Z"
  },
  "builds": [
+  {
+   "no": 320,
+   "build": "20261114-153859",
+   "built": "2026-11-14T15:38:59Z",
+   "published": "2026-11-14T17:20:12Z",
+   "republished": [],
+   "notes": [
+    "Price Check: the Selling list shows the salesmen of every shop, this shop first and each other shop under its name; any of them can make the token",
+    "Sale Bill: a token made by a salesman of another shop shows that salesman's name on the item rows",
+    "Purchase URD: New estimate — the customer's old gold or silver is valued at the day's rates and printed as a URD estimate, without buying anything or taking any payment; Save as estimate does the same from a purchase being typed",
+    "Estimates & Quotations: a URD estimates tab — open, purchased, expired and cancelled; Make the purchase opens Purchase URD filled from the estimate and closes it when the purchase is posted"
+   ],
+   "commits": [
+    "0f0a13b",
+    "c58b7f9",
+    "8f9fd06",
+    "ef467d7",
+    "e56ee04"
+   ],
+   "refs": [
+    "sql/236",
+    "sql/237"
+   ]
+  },
   {
    "no": 319,
    "build": "20261114-131236",
@@ -4792,15 +4816,12 @@
  ],
  "pending": {
   "notes": [
-   "Price Check: the Selling list shows the salesmen of every shop, this shop first and each other shop under its name; any of them can make the token",
-   "Sale Bill: a token made by a salesman of another shop shows that salesman's name on the item rows",
-   "Purchase URD: New estimate — the customer's old gold or silver is valued at the day's rates and printed as a URD estimate, without buying anything or taking any payment; Save as estimate does the same from a purchase being typed",
-   "Estimates & Quotations: a URD estimates tab — open, purchased, expired and cancelled; Make the purchase opens Purchase URD filled from the estimate and closes it when the purchase is posted"
+   "Cash / Card / UPI report: clicking Cash, Card, UPI or a row of the summary lists the bills and vouchers behind that amount, grouped by kind with subtotals, each one opening on a click"
   ],
   "commits": [
-   "0f0a13b",
-   "c58b7f9",
-   "8f9fd06"
+   "49bbd8c",
+   "897dc23",
+   "1fac41b"
   ]
  }
 }
