@@ -1,16 +1,46 @@
 {
- "generated": "2026-11-15T03:29:57Z",
+ "generated": "2026-11-15T08:08:09Z",
  "source": {
-  "head": "7bf1e81",
-  "commits": 366
+  "head": "d77182a",
+  "commits": 371
  },
  "site": {
-  "deploys": 337,
-  "builds": 324,
+  "deploys": 339,
+  "builds": 326,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-15T03:27:35Z"
+  "latest": "2026-11-15T06:06:41Z"
  },
  "builds": [
+  {
+   "no": 326,
+   "build": "20261115-055744",
+   "built": "2026-11-15T05:57:44Z",
+   "published": "2026-11-15T06:06:41Z",
+   "republished": [],
+   "notes": [
+    "Price Check: the salesman's token prints on half an A4 sheet from the iPad (AirPrint) — one A4 printer for the shop instead of a receipt printer at each counter"
+   ],
+   "commits": [
+    "42b0b07",
+    "a05a753"
+   ],
+   "refs": []
+  },
+  {
+   "no": 325,
+   "build": "20261115-051415",
+   "built": "2026-11-15T05:14:15Z",
+   "published": "2026-11-15T05:33:47Z",
+   "republished": [],
+   "notes": [
+    "Price Check: discount as ₹ off, % off the price, % off the making or a final price — each worked into the making of the pieces from the labels"
+   ],
+   "commits": [
+    "88c577c",
+    "5180c93"
+   ],
+   "refs": []
+  },
   {
    "no": 324,
    "build": "20261114-192532",
@@ -4882,5 +4912,13 @@
    "commits": [],
    "refs": []
   }
- ]
+ ],
+ "pending": {
+  "notes": [
+   "Customers & Parties: Excel and PDF of the whole list — all parties of the chosen type and search with mobile, WhatsApp and address, not only the 200 on screen"
+  ],
+  "commits": [
+   "d77182a"
+  ]
+ }
 }
