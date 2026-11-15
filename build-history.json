@@ -1,16 +1,34 @@
 {
- "generated": "2026-11-14T18:31:19Z",
+ "generated": "2026-11-14T19:25:13Z",
  "source": {
-  "head": "b9d013a",
-  "commits": 362
+  "head": "ea98c08",
+  "commits": 364
  },
  "site": {
-  "deploys": 335,
-  "builds": 322,
+  "deploys": 336,
+  "builds": 323,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-14T18:01:41Z"
+  "latest": "2026-11-14T18:42:58Z"
  },
  "builds": [
+  {
+   "no": 323,
+   "build": "20261114-183141",
+   "built": "2026-11-14T18:31:41Z",
+   "published": "2026-11-14T18:42:58Z",
+   "republished": [],
+   "notes": [
+    "Sale Bill: a bill is saved only once — pressing Save again opens the bill already saved, and the same items for the same customer within 15 minutes ask first"
+   ],
+   "commits": [
+    "b9d013a",
+    "6bb4670",
+    "ea98c08"
+   ],
+   "refs": [
+    "sql/239"
+   ]
+  },
   {
    "no": 322,
    "build": "20261114-175018",
@@ -20,7 +38,9 @@
    "notes": [
     "Packets: choose All metals, Gold or Silver — the list, the totals and the Excel / PDF show that metal only, and Packet from the vault opens on it"
    ],
-   "commits": [],
+   "commits": [
+    "acefb1a"
+   ],
    "refs": []
   },
   {
@@ -4850,11 +4870,8 @@
  ],
  "pending": {
   "notes": [
-   "Sale Bill: a bill is saved only once — pressing Save again opens the bill already saved, and the same items for the same customer within 15 minutes ask first"
+   "Price Check: type the price the customer will pay, or tap a round figure under the price, and the making is worked back so the price is exactly that figure"
   ],
-  "commits": [
-   "acefb1a",
-   "b9d013a"
-  ]
+  "commits": []
  }
 }
