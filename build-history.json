@@ -1,16 +1,33 @@
 {
- "generated": "2026-11-15T08:08:09Z",
+ "generated": "2026-11-15T08:33:48Z",
  "source": {
-  "head": "d77182a",
-  "commits": 371
+  "head": "980d469",
+  "commits": 373
  },
  "site": {
-  "deploys": 339,
-  "builds": 326,
+  "deploys": 340,
+  "builds": 327,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-15T06:06:41Z"
+  "latest": "2026-11-15T08:15:12Z"
  },
  "builds": [
+  {
+   "no": 327,
+   "build": "20261115-080916",
+   "built": "2026-11-15T08:09:16Z",
+   "published": "2026-11-15T08:15:12Z",
+   "republished": [],
+   "notes": [
+    "Customers & Parties: Excel and PDF of the whole list — all parties of the chosen type and search with mobile, WhatsApp and address, not only the 200 on screen"
+   ],
+   "commits": [
+    "d77182a",
+    "7c54a7d"
+   ],
+   "refs": [
+    "sql/240"
+   ]
+  },
   {
    "no": 326,
    "build": "20261115-055744",
@@ -4915,10 +4932,10 @@
  ],
  "pending": {
   "notes": [
-   "Customers & Parties: Excel and PDF of the whole list — all parties of the chosen type and search with mobile, WhatsApp and address, not only the 200 on screen"
+   "WhatsApp: vouchers can be sent through WappConnect, from the shop's own business number"
   ],
   "commits": [
-   "d77182a"
+   "980d469"
   ]
  }
 }
