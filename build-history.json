@@ -1,16 +1,31 @@
 {
- "generated": "2026-11-14T19:25:13Z",
+ "generated": "2026-11-15T03:29:57Z",
  "source": {
-  "head": "ea98c08",
-  "commits": 364
+  "head": "7bf1e81",
+  "commits": 366
  },
  "site": {
-  "deploys": 336,
-  "builds": 323,
+  "deploys": 337,
+  "builds": 324,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-14T18:42:58Z"
+  "latest": "2026-11-15T03:27:35Z"
  },
  "builds": [
+  {
+   "no": 324,
+   "build": "20261114-192532",
+   "built": "2026-11-14T19:25:32Z",
+   "published": "2026-11-15T03:27:35Z",
+   "republished": [],
+   "notes": [
+    "Price Check: type the price the customer will pay, or tap a round figure under the price, and the making is worked back so the price is exactly that figure"
+   ],
+   "commits": [
+    "5fc10df",
+    "7bf1e81"
+   ],
+   "refs": []
+  },
   {
    "no": 323,
    "build": "20261114-183141",
@@ -4867,11 +4882,5 @@
    "commits": [],
    "refs": []
   }
- ],
- "pending": {
-  "notes": [
-   "Price Check: type the price the customer will pay, or tap a round figure under the price, and the making is worked back so the price is exactly that figure"
-  ],
-  "commits": []
- }
+ ]
 }
