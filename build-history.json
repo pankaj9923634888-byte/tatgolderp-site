@@ -1,16 +1,33 @@
 {
- "generated": "2026-11-15T11:07:42Z",
+ "generated": "2026-11-15T19:46:06Z",
  "source": {
-  "head": "c8d6432",
-  "commits": 377
+  "head": "bd8a98f",
+  "commits": 379
  },
  "site": {
-  "deploys": 341,
-  "builds": 328,
+  "deploys": 342,
+  "builds": 329,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-15T09:01:44Z"
+  "latest": "2026-11-15T11:19:42Z"
  },
  "builds": [
+  {
+   "no": 329,
+   "build": "20261115-111103",
+   "built": "2026-11-15T11:11:03Z",
+   "published": "2026-11-15T11:19:42Z",
+   "republished": [],
+   "notes": [
+    "Sale Bill: scan the price token's QR first, before typing the customer — the customer, the pieces and the making fill in"
+   ],
+   "commits": [
+    "ed594a9",
+    "f0a4cec",
+    "c8d6432",
+    "f14797f"
+   ],
+   "refs": []
+  },
   {
    "no": 328,
    "build": "20261115-083409",
@@ -4949,14 +4966,10 @@
  ],
  "pending": {
   "notes": [
-   "CRM WhatsApp texts: the shop's name and mobile number at the end of every message — maintenance script for this installation",
-   "CRM WhatsApp texts: the mobile number at the end of every message is 9923631177",
-   "Sale Bill: scan the price token's QR first, before typing the customer — the customer, the pieces and the making fill in"
+   "CRM login: a new role, CRM Executive, opens the CRM desk only — Today, Enquiries, Wanted list, Customers, Occasions & Campaigns — without Insights, Performance or Settings"
   ],
   "commits": [
-   "ed594a9",
-   "f0a4cec",
-   "c8d6432"
+   "bd8a98f"
   ]
  }
 }
