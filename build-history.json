@@ -1,16 +1,44 @@
 {
- "generated": "2026-11-15T20:18:49Z",
+ "generated": "2026-11-16T04:28:29Z",
  "source": {
-  "head": "4bf7f16",
-  "commits": 380
+  "head": "f7e1d0e",
+  "commits": 382
  },
  "site": {
-  "deploys": 343,
-  "builds": 330,
+  "deploys": 345,
+  "builds": 332,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-15T19:52:33Z"
+  "latest": "2026-11-16T01:06:58Z"
  },
  "builds": [
+  {
+   "no": 332,
+   "build": "20261115-202328",
+   "built": "2026-11-15T20:23:28Z",
+   "published": "2026-11-16T01:06:58Z",
+   "republished": [],
+   "notes": [],
+   "commits": [],
+   "refs": []
+  },
+  {
+   "no": 331,
+   "build": "20261115-201644",
+   "built": "2026-11-15T20:16:44Z",
+   "published": "2026-11-15T20:23:19Z",
+   "republished": [],
+   "notes": [
+    "WhatsApp desk: Old bills tab — send the customer sale bills of an earlier period with their PDF (owner only)",
+    "CRM messages through the WhatsApp provider: setting crm_wa_mode click | api, every CRM text has a provider twin CRM_<CODE> in wa_templates (placeholders in order of appearance), wa_messages kind CRM keeps its own values, api.crm_wa state / send / mode_save; the CRM WhatsApp window sends the approved text with one button, campaign rows too; the owner's switch in CRM Settings"
+   ],
+   "commits": [
+    "8f30508",
+    "f7e1d0e"
+   ],
+   "refs": [
+    "sql/243"
+   ]
+  },
   {
    "no": 330,
    "build": "20261115-194622",
@@ -4983,7 +5011,7 @@
  ],
  "pending": {
   "notes": [
-   "CRM: messages can go out through the WhatsApp provider instead of the staff's phone — a Send button, approved texts only, switched on in CRM Settings"
+   "Approvals: a notification on the approver's phone for every new request; the approver's phone app stays signed in"
   ],
   "commits": []
  }
