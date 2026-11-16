@@ -1,16 +1,33 @@
 {
- "generated": "2026-11-15T19:46:06Z",
+ "generated": "2026-11-15T20:18:49Z",
  "source": {
-  "head": "bd8a98f",
-  "commits": 379
+  "head": "4bf7f16",
+  "commits": 380
  },
  "site": {
-  "deploys": 342,
-  "builds": 329,
+  "deploys": 343,
+  "builds": 330,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-15T11:19:42Z"
+  "latest": "2026-11-15T19:52:33Z"
  },
  "builds": [
+  {
+   "no": 330,
+   "build": "20261115-194622",
+   "built": "2026-11-15T19:46:22Z",
+   "published": "2026-11-15T19:52:33Z",
+   "republished": [],
+   "notes": [
+    "The CRM login — the CRM desk only, for the PR / customer-relations staff: role CRM Executive (CRM.DESK) works the whole list of its shops — Today, Enquiries, Wanted list, Customers, Occasions & Campaigns; Insights, Performance, Push and Settings closed to it at the server; the login crm (OZR) made without a password"
+   ],
+   "commits": [
+    "bd8a98f",
+    "4bf7f16"
+   ],
+   "refs": [
+    "sql/242"
+   ]
+  },
   {
    "no": 329,
    "build": "20261115-111103",
@@ -4966,10 +4983,8 @@
  ],
  "pending": {
   "notes": [
-   "CRM login: a new role, CRM Executive, opens the CRM desk only — Today, Enquiries, Wanted list, Customers, Occasions & Campaigns — without Insights, Performance or Settings"
+   "CRM: messages can go out through the WhatsApp provider instead of the staff's phone — a Send button, approved texts only, switched on in CRM Settings"
   ],
-  "commits": [
-   "bd8a98f"
-  ]
+  "commits": []
  }
 }
