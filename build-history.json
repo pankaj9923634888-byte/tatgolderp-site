@@ -1,16 +1,33 @@
 {
- "generated": "2026-11-16T09:46:19Z",
+ "generated": "2026-11-16T18:48:03Z",
  "source": {
-  "head": "3152fd1",
-  "commits": 385
+  "head": "5c700bd",
+  "commits": 387
  },
  "site": {
-  "deploys": 346,
-  "builds": 333,
+  "deploys": 347,
+  "builds": 334,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-16T09:26:23Z"
+  "latest": "2026-11-16T11:05:48Z"
  },
  "builds": [
+  {
+   "no": 334,
+   "build": "20261116-095501",
+   "built": "2026-11-16T09:55:01Z",
+   "published": "2026-11-16T11:05:48Z",
+   "republished": [],
+   "notes": [
+    "Price Check: on gold the making discount is fixed — 25 % by the salesman, 50 % with the manager's discount code, and a round figure to the ₹100; silver and other pieces keep the discount choice"
+   ],
+   "commits": [
+    "3152fd1",
+    "a24d361"
+   ],
+   "refs": [
+    "sql/245"
+   ]
+  },
   {
    "no": 333,
    "build": "20261116-044333",
@@ -5028,10 +5045,12 @@
  ],
  "pending": {
   "notes": [
-   "Price Check: on gold the making discount is fixed — 25 % by the salesman, 50 % with the manager's discount code, and a round figure to the ₹100; silver and other pieces keep the discount choice"
+   "Sales app for the phone: camera scan for the Price Check, attendance on Home, tokens made and billed, stock search, rate card alerts and token history",
+   "Price Check: gold can be forwarded for the second discount step; the token arrives on the salesman's screen",
+   "Price Check: a salesman signed in with his own login sells in his own name; Selling is not asked"
   ],
   "commits": [
-   "3152fd1"
+   "5c700bd"
   ]
  }
 }
