@@ -1,16 +1,33 @@
 {
- "generated": "2026-11-16T04:28:29Z",
+ "generated": "2026-11-16T09:46:19Z",
  "source": {
-  "head": "f7e1d0e",
-  "commits": 382
+  "head": "3152fd1",
+  "commits": 385
  },
  "site": {
-  "deploys": 345,
-  "builds": 332,
+  "deploys": 346,
+  "builds": 333,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-16T01:06:58Z"
+  "latest": "2026-11-16T09:26:23Z"
  },
  "builds": [
+  {
+   "no": 333,
+   "build": "20261116-044333",
+   "built": "2026-11-16T04:43:33Z",
+   "published": "2026-11-16T09:26:23Z",
+   "republished": [],
+   "notes": [
+    "Approvals: a notification on the approver's phone for every new request; the approver's phone app stays signed in"
+   ],
+   "commits": [
+    "14bc129",
+    "27f8502"
+   ],
+   "refs": [
+    "sql/244"
+   ]
+  },
   {
    "no": 332,
    "build": "20261115-202328",
@@ -5011,8 +5028,10 @@
  ],
  "pending": {
   "notes": [
-   "Approvals: a notification on the approver's phone for every new request; the approver's phone app stays signed in"
+   "Price Check: on gold the making discount is fixed — 25 % by the salesman, 50 % with the manager's discount code, and a round figure to the ₹100; silver and other pieces keep the discount choice"
   ],
-  "commits": []
+  "commits": [
+   "3152fd1"
+  ]
  }
 }
