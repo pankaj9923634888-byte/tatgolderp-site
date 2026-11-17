@@ -1,16 +1,46 @@
 {
- "generated": "2026-11-17T09:25:49Z",
+ "generated": "2026-11-17T11:56:12Z",
  "source": {
-  "head": "3aae65b",
-  "commits": 394
+  "head": "260a8d2",
+  "commits": 395
  },
  "site": {
-  "deploys": 350,
-  "builds": 337,
+  "deploys": 351,
+  "builds": 338,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-17T04:18:54Z"
+  "latest": "2026-11-17T09:47:11Z"
  },
  "builds": [
+  {
+   "no": 338,
+   "build": "20261117-092601",
+   "built": "2026-11-17T09:26:01Z",
+   "published": "2026-11-17T09:47:11Z",
+   "republished": [],
+   "notes": [
+    "Login Desk: a login request now waits one hour, then it expires and leaves the waiting list by itself",
+    "Waiting page: shows until when the request waits, and an Ask again button once it has expired",
+    "Price Check: the fixed making discount now applies to silver and every other metal as well — 25 % by the salesman, 50 % with the manager's discount code, and a round figure to the ₹100",
+    "Price Check: the earlier discount choice beside the customer's price and Change on a piece are removed; only the fixed discount can be given",
+    "Price token: the discount line reads Making discount while the fixed discount covers every metal",
+    "Sales app: one login for a salesman — attendance in the attendance app on the salesman's own phone, the sales app on the shop's tab with the same login; the app shows the day's attendance and takes no punch",
+    "Login Desk: a shop tab, approved once, opens the sales app for every salesman's own login",
+    "Sales app: the Selling box is no longer shown on the Price Check; each token goes in the name of the login that makes it",
+    "Sales app: a login without a salesman of its own is tied to its salesman, or added to Masters → Salesmen, the first time it opens the app",
+    "Sales app: on a phone or a tab the cards and the price band stay within the screen; figures on the right are no longer cut off"
+   ],
+   "commits": [
+    "cacd8b7",
+    "3aae65b",
+    "260a8d2"
+   ],
+   "refs": [
+    "sql/249",
+    "sql/250",
+    "sql/251",
+    "sql/252"
+   ]
+  },
   {
    "no": 337,
    "build": "20261117-035701",
@@ -5103,20 +5133,13 @@
  ],
  "pending": {
   "notes": [
-   "Login Desk: a login request now waits one hour, then it expires and leaves the waiting list by itself",
-   "Waiting page: shows until when the request waits, and an Ask again button once it has expired",
-   "Price Check: the fixed making discount now applies to silver and every other metal as well — 25 % by the salesman, 50 % with the manager's discount code, and a round figure to the ₹100",
-   "Price Check: the earlier discount choice beside the customer's price and Change on a piece are removed; only the fixed discount can be given",
-   "Price token: the discount line reads Making discount while the fixed discount covers every metal",
-   "Sales app: one login for a salesman — attendance in the attendance app on the salesman's own phone, the sales app on the shop's tab with the same login; the app shows the day's attendance and takes no punch",
-   "Login Desk: a shop tab, approved once, opens the sales app for every salesman's own login",
-   "Sales app: the Selling box is no longer shown on the Price Check; each token goes in the name of the login that makes it",
-   "Sales app: a login without a salesman of its own is tied to its salesman, or added to Masters → Salesmen, the first time it opens the app",
-   "Sales app: on a phone or a tab the cards and the price band stay within the screen; figures on the right are no longer cut off"
+   "Refinery Desk: new Hand over tab — a shop hands its old gold and old silver to Head Office on a numbered voucher with a printed note",
+   "Refinery Desk: every Send, Jama and settlement is booked at Head Office, so the fine gold back from the refinery comes into the Head Office vault",
+   "Refinery Desk: new settlement type Touch gain — fine gold returned above the expected touch is booked as profit on old gold",
+   "Refinery Desk: a Send takes old metal at its share of the purchase fine and cost, so a branch's old gold reaches nil with its last gram",
+   "Old gold book: each branch's old gold and silver — bought, handed over, sent to the refinery, in hand — with every entry and every Send",
+   "Owner Dashboard: new Old gold & silver card — old metal at each branch, at the refinery and back in the Head Office vault"
   ],
-  "commits": [
-   "cacd8b7",
-   "3aae65b"
-  ]
+  "commits": []
  }
 }
