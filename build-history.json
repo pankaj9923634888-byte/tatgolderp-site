@@ -1,16 +1,38 @@
 {
- "generated": "2026-11-16T18:48:03Z",
+ "generated": "2026-11-17T03:43:19Z",
  "source": {
-  "head": "5c700bd",
-  "commits": 387
+  "head": "79179d0",
+  "commits": 389
  },
  "site": {
-  "deploys": 347,
-  "builds": 334,
+  "deploys": 348,
+  "builds": 335,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-16T11:05:48Z"
+  "latest": "2026-11-16T19:16:38Z"
  },
  "builds": [
+  {
+   "no": 335,
+   "build": "20261116-190447",
+   "built": "2026-11-16T19:04:47Z",
+   "published": "2026-11-16T19:16:38Z",
+   "republished": [],
+   "notes": [
+    "Sales app for the phone: camera scan for the Price Check, attendance on Home, tokens made and billed, stock search, rate card alerts and token history",
+    "Price Check: gold can be forwarded for the second discount step; the token arrives on the salesman's screen",
+    "Price Check: a salesman's own login sells under its own name; Selling is not asked",
+    "Sales app: the rate strip is no longer shown on the Price Check; the rate card is under Alerts"
+   ],
+   "commits": [
+    "5c700bd",
+    "4c0beb2",
+    "79179d0"
+   ],
+   "refs": [
+    "sql/245",
+    "sql/246"
+   ]
+  },
   {
    "no": 334,
    "build": "20261116-095501",
@@ -18,7 +40,8 @@
    "published": "2026-11-16T11:05:48Z",
    "republished": [],
    "notes": [
-    "Price Check: on gold the making discount is fixed — 25 % by the salesman, 50 % with the manager's discount code, and a round figure to the ₹100; silver and other pieces keep the discount choice"
+    "Price Check: on gold the making discount is fixed — 25 % by the salesman, 50 % with the manager's discount code, and a round figure to the ₹100",
+    "Price Check: silver and other pieces keep the discount choice"
    ],
    "commits": [
     "3152fd1",
@@ -5045,12 +5068,9 @@
  ],
  "pending": {
   "notes": [
-   "Sales app for the phone: camera scan for the Price Check, attendance on Home, tokens made and billed, stock search, rate card alerts and token history",
-   "Price Check: gold can be forwarded for the second discount step; the token arrives on the salesman's screen",
-   "Price Check: a salesman signed in with his own login sells in his own name; Selling is not asked"
+   "Sales app: a searched item shows the list of its pieces with label, weight and shop",
+   "Sales app: its own sign-in screen; Sign out is offered once the day's attendance is complete"
   ],
-  "commits": [
-   "5c700bd"
-  ]
+  "commits": []
  }
 }
