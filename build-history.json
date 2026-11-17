@@ -1,16 +1,33 @@
 {
- "generated": "2026-11-17T03:43:19Z",
+ "generated": "2026-11-17T03:56:42Z",
  "source": {
-  "head": "79179d0",
-  "commits": 389
+  "head": "60c187c",
+  "commits": 390
  },
  "site": {
-  "deploys": 348,
-  "builds": 335,
+  "deploys": 349,
+  "builds": 336,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-16T19:16:38Z"
+  "latest": "2026-11-17T03:51:54Z"
  },
  "builds": [
+  {
+   "no": 336,
+   "build": "20261117-034333",
+   "built": "2026-11-17T03:43:33Z",
+   "published": "2026-11-17T03:51:54Z",
+   "republished": [],
+   "notes": [
+    "Sales app: a searched item shows the list of its pieces with label, weight and shop",
+    "Sales app: its own sign-in screen; Sign out is offered once the day's attendance is complete"
+   ],
+   "commits": [
+    "60c187c"
+   ],
+   "refs": [
+    "sql/247"
+   ]
+  },
   {
    "no": 335,
    "build": "20261116-190447",
@@ -5068,8 +5085,7 @@
  ],
  "pending": {
   "notes": [
-   "Sales app: a searched item shows the list of its pieces with label, weight and shop",
-   "Sales app: its own sign-in screen; Sign out is offered once the day's attendance is complete"
+   "Sales app: its own Home Screen icon and name, apart from the main icon"
   ],
   "commits": []
  }

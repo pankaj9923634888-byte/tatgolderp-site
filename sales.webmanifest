@@ -1,0 +1,17 @@
+{
+  "id": "/sales/",
+  "name": "Sales App",
+  "short_name": "Sales",
+  "description": "Scan and price check, tokens, stock search and attendance for the sales team",
+  "start_url": "/sales/?source=home",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0B2F6B",
+  "theme_color": "#0B2F6B",
+  "icons": [
+    { "src": "/icons/sales-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/sales-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/sales-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
