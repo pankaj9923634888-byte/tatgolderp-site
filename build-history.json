@@ -1,16 +1,55 @@
 {
- "generated": "2026-11-17T12:10:01Z",
+ "generated": "2026-11-17T12:52:38Z",
  "source": {
-  "head": "d5fa962",
-  "commits": 396
+  "head": "bacc426",
+  "commits": 398
  },
  "site": {
-  "deploys": 351,
-  "builds": 338,
+  "deploys": 353,
+  "builds": 340,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-17T09:47:11Z"
+  "latest": "2026-11-17T12:41:15Z"
  },
  "builds": [
+  {
+   "no": 340,
+   "build": "20261117-121254",
+   "built": "2026-11-17T12:12:54Z",
+   "published": "2026-11-17T12:41:15Z",
+   "republished": [],
+   "notes": [
+    "Export to Tally: a Branch box — the files can be made for all branches or for one branch alone, with that branch's entries, the stock of its godown and its own opening balances",
+    "Export to Tally: the files of each choice are kept apart — the next period, the opening balances and the In no file list are the branch's own, and Past exports shows the branch of every file",
+    "GST Report: a Branch box on the screen, a Branch column and a By branch tab when the report holds more than one branch, and the branch in the Excel for the CA"
+   ],
+   "commits": [
+    "7c2f9d2"
+   ],
+   "refs": [
+    "sql/254"
+   ]
+  },
+  {
+   "no": 339,
+   "build": "20261117-115638",
+   "built": "2026-11-17T11:56:38Z",
+   "published": "2026-11-17T12:16:42Z",
+   "republished": [],
+   "notes": [
+    "Refinery Desk: new Hand over tab — a shop hands its old gold and old silver to Head Office on a numbered voucher with a printed note",
+    "Refinery Desk: every Send, Jama and settlement is booked at Head Office, so the fine gold back from the refinery comes into the Head Office vault",
+    "Refinery Desk: new settlement type Touch gain — fine gold returned above the expected touch is booked as profit on old gold",
+    "Refinery Desk: a Send takes old metal at its share of the purchase fine and cost, so a branch's old gold reaches nil with its last gram",
+    "Old gold book: each branch's old gold and silver — bought, handed over, sent to the refinery, in hand — with every entry and every Send",
+    "Owner Dashboard: new Old gold & silver card — old metal at each branch, at the refinery and back in the Head Office vault"
+   ],
+   "commits": [
+    "d5fa962"
+   ],
+   "refs": [
+    "sql/253"
+   ]
+  },
   {
    "no": 338,
    "build": "20261117-092601",
@@ -5133,18 +5172,13 @@
  ],
  "pending": {
   "notes": [
-   "Refinery Desk: new Hand over tab — a shop hands its old gold and old silver to Head Office on a numbered voucher with a printed note",
-   "Refinery Desk: every Send, Jama and settlement is booked at Head Office, so the fine gold back from the refinery comes into the Head Office vault",
-   "Refinery Desk: new settlement type Touch gain — fine gold returned above the expected touch is booked as profit on old gold",
-   "Refinery Desk: a Send takes old metal at its share of the purchase fine and cost, so a branch's old gold reaches nil with its last gram",
-   "Old gold book: each branch's old gold and silver — bought, handed over, sent to the refinery, in hand — with every entry and every Send",
-   "Owner Dashboard: new Old gold & silver card — old metal at each branch, at the refinery and back in the Head Office vault",
-   "Export to Tally: a Branch box — the files can be made for all branches or for one branch alone, with that branch's entries, the stock of its godown and its own opening balances",
-   "Export to Tally: the files of each choice are kept apart — the next period, the opening balances and the In no file list are the branch's own, and Past exports shows the branch of every file",
-   "GST Report: a Branch box on the screen, a Branch column and a By branch tab when the report holds more than one branch, and the branch in the Excel for the CA"
+   "Stock Taking: the scan box stays open while a label is checked - scans wait their turn and none is lost",
+   "Stock Taking: the last scans are listed with the result of each, a sound for found and for a problem, and Scan again when the connection fails",
+   "Stock Taking: a large count opens and scans quickly - 150 lines at a time, many categories chosen from one box",
+   "Stock Taking: the count screen fits a laptop screen; the start card no longer runs off a 1280-pixel screen"
   ],
   "commits": [
-   "d5fa962"
+   "bacc426"
   ]
  }
 }
