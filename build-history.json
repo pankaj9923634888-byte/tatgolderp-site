@@ -1,16 +1,34 @@
 {
- "generated": "2026-11-17T03:56:42Z",
+ "generated": "2026-11-17T09:25:49Z",
  "source": {
-  "head": "60c187c",
-  "commits": 390
+  "head": "3aae65b",
+  "commits": 394
  },
  "site": {
-  "deploys": 349,
-  "builds": 336,
+  "deploys": 350,
+  "builds": 337,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-17T03:51:54Z"
+  "latest": "2026-11-17T04:18:54Z"
  },
  "builds": [
+  {
+   "no": 337,
+   "build": "20261117-035701",
+   "built": "2026-11-17T03:57:01Z",
+   "published": "2026-11-17T04:18:54Z",
+   "republished": [],
+   "notes": [
+    "Sales app: its own Home Screen icon and name, apart from the main icon",
+    "Sales app: Scan opens the Price Check again"
+   ],
+   "commits": [
+    "5c43cca",
+    "4770c43"
+   ],
+   "refs": [
+    "sql/248"
+   ]
+  },
   {
    "no": 336,
    "build": "20261117-034333",
@@ -5085,8 +5103,20 @@
  ],
  "pending": {
   "notes": [
-   "Sales app: its own Home Screen icon and name, apart from the main icon"
+   "Login Desk: a login request now waits one hour, then it expires and leaves the waiting list by itself",
+   "Waiting page: shows until when the request waits, and an Ask again button once it has expired",
+   "Price Check: the fixed making discount now applies to silver and every other metal as well — 25 % by the salesman, 50 % with the manager's discount code, and a round figure to the ₹100",
+   "Price Check: the earlier discount choice beside the customer's price and Change on a piece are removed; only the fixed discount can be given",
+   "Price token: the discount line reads Making discount while the fixed discount covers every metal",
+   "Sales app: one login for a salesman — attendance in the attendance app on the salesman's own phone, the sales app on the shop's tab with the same login; the app shows the day's attendance and takes no punch",
+   "Login Desk: a shop tab, approved once, opens the sales app for every salesman's own login",
+   "Sales app: the Selling box is no longer shown on the Price Check; each token goes in the name of the login that makes it",
+   "Sales app: a login without a salesman of its own is tied to its salesman, or added to Masters → Salesmen, the first time it opens the app",
+   "Sales app: on a phone or a tab the cards and the price band stay within the screen; figures on the right are no longer cut off"
   ],
-  "commits": []
+  "commits": [
+   "cacd8b7",
+   "3aae65b"
+  ]
  }
 }
