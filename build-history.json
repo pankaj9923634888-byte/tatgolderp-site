@@ -1,16 +1,33 @@
 {
- "generated": "2026-11-17T12:52:38Z",
+ "generated": "2026-11-18T18:37:11Z",
  "source": {
-  "head": "bacc426",
-  "commits": 398
+  "head": "680fc20",
+  "commits": 399
  },
  "site": {
-  "deploys": 353,
-  "builds": 340,
+  "deploys": 354,
+  "builds": 341,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-17T12:41:15Z"
+  "latest": "2026-11-17T13:10:58Z"
  },
  "builds": [
+  {
+   "no": 341,
+   "build": "20261117-125303",
+   "built": "2026-11-17T12:53:03Z",
+   "published": "2026-11-17T13:10:58Z",
+   "republished": [],
+   "notes": [
+    "Stock Taking: the scan box stays open while a label is checked - scans wait their turn and none is lost",
+    "Stock Taking: the last scans are listed with the result of each, a sound for found and for a problem, and Scan again when the connection fails",
+    "Stock Taking: a large count opens and scans quickly - 150 lines at a time, many categories chosen from one box",
+    "Stock Taking: the count screen fits a laptop screen; the start card no longer runs off a 1280-pixel screen"
+   ],
+   "commits": [
+    "bacc426"
+   ],
+   "refs": []
+  },
   {
    "no": 340,
    "build": "20261117-121254",
@@ -5172,13 +5189,12 @@
  ],
  "pending": {
   "notes": [
-   "Stock Taking: the scan box stays open while a label is checked - scans wait their turn and none is lost",
-   "Stock Taking: the last scans are listed with the result of each, a sound for found and for a problem, and Scan again when the connection fails",
-   "Stock Taking: a large count opens and scans quickly - 150 lines at a time, many categories chosen from one box",
-   "Stock Taking: the count screen fits a laptop screen; the start card no longer runs off a 1280-pixel screen"
+   "Owner Dashboard: a new glass design in two looks — Night (navy and gold) and Day (light) — switched with the moon / sun button beside the period buttons and remembered on each device",
+   "Owner Dashboard: the stock metal value card shows the share of gold, silver and the vault in a thin bar; pointing at a part lights up its share",
+   "Owner Dashboard: the main figures count up when the page opens and move to their new values when the period changes; the figures stay on screen while the next period loads",
+   "Owner Dashboard: the period buttons slide to the chosen period, reports open under the tiles with a smooth unfold, and a long figure shrinks to fit its tile instead of being cut",
+   "Owner Dashboard: weights, dates and bill counts in the Sales details and Stock cards no longer break across two lines"
   ],
-  "commits": [
-   "bacc426"
-  ]
+  "commits": []
  }
 }
