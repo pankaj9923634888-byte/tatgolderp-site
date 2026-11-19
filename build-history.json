@@ -1,16 +1,34 @@
 {
- "generated": "2026-11-18T18:37:11Z",
+ "generated": "2026-11-19T08:33:01Z",
  "source": {
-  "head": "680fc20",
-  "commits": 399
+  "head": "ea620e3",
+  "commits": 400
  },
  "site": {
-  "deploys": 354,
-  "builds": 341,
+  "deploys": 355,
+  "builds": 342,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-17T13:10:58Z"
+  "latest": "2026-11-18T23:42:58Z"
  },
  "builds": [
+  {
+   "no": 342,
+   "build": "20261118-183732",
+   "built": "2026-11-18T18:37:32Z",
+   "published": "2026-11-18T23:42:58Z",
+   "republished": [],
+   "notes": [
+    "Owner Dashboard: a new glass design in two looks, Night and Day, switched with the moon / sun button beside the period buttons and remembered on each device",
+    "Owner Dashboard: the stock metal value card shows the share of gold, silver and the vault in a thin bar; pointing at a part lights up its share",
+    "Owner Dashboard: figures count up when the page opens and move to their new values when the period changes; they stay on screen while the next period loads",
+    "Owner Dashboard: the period buttons slide, reports unfold smoothly under the tiles, and a long figure shrinks to fit its tile instead of being cut",
+    "Owner Dashboard: weights, dates and bill counts in the Sales details and Stock cards no longer break across two lines"
+   ],
+   "commits": [
+    "ea620e3"
+   ],
+   "refs": []
+  },
   {
    "no": 341,
    "build": "20261117-125303",
@@ -24,7 +42,8 @@
     "Stock Taking: the count screen fits a laptop screen; the start card no longer runs off a 1280-pixel screen"
    ],
    "commits": [
-    "bacc426"
+    "bacc426",
+    "680fc20"
    ],
    "refs": []
   },
@@ -5189,11 +5208,10 @@
  ],
  "pending": {
   "notes": [
-   "Owner Dashboard: a new glass design in two looks — Night (navy and gold) and Day (light) — switched with the moon / sun button beside the period buttons and remembered on each device",
-   "Owner Dashboard: the stock metal value card shows the share of gold, silver and the vault in a thin bar; pointing at a part lights up its share",
-   "Owner Dashboard: the main figures count up when the page opens and move to their new values when the period changes; the figures stay on screen while the next period loads",
-   "Owner Dashboard: the period buttons slide to the chosen period, reports open under the tiles with a smooth unfold, and a long figure shrinks to fit its tile instead of being cut",
-   "Owner Dashboard: weights, dates and bill counts in the Sales details and Stock cards no longer break across two lines"
+   "Estimate: an item not in stock can be typed by hand — name, metal, purity, weight, pieces, making and stone charges — and is priced at today's rate",
+   "Estimate: the Item not in stock button and the F8 key open the entry; a name typed in the Item box that matches no label opens it with that name",
+   "Estimate: a typed item holds no stock and prints as NOT IN STOCK; the bill made from the estimate lists it so the real piece's label can be scanned",
+   "Estimates & Quotations and the Estimates list show a typed item by its name"
   ],
   "commits": []
  }
