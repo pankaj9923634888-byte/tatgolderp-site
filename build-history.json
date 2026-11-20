@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-19T20:41:29Z",
+ "generated": "2026-11-19T20:54:03Z",
  "source": {
-  "head": "66e1933",
-  "commits": 402
+  "head": "05d940e",
+  "commits": 404
  },
  "site": {
   "deploys": 356,
@@ -5228,12 +5228,15 @@
  "pending": {
   "notes": [
    "Price Check: the making discount now has three steps — 20 % by the salesman, 40 % with the manager's code and 50 % with the owner's code",
-   "Price Check: the owner's code button appears only after the manager's step; an owner's code given at the manager's step also covers the last step",
-   "Sales app: the manager can give his 20 % or send a forward on to the owner for 10 % more; the owner can give 20 % or 20 % + 10 %",
-   "PDF files (price tokens, bills, vouchers, statements and reports) now carry their measurements to three decimals, for printing from printer apps on phones and tablets"
+   "Price Check: no code button on the screen — the manager or the owner presses and holds the word MAKING to type a code; a step shows only once given",
+   "Price Check: the note and the token box on the screen no longer name who gave the code",
+   "Sales app: the manager gives 20 % or sends the forward on to the owner for 10 % more; the owner can give 20 % or 20 % + 10 %",
+   "PDF files (tokens, bills, vouchers, statements, reports) carry their measurements to three decimals, for printing from apps on phones and tablets"
   ],
   "commits": [
-   "66e1933"
+   "66e1933",
+   "00b9e7f",
+   "05d940e"
   ]
  }
 }
