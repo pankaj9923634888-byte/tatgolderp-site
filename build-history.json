@@ -1,16 +1,38 @@
 {
- "generated": "2026-11-19T20:54:03Z",
+ "generated": "2026-11-20T07:03:28Z",
  "source": {
-  "head": "05d940e",
-  "commits": 404
+  "head": "73297e8",
+  "commits": 406
  },
  "site": {
-  "deploys": 356,
-  "builds": 343,
+  "deploys": 357,
+  "builds": 344,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-19T08:55:46Z"
+  "latest": "2026-11-20T02:48:37Z"
  },
  "builds": [
+  {
+   "no": 344,
+   "build": "20261119-204409",
+   "built": "2026-11-19T20:44:09Z",
+   "published": "2026-11-20T02:48:37Z",
+   "republished": [],
+   "notes": [
+    "Price Check: the making discount now has three steps — 20 % by the salesman, 40 % with the manager's code and 50 % with the owner's code",
+    "Sales app: the manager gives 20 % or sends the forward on to the owner for 10 % more; the owner can give 20 % or 20 % + 10 %",
+    "PDF files (tokens, bills, vouchers, statements, reports) carry their measurements to three decimals, for printing from apps on phones and tablets"
+   ],
+   "commits": [
+    "66e1933",
+    "00b9e7f",
+    "05d940e",
+    "59a689b",
+    "73297e8"
+   ],
+   "refs": [
+    "sql/256"
+   ]
+  },
   {
    "no": 343,
    "build": "20261119-083714",
@@ -5227,16 +5249,12 @@
  ],
  "pending": {
   "notes": [
-   "Price Check: the making discount now has three steps — 20 % by the salesman, 40 % with the manager's code and 50 % with the owner's code",
    "Price Check: no code button on the screen — the manager or the owner presses and holds the word MAKING to type a code; a step shows only once given",
    "Price Check: the note and the token box on the screen no longer name who gave the code",
-   "Sales app: the manager gives 20 % or sends the forward on to the owner for 10 % more; the owner can give 20 % or 20 % + 10 %",
-   "PDF files (tokens, bills, vouchers, statements, reports) carry their measurements to three decimals, for printing from apps on phones and tablets"
+   "Sale Bill: an item that is not in stock can be typed by hand and billed with the Item not in stock button or F8 — priced at today's rate with the making typed, plus GST; when the bill is saved it is entered in the stock books under a code NS…",
+   "Sale Bill from an estimate: the estimate's lines typed as not in stock come onto the bill",
+   "Estimate and Sale Bill: a typed gold article of 2 g or more carries the hallmark charge"
   ],
-  "commits": [
-   "66e1933",
-   "00b9e7f",
-   "05d940e"
-  ]
+  "commits": []
  }
 }
