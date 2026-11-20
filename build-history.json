@@ -1,16 +1,47 @@
 {
- "generated": "2026-11-20T07:03:28Z",
+ "generated": "2026-11-20T08:49:00Z",
  "source": {
-  "head": "73297e8",
-  "commits": 406
+  "head": "fb251f3",
+  "commits": 408
  },
  "site": {
-  "deploys": 357,
-  "builds": 344,
+  "deploys": 359,
+  "builds": 346,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-20T02:48:37Z"
+  "latest": "2026-11-20T07:37:44Z"
  },
  "builds": [
+  {
+   "no": 346,
+   "build": "20261120-071347",
+   "built": "2026-11-20T07:13:47Z",
+   "published": "2026-11-20T07:37:44Z",
+   "republished": [],
+   "notes": [
+    "Sale Bill: an item not in stock can be typed by hand and billed (Item not in stock button or F8) at today's rate with the typed making, plus GST",
+    "Sale Bill from an estimate: the estimate's lines typed as not in stock come onto the bill",
+    "Estimate and Sale Bill: a typed gold article of 2 g or more carries the hallmark charge"
+   ],
+   "commits": [
+    "2b0e1bf"
+   ],
+   "refs": [
+    "sql/257"
+   ]
+  },
+  {
+   "no": 345,
+   "build": "20261119-210009",
+   "built": "2026-11-19T21:00:09Z",
+   "published": "2026-11-20T07:04:53Z",
+   "republished": [],
+   "notes": [
+    "Price Check: no code button on the screen — the manager or the owner presses and holds the word MAKING to type a code; a step shows only once given",
+    "Price Check: the note and the token box on the screen no longer name who gave the code"
+   ],
+   "commits": [],
+   "refs": []
+  },
   {
    "no": 344,
    "build": "20261119-204409",
@@ -5249,12 +5280,11 @@
  ],
  "pending": {
   "notes": [
-   "Price Check: no code button on the screen — the manager or the owner presses and holds the word MAKING to type a code; a step shows only once given",
-   "Price Check: the note and the token box on the screen no longer name who gave the code",
-   "Sale Bill: an item that is not in stock can be typed by hand and billed with the Item not in stock button or F8 — priced at today's rate with the making typed, plus GST; when the bill is saved it is entered in the stock books under a code NS…",
-   "Sale Bill from an estimate: the estimate's lines typed as not in stock come onto the bill",
-   "Estimate and Sale Bill: a typed gold article of 2 g or more carries the hallmark charge"
+   "WhatsApp: when the provider refuses the API key, the desk says so in red with the steps to paste a new key — no Fix number button for a key problem",
+   "WhatsApp: re-sends wait for a working key, the owner's phone is told when the key stops working, and the documents that failed go out again in one press"
   ],
-  "commits": []
+  "commits": [
+   "fb251f3"
+  ]
  }
 }
