@@ -1,16 +1,35 @@
 {
- "generated": "2026-11-19T08:33:01Z",
+ "generated": "2026-11-19T20:41:29Z",
  "source": {
-  "head": "ea620e3",
-  "commits": 400
+  "head": "66e1933",
+  "commits": 402
  },
  "site": {
-  "deploys": 355,
-  "builds": 342,
+  "deploys": 356,
+  "builds": 343,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-18T23:42:58Z"
+  "latest": "2026-11-19T08:55:46Z"
  },
  "builds": [
+  {
+   "no": 343,
+   "build": "20261119-083714",
+   "built": "2026-11-19T08:37:14Z",
+   "published": "2026-11-19T08:55:46Z",
+   "republished": [],
+   "notes": [
+    "Estimate: an item not in stock can be typed by hand — name, metal, purity, weight, pieces, making and stone charges — and is priced at today's rate",
+    "Estimate: the Item not in stock button and the F8 key open the entry; a name typed in the Item box that matches no label opens it with that name",
+    "Estimate: a typed item holds no stock and prints as NOT IN STOCK; the bill made from the estimate lists it so the real piece's label can be scanned",
+    "Estimates & Quotations and the Estimates list show a typed item by its name"
+   ],
+   "commits": [
+    "ca65531"
+   ],
+   "refs": [
+    "sql/255"
+   ]
+  },
   {
    "no": 342,
    "build": "20261118-183732",
@@ -5208,11 +5227,13 @@
  ],
  "pending": {
   "notes": [
-   "Estimate: an item not in stock can be typed by hand — name, metal, purity, weight, pieces, making and stone charges — and is priced at today's rate",
-   "Estimate: the Item not in stock button and the F8 key open the entry; a name typed in the Item box that matches no label opens it with that name",
-   "Estimate: a typed item holds no stock and prints as NOT IN STOCK; the bill made from the estimate lists it so the real piece's label can be scanned",
-   "Estimates & Quotations and the Estimates list show a typed item by its name"
+   "Price Check: the making discount now has three steps — 20 % by the salesman, 40 % with the manager's code and 50 % with the owner's code",
+   "Price Check: the owner's code button appears only after the manager's step; an owner's code given at the manager's step also covers the last step",
+   "Sales app: the manager can give his 20 % or send a forward on to the owner for 10 % more; the owner can give 20 % or 20 % + 10 %",
+   "PDF files (price tokens, bills, vouchers, statements and reports) now carry their measurements to three decimals, for printing from printer apps on phones and tablets"
   ],
-  "commits": []
+  "commits": [
+   "66e1933"
+  ]
  }
 }
