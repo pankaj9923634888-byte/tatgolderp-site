@@ -1,16 +1,33 @@
 {
- "generated": "2026-11-23T09:36:14Z",
+ "generated": "2026-11-23T18:16:12Z",
  "source": {
-  "head": "9a5489d",
-  "commits": 410
+  "head": "4dfa246",
+  "commits": 411
  },
  "site": {
-  "deploys": 363,
-  "builds": 348,
+  "deploys": 364,
+  "builds": 349,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-21T09:07:21Z"
+  "latest": "2026-11-23T12:40:41Z"
  },
  "builds": [
+  {
+   "no": 349,
+   "build": "20261123-093635",
+   "built": "2026-11-23T09:36:35Z",
+   "published": "2026-11-23T12:40:41Z",
+   "republished": [],
+   "notes": [
+    "Debit Bill: pieces given on approval leave the main stock and wait in the Debit Box under the party's name, on Rate Fix or Rate Unfix",
+    "Debit Box: each piece is returned to stock or billed on the Sale Bill to the same party, at the fixed rate; Rate Fix puts the day's rate on an unfixed bill"
+   ],
+   "commits": [
+    "4dfa246"
+   ],
+   "refs": [
+    "sql/260"
+   ]
+  },
   {
    "no": 348,
    "build": "20261120-092152",
@@ -5314,8 +5331,8 @@
  ],
  "pending": {
   "notes": [
-   "Debit Bill: pieces given on approval leave the main stock and wait in the Debit Box under the party's name, on Rate Fix or Rate Unfix",
-   "Debit Box: each piece is returned to stock or billed on the Sale Bill to the same party, at the fixed rate; Rate Fix puts the day's rate on an unfixed bill"
+   "Manager Desk: new Sales details and Purchase details tiles open the dashboard's detail panels, Sale register included, for the manager's shop",
+   "Purchase details: old silver bought from customers is named Old silver (URD), with old gold and old silver on separate rows"
   ],
   "commits": []
  }
