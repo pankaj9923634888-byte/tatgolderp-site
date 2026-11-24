@@ -1,16 +1,40 @@
 {
- "generated": "2026-11-24T02:57:41Z",
+ "generated": "2026-11-24T09:30:42Z",
  "source": {
-  "head": "7d99bbb",
-  "commits": 414
+  "head": "8250ba5",
+  "commits": 416
  },
  "site": {
-  "deploys": 366,
-  "builds": 351,
+  "deploys": 368,
+  "builds": 353,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-24T02:16:08Z"
+  "latest": "2026-11-24T03:11:28Z"
  },
  "builds": [
+  {
+   "no": 353,
+   "build": "20261124-030144",
+   "built": "2026-11-24T03:01:44Z",
+   "published": "2026-11-24T03:11:28Z",
+   "republished": [],
+   "notes": [
+    "Owner Dashboard: new Outstanding tile — udhari still due bill by bill and each customer's balance, for the branch in the top bar"
+   ],
+   "commits": [
+    "ee4beca"
+   ],
+   "refs": []
+  },
+  {
+   "no": 352,
+   "build": "20261123-190301",
+   "built": "2026-11-23T19:03:01Z",
+   "published": "2026-11-24T02:57:28Z",
+   "republished": [],
+   "notes": [],
+   "commits": [],
+   "refs": []
+  },
   {
    "no": 351,
    "build": "20261123-185147",
@@ -5366,11 +5390,13 @@
  ],
  "pending": {
   "notes": [
-   "Debit Bill advance: money (cash, UPI, card, bank or cheque) or gold (weight × purity = fine grams) taken with a Debit Bill, or added later from the Debit Box",
-   "The Sale Bill made from the Debit Box, or the party's next bill, takes the advance: the money as advance adjusted, the gold fine for fine as old gold",
-   "When the last pieces come back the Return window asks to keep the advance for the next bill or refund it now; Advances held lists every party holding one",
-   "Owner Dashboard: new Outstanding tile — udhari still due bill by bill and each customer's balance, for the branch in the top bar"
+   "Sale Bill: a bill dated an earlier day takes the rates of that day - its line rates and the Gold 24K / 22K / 18K / Silver 999 rates of its corner are the rates in force at the end of its own day; a bill of today is priced as before",
+   "Price Check: the discount on the making is typed as a % — up to 25 % by the salesman, up to 25 % more with a manager's code",
+   "Price Check: the owner's separate 10 % step is removed — the owner's code works like a manager's code",
+   "Sales app: the manager types the discount % on a forwarded price before the token is issued"
   ],
-  "commits": []
+  "commits": [
+   "8250ba5"
+  ]
  }
 }
