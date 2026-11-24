@@ -1,16 +1,33 @@
 {
- "generated": "2026-11-24T11:32:20Z",
+ "generated": "2026-11-24T12:17:38Z",
  "source": {
-  "head": "1abd904",
-  "commits": 419
+  "head": "95240ea",
+  "commits": 420
  },
  "site": {
-  "deploys": 370,
-  "builds": 355,
+  "deploys": 371,
+  "builds": 356,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-24T11:15:23Z"
+  "latest": "2026-11-24T11:44:53Z"
  },
  "builds": [
+  {
+   "no": 356,
+   "build": "20261124-113225",
+   "built": "2026-11-24T11:32:25Z",
+   "published": "2026-11-24T11:44:53Z",
+   "republished": [],
+   "notes": [
+    "Sale Bill: a rate typed for a piece kept for a customer order is now charged; the order's making stays and the bill notes both rates",
+    "Customer Orders: the Pieces window shows the rate typed on the bill for a billed piece"
+   ],
+   "commits": [
+    "95240ea"
+   ],
+   "refs": [
+    "sql/268"
+   ]
+  },
   {
    "no": 355,
    "build": "20261124-110658",
@@ -5430,8 +5447,8 @@
  ],
  "pending": {
   "notes": [
-   "Sale Bill: a rate typed for a piece kept for a customer order is now charged; the order's making stays and the bill notes both rates",
-   "Customer Orders: the Pieces window shows the rate typed on the bill for a billed piece"
+   "Corrections: Manisha and the account login correct sale bills, customer orders, URD and RD bills, receipts and payments — every correction waits for the owner's approval",
+   "Customer Orders: a saved order can be corrected — items, rates, weights and delivery dates; the customer and the advance stay as booked"
   ],
   "commits": []
  }
