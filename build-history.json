@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-23T18:40:31Z",
+ "generated": "2026-11-23T19:02:47Z",
  "source": {
-  "head": "6f372b8",
-  "commits": 412
+  "head": "afefd23",
+  "commits": 413
  },
  "site": {
   "deploys": 365,
@@ -5348,8 +5348,13 @@
  ],
  "pending": {
   "notes": [
-   "Manager Desk: new Outstanding tile and report — udhari still due bill by bill and each customer's balance in the books, for the manager's shop"
+   "Manager Desk: new Outstanding tile and report — udhari still due bill by bill and each customer's balance in the books, for the manager's shop",
+   "Debit Bill advance: money (cash, UPI, card, bank or cheque) or gold (weight × purity = fine grams) taken with a Debit Bill, or added later from the Debit Box",
+   "The Sale Bill made from the Debit Box, or the party's next bill, takes the advance: the money as advance adjusted, the gold fine for fine as old gold",
+   "When the last pieces come back the Return window asks to keep the advance for the next bill or refund it now; Advances held lists every party holding one"
   ],
-  "commits": []
+  "commits": [
+   "afefd23"
+  ]
  }
 }
