@@ -1,16 +1,33 @@
 {
- "generated": "2026-11-23T18:16:12Z",
+ "generated": "2026-11-23T18:40:31Z",
  "source": {
-  "head": "4dfa246",
-  "commits": 411
+  "head": "6f372b8",
+  "commits": 412
  },
  "site": {
-  "deploys": 364,
-  "builds": 349,
+  "deploys": 365,
+  "builds": 350,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-23T12:40:41Z"
+  "latest": "2026-11-23T18:32:50Z"
  },
  "builds": [
+  {
+   "no": 350,
+   "build": "20261123-182231",
+   "built": "2026-11-23T18:22:31Z",
+   "published": "2026-11-23T18:32:50Z",
+   "republished": [],
+   "notes": [
+    "Manager Desk: new Sales details and Purchase details tiles open the dashboard's detail panels, Sale register included, for the manager's shop",
+    "Purchase details: old silver bought from customers is named Old silver (URD), with old gold and old silver on separate rows"
+   ],
+   "commits": [
+    "6f372b8"
+   ],
+   "refs": [
+    "sql/261"
+   ]
+  },
   {
    "no": 349,
    "build": "20261123-093635",
@@ -5331,8 +5348,7 @@
  ],
  "pending": {
   "notes": [
-   "Manager Desk: new Sales details and Purchase details tiles open the dashboard's detail panels, Sale register included, for the manager's shop",
-   "Purchase details: old silver bought from customers is named Old silver (URD), with old gold and old silver on separate rows"
+   "Manager Desk: new Outstanding tile and report — udhari still due bill by bill and each customer's balance in the books, for the manager's shop"
   ],
   "commits": []
  }
