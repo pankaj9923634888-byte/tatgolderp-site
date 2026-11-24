@@ -1,16 +1,37 @@
 {
- "generated": "2026-11-24T09:30:42Z",
+ "generated": "2026-11-24T10:59:30Z",
  "source": {
-  "head": "8250ba5",
-  "commits": 416
+  "head": "2e7eda5",
+  "commits": 417
  },
  "site": {
-  "deploys": 368,
-  "builds": 353,
+  "deploys": 369,
+  "builds": 354,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-24T03:11:28Z"
+  "latest": "2026-11-24T09:53:08Z"
  },
  "builds": [
+  {
+   "no": 354,
+   "build": "20261124-093603",
+   "built": "2026-11-24T09:36:03Z",
+   "published": "2026-11-24T09:53:08Z",
+   "republished": [],
+   "notes": [
+    "Sale Bill: a bill dated an earlier day takes the rates of that day - its line rates and the Gold 24K / 22K / 18K / Silver 999 rates of its corner are the rates in force at the end of its own day; a bill of today is priced as before",
+    "Price Check: the discount on the making is typed as a % — up to 25 % by the salesman, up to 25 % more with a manager's code",
+    "Price Check: the owner's separate 10 % step is removed — the owner's code works like a manager's code",
+    "Sales app: the manager types the discount % on a forwarded price before the token is issued"
+   ],
+   "commits": [
+    "8250ba5",
+    "2e7eda5"
+   ],
+   "refs": [
+    "sql/265",
+    "sql/266"
+   ]
+  },
   {
    "no": 353,
    "build": "20261124-030144",
@@ -5390,13 +5411,9 @@
  ],
  "pending": {
   "notes": [
-   "Sale Bill: a bill dated an earlier day takes the rates of that day - its line rates and the Gold 24K / 22K / 18K / Silver 999 rates of its corner are the rates in force at the end of its own day; a bill of today is priced as before",
-   "Price Check: the discount on the making is typed as a % — up to 25 % by the salesman, up to 25 % more with a manager's code",
-   "Price Check: the owner's separate 10 % step is removed — the owner's code works like a manager's code",
-   "Sales app: the manager types the discount % on a forwarded price before the token is issued"
+   "Home: Sales, Purchase and Orders are now large cards showing the gold and silver weight and amount of the period",
+   "Home: the Cash & Bank card shows money received, money paid and the balance for cash, bank, UPI and card"
   ],
-  "commits": [
-   "8250ba5"
-  ]
+  "commits": []
  }
 }
