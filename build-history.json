@@ -1,16 +1,34 @@
 {
- "generated": "2026-11-23T19:02:47Z",
+ "generated": "2026-11-24T02:57:41Z",
  "source": {
-  "head": "afefd23",
-  "commits": 413
+  "head": "7d99bbb",
+  "commits": 414
  },
  "site": {
-  "deploys": 365,
-  "builds": 350,
+  "deploys": 366,
+  "builds": 351,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-23T18:32:50Z"
+  "latest": "2026-11-24T02:16:08Z"
  },
  "builds": [
+  {
+   "no": 351,
+   "build": "20261123-185147",
+   "built": "2026-11-23T18:51:47Z",
+   "published": "2026-11-24T02:16:08Z",
+   "republished": [],
+   "notes": [
+    "Manager Desk: new Outstanding tile and report — udhari still due bill by bill and each customer's balance in the books, for the manager's shop"
+   ],
+   "commits": [
+    "afefd23",
+    "7d99bbb"
+   ],
+   "refs": [
+    "sql/262",
+    "sql/263"
+   ]
+  },
   {
    "no": 350,
    "build": "20261123-182231",
@@ -5348,13 +5366,11 @@
  ],
  "pending": {
   "notes": [
-   "Manager Desk: new Outstanding tile and report — udhari still due bill by bill and each customer's balance in the books, for the manager's shop",
    "Debit Bill advance: money (cash, UPI, card, bank or cheque) or gold (weight × purity = fine grams) taken with a Debit Bill, or added later from the Debit Box",
    "The Sale Bill made from the Debit Box, or the party's next bill, takes the advance: the money as advance adjusted, the gold fine for fine as old gold",
-   "When the last pieces come back the Return window asks to keep the advance for the next bill or refund it now; Advances held lists every party holding one"
+   "When the last pieces come back the Return window asks to keep the advance for the next bill or refund it now; Advances held lists every party holding one",
+   "Owner Dashboard: new Outstanding tile — udhari still due bill by bill and each customer's balance, for the branch in the top bar"
   ],
-  "commits": [
-   "afefd23"
-  ]
+  "commits": []
  }
 }
