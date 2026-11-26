@@ -1,16 +1,30 @@
 {
- "generated": "2026-11-26T07:11:27Z",
+ "generated": "2026-11-26T08:16:35Z",
  "source": {
-  "head": "7a2c0d6",
-  "commits": 421
+  "head": "aa8168b",
+  "commits": 423
  },
  "site": {
-  "deploys": 372,
-  "builds": 357,
+  "deploys": 373,
+  "builds": 358,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-24T12:49:41Z"
+  "latest": "2026-11-26T07:29:23Z"
  },
  "builds": [
+  {
+   "no": 358,
+   "build": "20261126-071133",
+   "built": "2026-11-26T07:11:33Z",
+   "published": "2026-11-26T07:29:23Z",
+   "republished": [],
+   "notes": [
+    "Inventory: the By type table downloads as a PDF, an Excel file or a phone PDF — by group or by item name, every row, with a total for each metal"
+   ],
+   "commits": [
+    "f49c295"
+   ],
+   "refs": []
+  },
   {
    "no": 357,
    "build": "20261124-124054",
@@ -5464,8 +5478,11 @@
  ],
  "pending": {
   "notes": [
-   "Inventory: the By type table downloads as a PDF, an Excel file or a phone PDF — by group or by item name, every row, with a total for each metal"
+   "Inventory: the By type table prints straight from the screen — the same A4 page as its PDF, every row, with a total for each metal",
+   "CRM Insights: What sells shows gold and silver side by side, each ranked by the weight sold in grams, with the rupee value beside each weight"
   ],
-  "commits": []
+  "commits": [
+   "aa8168b"
+  ]
  }
 }
