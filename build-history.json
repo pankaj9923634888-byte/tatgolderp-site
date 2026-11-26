@@ -1,16 +1,35 @@
 {
- "generated": "2026-11-26T09:41:52Z",
+ "generated": "2026-11-26T11:37:06Z",
  "source": {
-  "head": "010c63c",
-  "commits": 426
+  "head": "34acc24",
+  "commits": 427
  },
  "site": {
-  "deploys": 375,
-  "builds": 360,
+  "deploys": 376,
+  "builds": 361,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-26T08:46:25Z"
+  "latest": "2026-11-26T10:07:23Z"
  },
  "builds": [
+  {
+   "no": 361,
+   "build": "20261126-095349",
+   "built": "2026-11-26T09:53:49Z",
+   "published": "2026-11-26T10:07:23Z",
+   "republished": [],
+   "notes": [
+    "CRM Insights: What sells lists every item name of each metal, down to the last one - the Gold and Silver cards no longer stop at the top 12",
+    "Sales Returns window and the SALES RETURN tag - today's sales returns on top (count, pieces, grams per metal, money by settlement), every return of a period with where each piece is now, Excel / PDF; the tag on a returned piece in Inventory, Label Status, the Sale Bill row and (SR) Price Check until it is sold again"
+   ],
+   "commits": [
+    "010c63c",
+    "34acc24"
+   ],
+   "refs": [
+    "sql/272",
+    "sql/273"
+   ]
+  },
   {
    "no": 360,
    "build": "20261126-083758",
@@ -5514,12 +5533,12 @@
  ],
  "pending": {
   "notes": [
-   "CRM Insights: What sells lists every item name of each metal, down to the last one - the Gold and Silver cards no longer stop at the top 12",
-   "Sales Returns on Home: how many sales returns today, the pieces that came back with their grams (gold and silver apart) and the money refunded or kept as credit; every return of a period with where each piece is now; Excel and PDF",
-   "A piece taken back on a sales return carries a SALES RETURN tag in Inventory, Label Status and on the Sale Bill it is scanned on (a small SR on the Price Check card) until it is sold again"
+   "Order & Repair Tracking: one board of every customer order and repair - new at the shop, on the way to or at Head Office, with the karigar or supplier, back at Head Office (hallmarking, kept for the order), ready at the shop, delivered today - with the late jobs, the ones due in 2 days and the pieces ready and not collected on top",
+   "Every order and repair has a job tag with a QR code, scanned at each handover; a bag between a shop and Head Office has its own bag note; the weight is checked at every handover, and a difference above the limit waits for the owner's approval",
+   "Karigars & suppliers: who holds which order or repair, since when, late, gold with him, jobs done and on time in the last 90 days; the late list and the ready-not-collected list with WhatsApp to the customer in one tap (Marathi by default); Excel and PDF",
+   "Orders & Repairs on Home for the owner logins and on the Manager Desk with the late count; a Track link on the Repair desk",
+   "Orders and repairs open before tracking started are on the board with a Before tracking tag (no wrong booking time, no karigar or shop warnings); the next step on each puts it in its place"
   ],
-  "commits": [
-   "010c63c"
-  ]
+  "commits": []
  }
 }
