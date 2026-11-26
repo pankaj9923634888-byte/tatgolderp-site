@@ -1,16 +1,37 @@
 {
- "generated": "2026-11-26T11:37:06Z",
+ "generated": "2026-11-26T18:22:18Z",
  "source": {
-  "head": "34acc24",
-  "commits": 427
+  "head": "6f652aa",
+  "commits": 431
  },
  "site": {
-  "deploys": 376,
-  "builds": 361,
+  "deploys": 377,
+  "builds": 362,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-26T10:07:23Z"
+  "latest": "2026-11-26T17:36:23Z"
  },
  "builds": [
+  {
+   "no": 362,
+   "build": "20261126-171016",
+   "built": "2026-11-26T17:10:16Z",
+   "published": "2026-11-26T17:36:23Z",
+   "republished": [],
+   "notes": [
+    "Order & Repair Tracking: one board of every customer order and repair - new at the shop, on the way to or at Head Office, with the karigar or supplier, back at Head Office (hallmarking, kept for the order), ready at the shop, delivered today - with the late jobs, the ones due in 2 days and the pieces ready and not collected on top",
+    "Every order and repair has a job tag with a QR code, scanned at each handover; a bag between a shop and Head Office has its own bag note; the weight is checked at every handover, and a difference above the limit waits for the owner's approval",
+    "Karigars & suppliers: who holds which order or repair, since when, late, gold with him, jobs done and on time in the last 90 days; the late list and the ready-not-collected list with WhatsApp to the customer in one tap (Marathi by default); Excel and PDF",
+    "Orders & Repairs on Home for the owner logins and on the Manager Desk with the late count; a Track link on the Repair desk",
+    "Orders and repairs open before tracking started are on the board with a Before tracking tag (no wrong booking time, no karigar or shop warnings); the next step on each puts it in its place"
+   ],
+   "commits": [
+    "c521f2c",
+    "7ce99a1"
+   ],
+   "refs": [
+    "sql/274"
+   ]
+  },
   {
    "no": 361,
    "build": "20261126-095349",
@@ -5533,12 +5554,15 @@
  ],
  "pending": {
   "notes": [
-   "Order & Repair Tracking: one board of every customer order and repair - new at the shop, on the way to or at Head Office, with the karigar or supplier, back at Head Office (hallmarking, kept for the order), ready at the shop, delivered today - with the late jobs, the ones due in 2 days and the pieces ready and not collected on top",
-   "Every order and repair has a job tag with a QR code, scanned at each handover; a bag between a shop and Head Office has its own bag note; the weight is checked at every handover, and a difference above the limit waits for the owner's approval",
-   "Karigars & suppliers: who holds which order or repair, since when, late, gold with him, jobs done and on time in the last 90 days; the late list and the ready-not-collected list with WhatsApp to the customer in one tap (Marathi by default); Excel and PDF",
-   "Orders & Repairs on Home for the owner logins and on the Manager Desk with the late count; a Track link on the Repair desk",
-   "Orders and repairs open before tracking started are on the board with a Before tracking tag (no wrong booking time, no karigar or shop warnings); the next step on each puts it in its place"
+   "Outstanding: sort tabs with High → Low and Low → High for Balance, Total, Paid, Days, Customer and Last paid; every column heading sorts too",
+   "Outstanding: the list opens with the largest balance first, and the PDF and Excel follow the order on screen",
+   "Outstanding: a balance the customer paid on account (an Other receipt in Receipt & Payment, at any shop) now comes off their bills, oldest bill first",
+   "Outstanding: a bill paid in full that way leaves the list, and a part-paid bill shows only what is still due",
+   "Outstanding: sort tabs for Balance, Total, Paid, Days, Customer and Last paid, and every column heading sorts; the arrow shows the order and a second press turns it round"
   ],
-  "commits": []
+  "commits": [
+   "93fd09b",
+   "6f652aa"
+  ]
  }
 }
