@@ -1,16 +1,52 @@
 {
- "generated": "2026-11-26T08:36:52Z",
+ "generated": "2026-11-26T09:41:52Z",
  "source": {
-  "head": "a909ea0",
-  "commits": 424
+  "head": "010c63c",
+  "commits": 426
  },
  "site": {
-  "deploys": 373,
-  "builds": 358,
+  "deploys": 375,
+  "builds": 360,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-26T07:29:23Z"
+  "latest": "2026-11-26T08:46:25Z"
  },
  "builds": [
+  {
+   "no": 360,
+   "build": "20261126-083758",
+   "built": "2026-11-26T08:37:58Z",
+   "published": "2026-11-26T08:46:25Z",
+   "republished": [],
+   "notes": [
+    "Print Label on Home: scan or type a label number, item code, HUID or RFID card and print that one sticker; pieces taken back on a sales return are listed there until their new sticker is printed",
+    "Label Status, the Inventory item window and the saved Sale Return have a Print label button that opens the sticker print screen for that piece",
+    "A sticker printed again records its reason — sales return, torn or lost sticker, corrected label — in the label's history"
+   ],
+   "commits": [
+    "861411e"
+   ],
+   "refs": [
+    "sql/271"
+   ]
+  },
+  {
+   "no": 359,
+   "build": "20261126-082750",
+   "built": "2026-11-26T08:27:50Z",
+   "published": "2026-11-26T08:37:54Z",
+   "republished": [],
+   "notes": [
+    "Inventory: the By type table prints straight from the screen — the same A4 page as its PDF, every row, with a total for each metal",
+    "CRM Insights: What sells shows gold and silver side by side, each ranked by the weight sold in grams, with the rupee value beside each weight"
+   ],
+   "commits": [
+    "aa8168b",
+    "a909ea0"
+   ],
+   "refs": [
+    "sql/270"
+   ]
+  },
   {
    "no": 358,
    "build": "20261126-071133",
@@ -5478,15 +5514,12 @@
  ],
  "pending": {
   "notes": [
-   "Inventory: the By type table prints straight from the screen — the same A4 page as its PDF, every row, with a total for each metal",
-   "CRM Insights: What sells shows gold and silver side by side, each ranked by the weight sold in grams, with the rupee value beside each weight",
-   "Print Label on Home: scan or type a label number, item code, HUID or RFID card and print that one sticker; pieces taken back on a sales return are listed there until their new sticker is printed",
-   "Label Status, the Inventory item window and the saved Sale Return have a Print label button that opens the sticker print screen for that piece",
-   "A sticker printed again records its reason — sales return, torn or lost sticker, corrected label — in the label's history"
+   "CRM Insights: What sells lists every item name of each metal, down to the last one - the Gold and Silver cards no longer stop at the top 12",
+   "Sales Returns on Home: how many sales returns today, the pieces that came back with their grams (gold and silver apart) and the money refunded or kept as credit; every return of a period with where each piece is now; Excel and PDF",
+   "A piece taken back on a sales return carries a SALES RETURN tag in Inventory, Label Status and on the Sale Bill it is scanned on (a small SR on the Price Check card) until it is sold again"
   ],
   "commits": [
-   "aa8168b",
-   "a909ea0"
+   "010c63c"
   ]
  }
 }
