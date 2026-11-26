@@ -1,16 +1,33 @@
 {
- "generated": "2026-11-24T12:17:38Z",
+ "generated": "2026-11-26T07:11:27Z",
  "source": {
-  "head": "95240ea",
-  "commits": 420
+  "head": "7a2c0d6",
+  "commits": 421
  },
  "site": {
-  "deploys": 371,
-  "builds": 356,
+  "deploys": 372,
+  "builds": 357,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-24T11:44:53Z"
+  "latest": "2026-11-24T12:49:41Z"
  },
  "builds": [
+  {
+   "no": 357,
+   "build": "20261124-124054",
+   "built": "2026-11-24T12:40:54Z",
+   "published": "2026-11-24T12:49:41Z",
+   "republished": [],
+   "notes": [
+    "Corrections: Manisha and the account login correct sale bills, customer orders, URD and RD bills, receipts and payments — every correction waits for the owner's approval",
+    "Customer Orders: a saved order can be corrected — items, rates, weights and delivery dates; the customer and the advance stay as booked"
+   ],
+   "commits": [
+    "7a2c0d6"
+   ],
+   "refs": [
+    "sql/269"
+   ]
+  },
   {
    "no": 356,
    "build": "20261124-113225",
@@ -5447,8 +5464,7 @@
  ],
  "pending": {
   "notes": [
-   "Corrections: Manisha and the account login correct sale bills, customer orders, URD and RD bills, receipts and payments — every correction waits for the owner's approval",
-   "Customer Orders: a saved order can be corrected — items, rates, weights and delivery dates; the customer and the advance stay as booked"
+   "Inventory: the By type table downloads as a PDF, an Excel file or a phone PDF — by group or by item name, every row, with a total for each metal"
   ],
   "commits": []
  }
