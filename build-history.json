@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-26T18:22:18Z",
+ "generated": "2026-11-26T18:33:40Z",
  "source": {
-  "head": "6f652aa",
-  "commits": 431
+  "head": "8e69a0b",
+  "commits": 432
  },
  "site": {
   "deploys": 377,
@@ -5558,11 +5558,13 @@
    "Outstanding: the list opens with the largest balance first, and the PDF and Excel follow the order on screen",
    "Outstanding: a balance the customer paid on account (an Other receipt in Receipt & Payment, at any shop) now comes off their bills, oldest bill first",
    "Outstanding: a bill paid in full that way leaves the list, and a part-paid bill shows only what is still due",
-   "Outstanding: sort tabs for Balance, Total, Paid, Days, Customer and Last paid, and every column heading sorts; the arrow shows the order and a second press turns it round"
+   "Outstanding: the arrow on each sort tab and column heading shows the order, and a second press turns it round",
+   "Order & Repair Tracking: an order's messages go to the customer through the shop's own WhatsApp — at Head Office, Swapnil presses Send in the order's window: Order date & balance (with a new date when the customer's date has passed) or Order ready; the window lists every message the order's customer got, and the shop logins see them without Send"
   ],
   "commits": [
    "93fd09b",
-   "6f652aa"
+   "6f652aa",
+   "8e69a0b"
   ]
  }
 }
