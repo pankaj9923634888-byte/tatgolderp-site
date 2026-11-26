@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-26T08:16:35Z",
+ "generated": "2026-11-26T08:36:52Z",
  "source": {
-  "head": "aa8168b",
-  "commits": 423
+  "head": "a909ea0",
+  "commits": 424
  },
  "site": {
   "deploys": 373,
@@ -5479,10 +5479,14 @@
  "pending": {
   "notes": [
    "Inventory: the By type table prints straight from the screen — the same A4 page as its PDF, every row, with a total for each metal",
-   "CRM Insights: What sells shows gold and silver side by side, each ranked by the weight sold in grams, with the rupee value beside each weight"
+   "CRM Insights: What sells shows gold and silver side by side, each ranked by the weight sold in grams, with the rupee value beside each weight",
+   "Print Label on Home: scan or type a label number, item code, HUID or RFID card and print that one sticker; pieces taken back on a sales return are listed there until their new sticker is printed",
+   "Label Status, the Inventory item window and the saved Sale Return have a Print label button that opens the sticker print screen for that piece",
+   "A sticker printed again records its reason — sales return, torn or lost sticker, corrected label — in the label's history"
   ],
   "commits": [
-   "aa8168b"
+   "aa8168b",
+   "a909ea0"
   ]
  }
 }
