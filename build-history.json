@@ -1,16 +1,30 @@
 {
- "generated": "2026-11-27T00:16:01Z",
+ "generated": "2026-11-27T00:44:51Z",
  "source": {
-  "head": "31dac94",
-  "commits": 433
+  "head": "cf56624",
+  "commits": 434
  },
  "site": {
-  "deploys": 379,
-  "builds": 364,
+  "deploys": 380,
+  "builds": 365,
   "first": "2026-09-08T18:49:30Z",
-  "latest": "2026-11-26T23:55:05Z"
+  "latest": "2026-11-27T00:27:41Z"
  },
  "builds": [
+  {
+   "no": 365,
+   "build": "20261127-001609",
+   "built": "2026-11-27T00:16:09Z",
+   "published": "2026-11-27T00:27:41Z",
+   "republished": [],
+   "notes": [
+    "Order & Repair Tracking: a click on a karigar on the Karigars & suppliers tab opens the karigar's full ledger — fine gold given and received with the running balance, labour, and the cash or bank paid to the karigar; Excel and PDF"
+   ],
+   "commits": [
+    "cf56624"
+   ],
+   "refs": []
+  },
   {
    "no": 364,
    "build": "20261126-183819",
@@ -5589,7 +5603,7 @@
  ],
  "pending": {
   "notes": [
-   "Order & Repair Tracking: a click on a karigar on the Karigars & suppliers tab opens the karigar's full ledger — fine gold given and received with the running balance, labour, and the cash or bank paid to the karigar; Excel and PDF"
+   "Ledger: Cancel beside Edit on a Receipt & Payment voucher, a bill balance receipt or an order advance — the owner, a manager or a voucher editor cancels at once (a reversal puts the money back and the entry leaves the book and the reports); other logins ask the owner"
   ],
   "commits": []
  }
